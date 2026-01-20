@@ -1,0 +1,46 @@
+name: Refresh Market Data
+
+on:
+  schedule:
+    # Every 5 minutes during market hours (9:30 AM - 4:00 PM ET)
+    # ET is UTC-5 (winter) or UTC-4 (summer), so we use UTC times
+    # 9:30 AM ET = 14:30 UTC (winter) / 13:30 UTC (summer)
+    # 4:00 PM ET = 21:00 UTC (winter) / 20:00 UTC (summer)
+    # Using 13:30-21:00 UTC to cover both, Mon-Fri
+    - cron: '*/5 13-21 * * 1-5'
+
+  # Allow manual trigger for testing
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests pytz
+
+      - name: Fetch market data
+        run: python refresh_data.py > market_data.json 2> fetch.log
+
+      - name: Show fetch log
+        run: cat fetch.log
+
+      - name: Validate JSON
+        run: python -c "import json; json.load(open('market_data.json'))"
+
+      - name: Update Gist
+        uses: exuanbo/actions-deploy-gist@v1
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_ID }}
+          file_path: market_data.json
+          file_type: text

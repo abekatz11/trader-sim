@@ -14,6 +14,16 @@ from config import STOCK_UNIVERSE, INDICATORS, SCREENING
 # Environment variable to force sample data mode
 USE_SAMPLE_DATA = os.environ.get('TRADER_SIM_SAMPLE_DATA', '').lower() in ('1', 'true', 'yes')
 
+# GitHub Gist configuration for cached data
+# Set these environment variables or replace with your gist URL
+GIST_USER = os.environ.get('TRADER_SIM_GIST_USER', '')
+GIST_ID = os.environ.get('TRADER_SIM_GIST_ID', '')
+GIST_CACHE_MAX_AGE = 600  # 10 minutes - use gist data if fresher than this
+
+# Cached gist data
+_gist_cache = None
+_gist_cache_time = 0
+
 # Yahoo Finance API endpoints (try multiple)
 YAHOO_ENDPOINTS = [
     "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
@@ -42,6 +52,47 @@ SAMPLE_PRICES = {
 
 # Cache for live data availability check
 _live_data_available = None
+
+
+def _fetch_from_gist() -> Optional[Dict]:
+    """Fetch cached market data from GitHub Gist."""
+    global _gist_cache, _gist_cache_time
+
+    if not GIST_USER or not GIST_ID:
+        return None
+
+    # Return memory-cached data if recent
+    if _gist_cache and (time.time() - _gist_cache_time) < 60:
+        return _gist_cache
+
+    try:
+        url = f"https://gist.githubusercontent.com/{GIST_USER}/{GIST_ID}/raw/market_data.json"
+        resp = requests.get(url, timeout=5)
+        if resp.status_code != 200:
+            return None
+
+        data = resp.json()
+        timestamp = data.get('timestamp', 0)
+        age = time.time() - timestamp
+
+        if age > GIST_CACHE_MAX_AGE:
+            return None  # Data too stale
+
+        _gist_cache = data
+        _gist_cache_time = time.time()
+        return data
+    except Exception:
+        return None
+
+
+def _get_gist_stock_data(symbol: str) -> Optional[Dict]:
+    """Get stock data from gist cache if available."""
+    gist_data = _fetch_from_gist()
+    if not gist_data:
+        return None
+
+    stocks = gist_data.get('stocks', {})
+    return stocks.get(symbol)
 
 
 def _fetch_yahoo_chart(symbol: str, range_str: str = "3mo", interval: str = "1d") -> Optional[Dict]:
@@ -182,6 +233,12 @@ def get_current_price(symbol: str) -> Optional[float]:
     if _use_sample_data():
         return _get_sample_price(symbol)
 
+    # Try gist cache first
+    gist_data = _get_gist_stock_data(symbol)
+    if gist_data and 'price' in gist_data:
+        return gist_data['price']
+
+    # Fall back to live API
     chart = _fetch_yahoo_chart(symbol, "5d")
     if chart:
         meta = chart.get("meta", {})
@@ -247,6 +304,27 @@ def calculate_atr(data: pd.DataFrame, period: int = 14) -> pd.Series:
 
 def get_stock_analysis(symbol: str) -> Optional[Dict]:
     """Get comprehensive analysis for a single stock."""
+    # Try gist cache first (has pre-calculated indicators)
+    gist_data = _get_gist_stock_data(symbol)
+    if gist_data:
+        return {
+            "symbol": symbol,
+            "price": gist_data.get('price', 0),
+            "daily_change": gist_data.get('daily_change', 0),
+            "weekly_change": gist_data.get('weekly_change', 0),
+            "monthly_change": gist_data.get('monthly_change', 0),
+            "sma_10": gist_data.get('sma_10', 0),
+            "sma_20": gist_data.get('sma_20', 0),
+            "sma_50": gist_data.get('sma_50', 0),
+            "rsi": gist_data.get('rsi', 50),
+            "atr": gist_data.get('atr', 0),
+            "avg_volume": gist_data.get('volume', 0),
+            "above_sma_10": gist_data.get('above_sma_10', False),
+            "above_sma_20": gist_data.get('above_sma_20', False),
+            "above_sma_50": gist_data.get('above_sma_50', False),
+        }
+
+    # Fall back to live calculation
     hist = get_historical_data(symbol)
     if hist is None or len(hist) < 50:
         return None
@@ -348,6 +426,13 @@ def get_data_source_status() -> str:
     """Get a description of the current data source status."""
     if USE_SAMPLE_DATA:
         return "Sample data (forced via TRADER_SIM_SAMPLE_DATA env var)"
+
+    # Check if gist cache is available and fresh
+    gist_data = _fetch_from_gist()
+    if gist_data:
+        age = int(time.time() - gist_data.get('timestamp', 0))
+        return f"Gist cache ({age}s old, {gist_data.get('stocks_fetched', 0)} stocks)"
+
     if _rate_limited:
         remaining = int(_rate_limit_until - time.time())
         if remaining > 0:
@@ -357,7 +442,7 @@ def get_data_source_status() -> str:
         return "Sample data (Yahoo API unavailable)"
     if _live_data_available is True:
         return "Live data (Yahoo Finance API)"
-    return "Unknown (not yet checked)"
+    return "Live data (Yahoo Finance API)"
 
 
 def reset_rate_limit():
