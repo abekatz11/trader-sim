@@ -1,31 +1,120 @@
-"""Market data fetching using yfinance with fallback to sample data."""
+"""Market data fetching using Yahoo Finance API with fallback to sample data."""
 
-import yfinance as yf
+import requests
 import pandas as pd
 from typing import Dict, List, Optional
 from datetime import datetime, timedelta
 import random
 import warnings
 import os
-
-# Suppress yfinance warnings
-warnings.filterwarnings('ignore', module='yfinance')
+import time
 
 from config import STOCK_UNIVERSE, INDICATORS, SCREENING
 
 # Environment variable to force sample data mode
 USE_SAMPLE_DATA = os.environ.get('TRADER_SIM_SAMPLE_DATA', '').lower() in ('1', 'true', 'yes')
 
-# Sample prices (realistic values as of late 2024)
-SAMPLE_PRICES = {
-    "AAPL": 178.50, "MSFT": 378.25, "GOOGL": 141.80, "AMZN": 178.90, "NVDA": 495.20,
-    "META": 505.75, "JPM": 198.40, "BAC": 35.80, "V": 279.60, "WMT": 162.30,
-    "KO": 59.85, "PEP": 168.40, "MCD": 295.20, "JNJ": 155.60, "UNH": 528.90,
-    "PFE": 28.45, "XOM": 104.75, "CVX": 147.20, "SPY": 478.50, "QQQ": 405.80
+# Yahoo Finance API endpoints (try multiple)
+YAHOO_ENDPOINTS = [
+    "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
+    "https://query2.finance.yahoo.com/v8/finance/chart/{symbol}",
+]
+
+# Request headers to mimic browser
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'application/json',
 }
 
-# Flag to track if live data is available
+# Rate limiting
+_last_request_time = 0
+REQUEST_DELAY = 0.5  # 500ms between requests
+_rate_limited = False  # Track if we've been rate limited
+_rate_limit_until = 0  # Timestamp when rate limit should expire
+
+# Sample prices (fallback values - approximately current as of Jan 2026)
+SAMPLE_PRICES = {
+    "AAPL": 250.00, "MSFT": 420.00, "GOOGL": 195.00, "AMZN": 225.00, "NVDA": 140.00,
+    "META": 600.00, "JPM": 245.00, "BAC": 46.00, "V": 315.00, "WMT": 92.00,
+    "KO": 63.00, "PEP": 152.00, "MCD": 295.00, "JNJ": 145.00, "UNH": 525.00,
+    "PFE": 26.00, "XOM": 108.00, "CVX": 150.00, "SPY": 600.00, "QQQ": 525.00
+}
+
+# Cache for live data availability check
 _live_data_available = None
+
+
+def _fetch_yahoo_chart(symbol: str, range_str: str = "3mo", interval: str = "1d") -> Optional[Dict]:
+    """Fetch data directly from Yahoo Finance chart API."""
+    global _last_request_time, _rate_limited, _rate_limit_until
+
+    # If we're rate limited, check if we should try again
+    if _rate_limited:
+        if time.time() < _rate_limit_until:
+            return None  # Still rate limited, don't try
+        else:
+            _rate_limited = False  # Rate limit expired, try again
+
+    # Rate limiting between our requests
+    elapsed = time.time() - _last_request_time
+    if elapsed < REQUEST_DELAY:
+        time.sleep(REQUEST_DELAY - elapsed)
+
+    params = {
+        "interval": interval,
+        "range": range_str,
+    }
+
+    # Try each endpoint
+    for endpoint in YAHOO_ENDPOINTS:
+        url = endpoint.format(symbol=symbol)
+        try:
+            _last_request_time = time.time()
+            resp = requests.get(url, headers=HEADERS, params=params, timeout=10)
+
+            if resp.status_code == 429:
+                # Rate limited - set backoff and try next endpoint
+                _rate_limited = True
+                _rate_limit_until = time.time() + 300  # 5 minute backoff
+                continue
+
+            if resp.status_code != 200:
+                continue
+
+            data = resp.json()
+            result = data.get("chart", {}).get("result")
+            if result:
+                _rate_limited = False  # Success - clear rate limit flag
+                return result[0]
+        except requests.exceptions.RequestException:
+            continue
+
+    return None
+
+
+def _parse_chart_to_dataframe(chart_data: Dict) -> Optional[pd.DataFrame]:
+    """Parse Yahoo chart API response into a DataFrame."""
+    try:
+        timestamps = chart_data.get("timestamp", [])
+        quotes = chart_data.get("indicators", {}).get("quote", [{}])[0]
+
+        if not timestamps or not quotes:
+            return None
+
+        df = pd.DataFrame({
+            "Open": quotes.get("open", []),
+            "High": quotes.get("high", []),
+            "Low": quotes.get("low", []),
+            "Close": quotes.get("close", []),
+            "Volume": quotes.get("volume", []),
+        }, index=pd.to_datetime(timestamps, unit='s'))
+
+        # Remove rows with NaN close prices
+        df = df.dropna(subset=['Close'])
+
+        return df if not df.empty else None
+    except Exception:
+        return None
 
 
 def _check_live_data() -> bool:
@@ -34,12 +123,8 @@ def _check_live_data() -> bool:
     if _live_data_available is not None:
         return _live_data_available
 
-    try:
-        test = yf.download("SPY", period="1d", progress=False, auto_adjust=True)
-        _live_data_available = not test.empty
-    except Exception:
-        _live_data_available = False
-
+    chart = _fetch_yahoo_chart("SPY", "5d")
+    _live_data_available = chart is not None and "timestamp" in chart
     return _live_data_available
 
 
@@ -53,7 +138,7 @@ def _use_sample_data() -> bool:
 def _get_sample_price(symbol: str) -> float:
     """Get sample price with small random variation."""
     base = SAMPLE_PRICES.get(symbol, 100.0)
-    variation = random.uniform(-0.02, 0.02)  # +/- 2%
+    variation = random.uniform(-0.02, 0.02)
     return round(base * (1 + variation), 2)
 
 
@@ -62,10 +147,9 @@ def _generate_sample_history(symbol: str, days: int = 90) -> pd.DataFrame:
     base_price = SAMPLE_PRICES.get(symbol, 100.0)
     dates = pd.date_range(end=datetime.now(), periods=days, freq='B')
 
-    # Generate random walk prices
     prices = [base_price]
     for _ in range(days - 1):
-        change = random.gauss(0.0005, 0.015)  # Small positive drift, realistic volatility
+        change = random.gauss(0.0005, 0.015)
         prices.append(prices[-1] * (1 + change))
 
     df = pd.DataFrame({
@@ -84,14 +168,13 @@ def get_historical_data(symbol: str, period: str = "3mo") -> Optional[pd.DataFra
     if _use_sample_data():
         return _generate_sample_history(symbol, 90)
 
-    try:
-        hist = yf.download(symbol, period=period, progress=False, auto_adjust=True)
-        if hist.empty:
-            return _generate_sample_history(symbol, 90)
-        return hist
-    except Exception as e:
-        print(f"Error fetching history for {symbol}, using sample data: {e}")
-        return _generate_sample_history(symbol, 90)
+    chart = _fetch_yahoo_chart(symbol, period)
+    if chart:
+        df = _parse_chart_to_dataframe(chart)
+        if df is not None and len(df) >= 50:
+            return df
+
+    return _generate_sample_history(symbol, 90)
 
 
 def get_current_price(symbol: str) -> Optional[float]:
@@ -99,13 +182,19 @@ def get_current_price(symbol: str) -> Optional[float]:
     if _use_sample_data():
         return _get_sample_price(symbol)
 
-    try:
-        hist = yf.download(symbol, period="5d", progress=False, auto_adjust=True)
-        if hist.empty:
-            return _get_sample_price(symbol)
-        return round(float(hist['Close'].iloc[-1]), 2)
-    except Exception as e:
-        return _get_sample_price(symbol)
+    chart = _fetch_yahoo_chart(symbol, "5d")
+    if chart:
+        meta = chart.get("meta", {})
+        price = meta.get("regularMarketPrice")
+        if price:
+            return round(float(price), 2)
+
+        # Fallback to last close
+        df = _parse_chart_to_dataframe(chart)
+        if df is not None and not df.empty:
+            return round(float(df['Close'].iloc[-1]), 2)
+
+    return _get_sample_price(symbol)
 
 
 def get_current_prices(symbols: List[str] = None) -> Dict[str, float]:
@@ -116,31 +205,13 @@ def get_current_prices(symbols: List[str] = None) -> Dict[str, float]:
     if _use_sample_data():
         return {s: _get_sample_price(s) for s in symbols}
 
-    try:
-        data = yf.download(symbols, period="5d", progress=False, auto_adjust=True, group_by='ticker')
+    prices = {}
+    for symbol in symbols:
+        price = get_current_price(symbol)
+        if price:
+            prices[symbol] = price
 
-        prices = {}
-        if len(symbols) == 1:
-            if not data.empty:
-                prices[symbols[0]] = round(float(data['Close'].iloc[-1]), 2)
-        else:
-            for symbol in symbols:
-                try:
-                    if symbol in data.columns.get_level_values(0):
-                        close_price = data[symbol]['Close'].dropna()
-                        if len(close_price) > 0:
-                            prices[symbol] = round(float(close_price.iloc[-1]), 2)
-                except Exception:
-                    continue
-
-        # Fill missing with sample data
-        for symbol in symbols:
-            if symbol not in prices:
-                prices[symbol] = _get_sample_price(symbol)
-
-        return prices
-    except Exception as e:
-        return {s: _get_sample_price(s) for s in symbols}
+    return prices
 
 
 def calculate_sma(data: pd.DataFrame, period: int) -> pd.Series:
@@ -183,19 +254,16 @@ def get_stock_analysis(symbol: str) -> Optional[Dict]:
     current_price = float(hist['Close'].iloc[-1])
     prev_close = float(hist['Close'].iloc[-2])
 
-    # Calculate indicators
     sma_10 = float(calculate_sma(hist, 10).iloc[-1])
     sma_20 = float(calculate_sma(hist, 20).iloc[-1])
     sma_50 = float(calculate_sma(hist, 50).iloc[-1])
     rsi = float(calculate_rsi(hist, INDICATORS['rsi_period']).iloc[-1])
     atr = float(calculate_atr(hist, INDICATORS['atr_period']).iloc[-1])
 
-    # Calculate returns
     daily_return = ((current_price - prev_close) / prev_close) * 100
     weekly_return = ((current_price - float(hist['Close'].iloc[-5])) / float(hist['Close'].iloc[-5])) * 100 if len(hist) >= 5 else 0
     monthly_return = ((current_price - float(hist['Close'].iloc[-20])) / float(hist['Close'].iloc[-20])) * 100 if len(hist) >= 20 else 0
 
-    # Average volume
     avg_volume = float(hist['Volume'].tail(20).mean())
 
     return {
@@ -227,7 +295,6 @@ def screen_stocks(symbols: List[str] = None) -> List[Dict]:
         if analysis is None:
             continue
 
-        # Apply screening filters
         if analysis['atr'] < SCREENING['min_atr']:
             continue
         if analysis['avg_volume'] < SCREENING['min_avg_volume']:
@@ -256,7 +323,6 @@ def get_market_summary(symbols: List[str] = None) -> Dict:
     if not analyses:
         return {"error": "No data available"}
 
-    # Calculate market-wide metrics
     avg_daily_change = sum(a['daily_change'] for a in analyses) / len(analyses)
     avg_rsi = sum(a['rsi'] for a in analyses) / len(analyses)
 
@@ -276,3 +342,27 @@ def get_market_summary(symbols: List[str] = None) -> Dict:
 def is_using_sample_data() -> bool:
     """Check if currently using sample data."""
     return _use_sample_data()
+
+
+def get_data_source_status() -> str:
+    """Get a description of the current data source status."""
+    if USE_SAMPLE_DATA:
+        return "Sample data (forced via TRADER_SIM_SAMPLE_DATA env var)"
+    if _rate_limited:
+        remaining = int(_rate_limit_until - time.time())
+        if remaining > 0:
+            return f"Sample data (Yahoo API rate limited, retry in {remaining}s)"
+        return "Sample data (rate limit expired, will retry)"
+    if _live_data_available is False:
+        return "Sample data (Yahoo API unavailable)"
+    if _live_data_available is True:
+        return "Live data (Yahoo Finance API)"
+    return "Unknown (not yet checked)"
+
+
+def reset_rate_limit():
+    """Reset rate limit flag (for testing/debugging)."""
+    global _rate_limited, _rate_limit_until, _live_data_available
+    _rate_limited = False
+    _rate_limit_until = 0
+    _live_data_available = None

@@ -15,7 +15,7 @@ except ImportError:
     RICH_AVAILABLE = False
 
 from portfolio import Portfolio
-from market_data import get_current_prices, get_stock_analysis, is_using_sample_data
+from market_data import get_current_prices, get_stock_analysis, is_using_sample_data, get_data_source_status
 from trades import execute_trade, get_max_shares
 from analyzer import generate_analysis, get_screened_opportunities
 from config import STOCK_UNIVERSE, SIMULATION_DAYS, STARTING_CASH
@@ -121,11 +121,12 @@ def cmd_prices(symbols: Optional[list] = None):
     prices = get_current_prices(symbols)
 
     console = get_console()
+    status_msg = get_data_source_status()
     if is_using_sample_data():
         if console and RICH_AVAILABLE:
-            console.print("[yellow]Note: Using simulated data (Yahoo Finance API unavailable)[/yellow]\n")
+            console.print(f"[yellow]Data source: {status_msg}[/yellow]\n")
         else:
-            print("Note: Using simulated data (Yahoo Finance API unavailable)\n")
+            print(f"Data source: {status_msg}\n")
 
     if console and RICH_AVAILABLE:
         table = Table(title=f"Prices for {len(prices)} stocks")
