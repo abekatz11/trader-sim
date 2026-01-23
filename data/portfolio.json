@@ -1,0 +1,279 @@
+{
+  "cash": 126.18999999999998,
+  "holdings": {
+    "RIVN": {
+      "symbol": "RIVN",
+      "shares": 12.0,
+      "cost_basis": 193.20000000000002,
+      "avg_price": 16.1
+    },
+    "NIO": {
+      "symbol": "NIO",
+      "shares": 40.0,
+      "cost_basis": 184.8,
+      "avg_price": 4.62
+    },
+    "SOFI": {
+      "symbol": "SOFI",
+      "shares": 8,
+      "cost_basis": 205.28,
+      "avg_price": 25.66
+    },
+    "LCID": {
+      "symbol": "LCID",
+      "shares": 4,
+      "cost_basis": 44.24,
+      "avg_price": 11.06
+    },
+    "DKNG": {
+      "symbol": "DKNG",
+      "shares": 8,
+      "cost_basis": 246.59,
+      "avg_price": 30.82
+    }
+  },
+  "transactions": [
+    {
+      "timestamp": "2026-01-20T13:09:24.197625",
+      "action": "BUY",
+      "symbol": "RIVN",
+      "shares": 12.0,
+      "price": 16.1,
+      "total": 193.2
+    },
+    {
+      "timestamp": "2026-01-20T13:09:28.359819",
+      "action": "BUY",
+      "symbol": "FCEL",
+      "shares": 25.0,
+      "price": 8.61,
+      "total": 215.25
+    },
+    {
+      "timestamp": "2026-01-20T13:09:32.987484",
+      "action": "BUY",
+      "symbol": "PLUG",
+      "shares": 70.0,
+      "price": 2.32,
+      "total": 162.4
+    },
+    {
+      "timestamp": "2026-01-20T13:09:38.352678",
+      "action": "BUY",
+      "symbol": "MARA",
+      "shares": 18.0,
+      "price": 10.8,
+      "total": 194.4
+    },
+    {
+      "timestamp": "2026-01-20T13:09:44.126711",
+      "action": "BUY",
+      "symbol": "NIO",
+      "shares": 40.0,
+      "price": 4.62,
+      "total": 184.8
+    },
+    {
+      "timestamp": "2026-01-20T21:23:11.335099",
+      "action": "SELL",
+      "symbol": "MARA",
+      "shares": 18,
+      "price": 10.37,
+      "total": 186.66
+    },
+    {
+      "timestamp": "2026-01-21T11:01:07.431922",
+      "action": "SELL",
+      "symbol": "FCEL",
+      "shares": 25,
+      "price": 9.57,
+      "total": 239.25
+    },
+    {
+      "timestamp": "2026-01-21T11:01:07.433775",
+      "action": "BUY",
+      "symbol": "MARA",
+      "shares": 15,
+      "price": 11.1,
+      "total": 166.5
+    },
+    {
+      "timestamp": "2026-01-21T11:06:17.456660",
+      "action": "BUY",
+      "symbol": "MARA",
+      "shares": 7,
+      "price": 11.1,
+      "total": 77.7
+    },
+    {
+      "timestamp": "2026-01-21T11:13:42.561103",
+      "action": "BUY",
+      "symbol": "SOFI",
+      "shares": 8,
+      "price": 25.66,
+      "total": 205.28
+    },
+    {
+      "timestamp": "2026-01-21T11:58:10.802201",
+      "action": "SELL",
+      "symbol": "MARA",
+      "shares": 22,
+      "price": 10.45,
+      "total": 229.9
+    },
+    {
+      "timestamp": "2026-01-21T12:10:47.105646",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 25,
+      "price": 7.38,
+      "total": 184.5
+    },
+    {
+      "timestamp": "2026-01-21T12:18:42.502955",
+      "action": "BUY",
+      "symbol": "LCID",
+      "shares": 4,
+      "price": 11.06,
+      "total": 44.24
+    },
+    {
+      "timestamp": "2026-01-21T12:26:57.446405",
+      "action": "SELL",
+      "symbol": "PLUG",
+      "shares": 70,
+      "price": 2.17,
+      "total": 151.9
+    },
+    {
+      "timestamp": "2026-01-23T10:09:55.590457",
+      "action": "BUY",
+      "symbol": "DKNG",
+      "shares": 5,
+      "price": 30.88,
+      "total": 154.4
+    },
+    {
+      "timestamp": "2026-01-23T10:26:28.347100",
+      "action": "SELL",
+      "symbol": "SNAP",
+      "shares": 25,
+      "price": 7.62,
+      "total": 190.5
+    },
+    {
+      "timestamp": "2026-01-23T10:26:38.791613",
+      "action": "BUY",
+      "symbol": "DKNG",
+      "shares": 3,
+      "price": 30.73,
+      "total": 92.19
+    },
+    {
+      "timestamp": "2026-01-23T10:34:37.183556",
+      "action": "BUY",
+      "symbol": "SNDL",
+      "shares": 60,
+      "price": 1.61,
+      "total": 96.6
+    },
+    {
+      "timestamp": "2026-01-23T10:51:14.115520",
+      "action": "SELL",
+      "symbol": "SNDL",
+      "shares": 60,
+      "price": 1.61,
+      "total": 96.6
+    },
+    {
+      "timestamp": "2026-01-23T10:59:13.056795",
+      "action": "BUY",
+      "symbol": "SQ",
+      "shares": 1,
+      "price": 100.35,
+      "total": 100.35
+    },
+    {
+      "timestamp": "2026-01-23T11:13:09.953674",
+      "action": "SELL",
+      "symbol": "SQ",
+      "shares": 1,
+      "price": 100.84,
+      "total": 100.84
+    },
+    {
+      "timestamp": "2026-01-23T11:15:39.422285",
+      "action": "BUY",
+      "symbol": "SQ",
+      "shares": 1,
+      "price": 98.99,
+      "total": 98.99
+    },
+    {
+      "timestamp": "2026-01-23T11:21:14.486237",
+      "action": "SELL",
+      "symbol": "SQ",
+      "shares": 1,
+      "price": 101.34,
+      "total": 101.34
+    }
+  ],
+  "value_history": [
+    {
+      "timestamp": "2026-01-23T10:09:58.607242",
+      "total_value": 1001.74,
+      "cash": 25.04,
+      "holdings_value": 976.7
+    },
+    {
+      "timestamp": "2026-01-23T10:26:30.837281",
+      "total_value": 1000.14,
+      "cash": 215.54,
+      "holdings_value": 784.6
+    },
+    {
+      "timestamp": "2026-01-23T10:26:41.355344",
+      "total_value": 1000.31,
+      "cash": 123.35,
+      "holdings_value": 876.96
+    },
+    {
+      "timestamp": "2026-01-23T10:34:40.207690",
+      "total_value": 1001.23,
+      "cash": 26.75,
+      "holdings_value": 974.48
+    },
+    {
+      "timestamp": "2026-01-23T10:51:16.613369",
+      "total_value": 998.63,
+      "cash": 123.35,
+      "holdings_value": 875.28
+    },
+    {
+      "timestamp": "2026-01-23T10:59:15.904986",
+      "total_value": 1000.05,
+      "cash": 23.0,
+      "holdings_value": 977.05
+    },
+    {
+      "timestamp": "2026-01-23T11:13:12.472397",
+      "total_value": 997.68,
+      "cash": 123.84,
+      "holdings_value": 873.84
+    },
+    {
+      "timestamp": "2026-01-23T11:15:42.523098",
+      "total_value": 996.12,
+      "cash": 24.85,
+      "holdings_value": 971.27
+    },
+    {
+      "timestamp": "2026-01-23T11:21:17.019407",
+      "total_value": 997.43,
+      "cash": 126.19,
+      "holdings_value": 871.24
+    }
+  ],
+  "start_date": "2026-01-20T13:08:11.130141",
+  "day": 1
+}
