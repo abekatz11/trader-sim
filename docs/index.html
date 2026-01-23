@@ -262,7 +262,8 @@
             <h1>Trader-Sim</h1>
             <div class="header-right">
                 <span class="status-badge" id="statusBadge">Loading...</span>
-                <button class="refresh-btn" onclick="loadAllData()">Refresh</button>
+                <button class="refresh-btn" onclick="loadAllData()">Refresh Data</button>
+                <button class="refresh-btn" onclick="fetchLivePrices()" style="background: var(--accent-blue); color: white;">Live Prices</button>
             </div>
         </header>
 
@@ -360,6 +361,7 @@
         let portfolioData = null;
         let tradeLogData = null;
         let valueChart = null;
+        let livePrices = {};
 
         // Utilities
         const formatCurrency = (val) => '$' + parseFloat(val || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -371,6 +373,114 @@
             const res = await fetch(url + '?t=' + Date.now()); // Cache bust
             if (!res.ok) throw new Error(`Failed to fetch ${url}`);
             return res.json();
+        }
+
+        // Fetch live prices from Yahoo Finance via CORS proxy
+        async function fetchLivePrices() {
+            if (!portfolioData || !portfolioData.holdings) return;
+
+            const symbols = Object.keys(portfolioData.holdings);
+            if (symbols.length === 0) return;
+
+            document.getElementById('statusBadge').textContent = 'Fetching prices...';
+            document.getElementById('statusBadge').className = 'status-badge';
+
+            try {
+                // Use corsproxy.io as CORS proxy
+                const symbolsStr = symbols.join(',');
+                const url = `https://corsproxy.io/?${encodeURIComponent(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${symbolsStr}`)}`;
+
+                const res = await fetch(url);
+                if (!res.ok) throw new Error('Failed to fetch prices');
+
+                const data = await res.json();
+                const quotes = data.quoteResponse?.result || [];
+
+                livePrices = {};
+                for (const quote of quotes) {
+                    livePrices[quote.symbol] = quote.regularMarketPrice || quote.price;
+                }
+
+                updatePortfolioDisplayLive();
+                updateHoldingsTableLive();
+
+                document.getElementById('statusBadge').textContent = 'Live';
+                document.getElementById('statusBadge').className = 'status-badge live';
+                document.getElementById('lastUpdated').textContent = 'Live prices as of ' + new Date().toLocaleTimeString();
+            } catch (err) {
+                console.error('Failed to fetch live prices:', err);
+                document.getElementById('statusBadge').textContent = 'Price fetch failed';
+                document.getElementById('statusBadge').className = 'status-badge error';
+            }
+        }
+
+        // Update portfolio display with live prices
+        function updatePortfolioDisplayLive() {
+            if (!portfolioData || Object.keys(livePrices).length === 0) return;
+
+            const cash = portfolioData.cash || 0;
+            let holdingsValue = 0;
+
+            for (const [symbol, holding] of Object.entries(portfolioData.holdings || {})) {
+                const price = livePrices[symbol] || holding.avg_price;
+                holdingsValue += holding.shares * price;
+            }
+
+            const totalValue = cash + holdingsValue;
+            document.getElementById('totalValue').textContent = formatCurrency(totalValue);
+
+            const returnPct = ((totalValue - STARTING_CASH) / STARTING_CASH) * 100;
+            const returnBadge = document.getElementById('returnBadge');
+            returnBadge.textContent = formatPercent(returnPct);
+            returnBadge.className = 'return-badge ' + getColorClass(returnPct);
+
+            document.getElementById('holdingsValue').textContent = formatCurrency(holdingsValue);
+        }
+
+        // Update holdings table with live prices
+        function updateHoldingsTableLive() {
+            if (!portfolioData || Object.keys(livePrices).length === 0) return;
+
+            const container = document.getElementById('holdingsTable');
+            const holdings = portfolioData.holdings || {};
+
+            if (Object.keys(holdings).length === 0) return;
+
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Shares</th>
+                            <th>Avg Price</th>
+                            <th>Current</th>
+                            <th>Value</th>
+                            <th>P&L %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            for (const [symbol, holding] of Object.entries(holdings)) {
+                const currentPrice = livePrices[symbol] || holding.avg_price;
+                const currentValue = holding.shares * currentPrice;
+                const pnlPct = ((currentPrice - holding.avg_price) / holding.avg_price) * 100;
+                const colorClass = getColorClass(pnlPct);
+
+                html += `
+                    <tr>
+                        <td><span class="symbol">${symbol}</span></td>
+                        <td>${holding.shares}</td>
+                        <td>${formatCurrency(holding.avg_price)}</td>
+                        <td>${formatCurrency(currentPrice)}</td>
+                        <td>${formatCurrency(currentValue)}</td>
+                        <td class="${colorClass}">${formatPercent(pnlPct)}</td>
+                    </tr>
+                `;
+            }
+
+            html += '</tbody></table>';
+            container.innerHTML = html;
         }
 
         // Load portfolio data
