@@ -1,5 +1,5 @@
 {
-  "cash": 126.18999999999998,
+  "cash": 31.059999999999988,
   "holdings": {
     "RIVN": {
       "symbol": "RIVN",
@@ -30,6 +30,12 @@
       "shares": 8,
       "cost_basis": 246.59,
       "avg_price": 30.82
+    },
+    "MARA": {
+      "symbol": "MARA",
+      "shares": 9,
+      "cost_basis": 95.13,
+      "avg_price": 10.57
     }
   },
   "transactions": [
@@ -216,6 +222,14 @@
       "shares": 1,
       "price": 101.34,
       "total": 101.34
+    },
+    {
+      "timestamp": "2026-01-23T15:01:43.179483",
+      "action": "BUY",
+      "symbol": "MARA",
+      "shares": 9,
+      "price": 10.57,
+      "total": 95.13
     }
   ],
   "value_history": [
@@ -272,6 +286,12 @@
       "total_value": 997.43,
       "cash": 126.19,
       "holdings_value": 871.24
+    },
+    {
+      "timestamp": "2026-01-23T15:01:46.214189",
+      "total_value": 992.41,
+      "cash": 31.06,
+      "holdings_value": 961.35
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
