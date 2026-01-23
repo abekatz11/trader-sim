@@ -54,8 +54,9 @@ GUARDRAILS = {
     "min_position_value": 20,       # Don't buy less than $20 worth
 
     # Trade limits
-    "max_daily_trades": 8,          # Max trades per day (buys + sells)
-    "max_daily_buys": 5,            # Max buy orders per day
+    # edited 1/23 at 1:16 to turn off these trade limits.
+    #"max_daily_trades": 8,          # Max trades per day (buys + sells)
+    #"max_daily_buys": 5,            # Max buy orders per day
 
     # Risk limits
     "max_single_loss_pct": 12,      # Force sell if position down more than 12%
