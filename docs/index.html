@@ -387,6 +387,7 @@
         let tradeLogData = null;
         let valueChart = null;
         let livePrices = {};
+        let lastLivePriceFetch = null;  // Timestamp of last successful live price fetch
 
         // Utilities
         const formatCurrency = (val) => '$' + parseFloat(val || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -417,6 +418,47 @@
             textEl.textContent = open ? 'Market Open' : 'Market Closed';
         }
 
+        // Get the most recent market close time (4 PM ET)
+        function getLastMarketClose() {
+            const now = new Date();
+            const et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+            const day = et.getDay();
+            const hours = et.getHours();
+            const minutes = et.getMinutes();
+            const timeInMinutes = hours * 60 + minutes;
+            const marketClose = 16 * 60; // 4:00 PM
+
+            // Start with today at 4 PM ET
+            let closeDate = new Date(et);
+            closeDate.setHours(16, 0, 0, 0);
+
+            // If it's before 4 PM today, use yesterday's close
+            if (timeInMinutes < marketClose) {
+                closeDate.setDate(closeDate.getDate() - 1);
+            }
+
+            // Walk back to find the last weekday (skip weekends)
+            while (closeDate.getDay() === 0 || closeDate.getDay() === 6) {
+                closeDate.setDate(closeDate.getDate() - 1);
+            }
+
+            return closeDate;
+        }
+
+        // Check if we already have prices from the current after-hours period
+        function hasCurrentAfterHoursPrices() {
+            if (!lastLivePriceFetch || Object.keys(livePrices).length === 0) {
+                return false;
+            }
+            // If market is open, always allow fetching
+            if (isMarketOpen()) {
+                return false;
+            }
+            // If we fetched after the last market close, no need to fetch again
+            const lastClose = getLastMarketClose();
+            return lastLivePriceFetch > lastClose;
+        }
+
         // Fetch data from GitHub
         async function fetchJSON(url) {
             const res = await fetch(url + '?t=' + Date.now()); // Cache bust
@@ -430,6 +472,15 @@
 
             const symbols = Object.keys(portfolioData.holdings);
             if (symbols.length === 0) return;
+
+            // Skip fetch if market is closed and we already have prices from after close
+            if (hasCurrentAfterHoursPrices()) {
+                document.getElementById('statusBadge').textContent = 'Using cached prices';
+                document.getElementById('statusBadge').className = 'status-badge live';
+                document.getElementById('lastUpdated').textContent =
+                    'Market closed - prices from ' + lastLivePriceFetch.toLocaleTimeString();
+                return;
+            }
 
             document.getElementById('statusBadge').textContent = 'Fetching prices...';
             document.getElementById('statusBadge').className = 'status-badge';
@@ -457,12 +508,13 @@
                 }
 
                 if (Object.keys(livePrices).length > 0) {
+                    lastLivePriceFetch = new Date();
                     updatePortfolioDisplayLive();
                     updateHoldingsTableLive();
 
                     document.getElementById('statusBadge').textContent = 'Live';
                     document.getElementById('statusBadge').className = 'status-badge live';
-                    document.getElementById('lastUpdated').textContent = 'Live prices as of ' + new Date().toLocaleTimeString();
+                    document.getElementById('lastUpdated').textContent = 'Live prices as of ' + lastLivePriceFetch.toLocaleTimeString();
                 } else {
                     throw new Error('No prices fetched');
                 }
