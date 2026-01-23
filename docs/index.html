@@ -386,27 +386,37 @@
             document.getElementById('statusBadge').className = 'status-badge';
 
             try {
-                // Use corsproxy.io as CORS proxy
-                const symbolsStr = symbols.join(',');
-                const url = `https://corsproxy.io/?${encodeURIComponent(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${symbolsStr}`)}`;
-
-                const res = await fetch(url);
-                if (!res.ok) throw new Error('Failed to fetch prices');
-
-                const data = await res.json();
-                const quotes = data.quoteResponse?.result || [];
-
+                // Fetch each symbol individually using Yahoo chart API via allorigins proxy
                 livePrices = {};
-                for (const quote of quotes) {
-                    livePrices[quote.symbol] = quote.regularMarketPrice || quote.price;
+
+                for (const symbol of symbols) {
+                    try {
+                        const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`;
+                        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(yahooUrl)}`;
+
+                        const res = await fetch(proxyUrl);
+                        if (res.ok) {
+                            const data = await res.json();
+                            const price = data?.chart?.result?.[0]?.meta?.regularMarketPrice;
+                            if (price) {
+                                livePrices[symbol] = price;
+                            }
+                        }
+                    } catch (e) {
+                        console.warn(`Failed to fetch price for ${symbol}`);
+                    }
                 }
 
-                updatePortfolioDisplayLive();
-                updateHoldingsTableLive();
+                if (Object.keys(livePrices).length > 0) {
+                    updatePortfolioDisplayLive();
+                    updateHoldingsTableLive();
 
-                document.getElementById('statusBadge').textContent = 'Live';
-                document.getElementById('statusBadge').className = 'status-badge live';
-                document.getElementById('lastUpdated').textContent = 'Live prices as of ' + new Date().toLocaleTimeString();
+                    document.getElementById('statusBadge').textContent = 'Live';
+                    document.getElementById('statusBadge').className = 'status-badge live';
+                    document.getElementById('lastUpdated').textContent = 'Live prices as of ' + new Date().toLocaleTimeString();
+                } else {
+                    throw new Error('No prices fetched');
+                }
             } catch (err) {
                 console.error('Failed to fetch live prices:', err);
                 document.getElementById('statusBadge').textContent = 'Price fetch failed';
