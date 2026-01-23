@@ -1,5 +1,5 @@
 {
-  "cash": 236.5,
+  "cash": 63.370000000000005,
   "holdings": {
     "RIVN": {
       "symbol": "RIVN",
@@ -30,6 +30,12 @@
       "shares": 9,
       "cost_basis": 95.13,
       "avg_price": 10.57
+    },
+    "NET": {
+      "symbol": "NET",
+      "shares": 1,
+      "cost_basis": 173.13,
+      "avg_price": 173.13
     }
   },
   "transactions": [
@@ -232,6 +238,14 @@
       "shares": 8,
       "price": 25.68,
       "total": 205.44
+    },
+    {
+      "timestamp": "2026-01-23T15:47:03.952633",
+      "action": "BUY",
+      "symbol": "NET",
+      "shares": 1,
+      "price": 173.13,
+      "total": 173.13
     }
   ],
   "value_history": [
@@ -300,6 +314,12 @@
       "total_value": 989.88,
       "cash": 236.5,
       "holdings_value": 753.38
+    },
+    {
+      "timestamp": "2026-01-23T15:47:06.968999",
+      "total_value": 990.58,
+      "cash": 63.37,
+      "holdings_value": 927.21
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
