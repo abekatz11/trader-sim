@@ -1,5 +1,5 @@
 {
-  "cash": 299.24,
+  "cash": 85.19,
   "holdings": {
     "NIO": {
       "symbol": "NIO",
@@ -24,6 +24,12 @@
       "shares": 9,
       "cost_basis": 232.93,
       "avg_price": 25.88
+    },
+    "COIN": {
+      "symbol": "COIN",
+      "shares": 1,
+      "cost_basis": 214.05,
+      "avg_price": 214.05
     }
   },
   "transactions": [
@@ -298,6 +304,14 @@
       "shares": 12,
       "price": 15.68,
       "total": 188.16
+    },
+    {
+      "timestamp": "2026-01-26T12:53:21.760876",
+      "action": "BUY",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 214.05,
+      "total": 214.05
     }
   ],
   "value_history": [
@@ -420,6 +434,12 @@
       "total_value": 1007.19,
       "cash": 299.24,
       "holdings_value": 707.95
+    },
+    {
+      "timestamp": "2026-01-26T12:53:24.299646",
+      "total_value": 1007.38,
+      "cash": 85.19,
+      "holdings_value": 922.19
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
