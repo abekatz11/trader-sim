@@ -1,5 +1,5 @@
 {
-  "cash": 85.19,
+  "cash": 38.33,
   "holdings": {
     "NIO": {
       "symbol": "NIO",
@@ -30,6 +30,12 @@
       "shares": 1,
       "cost_basis": 214.05,
       "avg_price": 214.05
+    },
+    "RIVN": {
+      "symbol": "RIVN",
+      "shares": 3,
+      "cost_basis": 46.86,
+      "avg_price": 15.62
     }
   },
   "transactions": [
@@ -312,6 +318,14 @@
       "shares": 1,
       "price": 214.05,
       "total": 214.05
+    },
+    {
+      "timestamp": "2026-01-26T13:01:20.408025",
+      "action": "BUY",
+      "symbol": "RIVN",
+      "shares": 3,
+      "price": 15.62,
+      "total": 46.86
     }
   ],
   "value_history": [
@@ -440,6 +454,12 @@
       "total_value": 1007.38,
       "cash": 85.19,
       "holdings_value": 922.19
+    },
+    {
+      "timestamp": "2026-01-26T13:01:23.461787",
+      "total_value": 1006.52,
+      "cash": 38.33,
+      "holdings_value": 968.19
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
