@@ -1,12 +1,6 @@
 {
-  "cash": 41.389999999999986,
+  "cash": 299.24,
   "holdings": {
-    "RIVN": {
-      "symbol": "RIVN",
-      "shares": 12.0,
-      "cost_basis": 193.20000000000002,
-      "avg_price": 16.1
-    },
     "NIO": {
       "symbol": "NIO",
       "shares": 40.0,
@@ -30,12 +24,6 @@
       "shares": 9,
       "cost_basis": 232.93,
       "avg_price": 25.88
-    },
-    "AFRM": {
-      "symbol": "AFRM",
-      "shares": 1,
-      "cost_basis": 69.86,
-      "avg_price": 69.86
     }
   },
   "transactions": [
@@ -294,6 +282,22 @@
       "shares": 1,
       "price": 69.86,
       "total": 69.86
+    },
+    {
+      "timestamp": "2026-01-26T12:45:48.756350",
+      "action": "SELL",
+      "symbol": "AFRM",
+      "shares": 1,
+      "price": 69.69,
+      "total": 69.69
+    },
+    {
+      "timestamp": "2026-01-26T12:45:51.787336",
+      "action": "SELL",
+      "symbol": "RIVN",
+      "shares": 12,
+      "price": 15.68,
+      "total": 188.16
     }
   ],
   "value_history": [
@@ -404,6 +408,18 @@
       "total_value": 1007.15,
       "cash": 41.39,
       "holdings_value": 965.76
+    },
+    {
+      "timestamp": "2026-01-26T12:45:51.298719",
+      "total_value": 1007.19,
+      "cash": 111.08,
+      "holdings_value": 896.11
+    },
+    {
+      "timestamp": "2026-01-26T12:45:53.804810",
+      "total_value": 1007.19,
+      "cash": 299.24,
+      "holdings_value": 707.95
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
