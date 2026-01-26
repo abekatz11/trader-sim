@@ -1,5 +1,5 @@
 {
-  "cash": 111.24999999999999,
+  "cash": 41.389999999999986,
   "holdings": {
     "RIVN": {
       "symbol": "RIVN",
@@ -30,6 +30,12 @@
       "shares": 9,
       "cost_basis": 232.93,
       "avg_price": 25.88
+    },
+    "AFRM": {
+      "symbol": "AFRM",
+      "shares": 1,
+      "cost_basis": 69.86,
+      "avg_price": 69.86
     }
   },
   "transactions": [
@@ -280,6 +286,14 @@
       "shares": 4,
       "price": 25.8,
       "total": 103.2
+    },
+    {
+      "timestamp": "2026-01-26T11:56:07.756320",
+      "action": "BUY",
+      "symbol": "AFRM",
+      "shares": 1,
+      "price": 69.86,
+      "total": 69.86
     }
   ],
   "value_history": [
@@ -384,6 +398,12 @@
       "total_value": 1007.13,
       "cash": 111.25,
       "holdings_value": 895.88
+    },
+    {
+      "timestamp": "2026-01-26T11:56:10.795916",
+      "total_value": 1007.15,
+      "cash": 41.39,
+      "holdings_value": 965.76
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
