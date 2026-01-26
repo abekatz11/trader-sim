@@ -1,5 +1,5 @@
 {
-  "cash": 202.15,
+  "cash": 124.54,
   "holdings": {
     "RIVN": {
       "symbol": "RIVN",
@@ -33,9 +33,9 @@
     },
     "SOFI": {
       "symbol": "SOFI",
-      "shares": 2,
-      "cost_basis": 52.12,
-      "avg_price": 26.06
+      "shares": 5,
+      "cost_basis": 129.73,
+      "avg_price": 25.95
     }
   },
   "transactions": [
@@ -262,6 +262,14 @@
       "shares": 2,
       "price": 26.06,
       "total": 52.12
+    },
+    {
+      "timestamp": "2026-01-26T10:44:11.883159",
+      "action": "BUY",
+      "symbol": "SOFI",
+      "shares": 3,
+      "price": 25.87,
+      "total": 77.61
     }
   ],
   "value_history": [
@@ -348,6 +356,12 @@
       "total_value": 1010.67,
       "cash": 202.15,
       "holdings_value": 808.52
+    },
+    {
+      "timestamp": "2026-01-26T10:44:15.085833",
+      "total_value": 1008.13,
+      "cash": 124.54,
+      "holdings_value": 883.59
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
