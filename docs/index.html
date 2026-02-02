@@ -378,7 +378,9 @@
         const GITHUB_BRANCH = 'master';
         const STARTING_CASH = 1000;
 
-        const RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}`;
+        // Detect if running locally and use local endpoints
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const RAW_BASE = isLocal ? '' : `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}`;
         const PORTFOLIO_URL = `${RAW_BASE}/data/portfolio.json`;
         const TRADE_LOG_URL = `${RAW_BASE}/data/trade_log.json`;
 
