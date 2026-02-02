@@ -384,11 +384,7 @@ def log_trading_session(
         }
 
     # Get SPY price for benchmark tracking
-    spy_price = None
-    for stock in market_summary:
-        if stock['symbol'] == 'SPY':
-            spy_price = stock['price']
-            break
+    spy_price = market_data.get('SPY', {}).get('price')
 
     session = {
         "timestamp": timestamp,
