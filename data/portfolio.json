@@ -1,5 +1,5 @@
 {
-  "cash": 327.51,
+  "cash": 178.29000000000002,
   "holdings": {
     "COIN": {
       "symbol": "COIN",
@@ -30,6 +30,12 @@
       "shares": 1,
       "cost_basis": 89.48,
       "avg_price": 89.48
+    },
+    "XPEV": {
+      "symbol": "XPEV",
+      "shares": 9,
+      "cost_basis": 149.21999999999997,
+      "avg_price": 16.58
     }
   },
   "transactions": [
@@ -488,6 +494,14 @@
       "shares": 1,
       "price": 89.48,
       "total": 89.48
+    },
+    {
+      "timestamp": "2026-02-02T15:48:37.318093",
+      "action": "BUY",
+      "symbol": "XPEV",
+      "shares": 9,
+      "price": 16.58,
+      "total": 149.22
     }
   ],
   "value_history": [
@@ -748,6 +762,12 @@
       "total_value": 911.12,
       "cash": 327.51,
       "holdings_value": 583.61
+    },
+    {
+      "timestamp": "2026-02-02T15:48:40.686035",
+      "total_value": 911.12,
+      "cash": 178.29,
+      "holdings_value": 732.83
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
