@@ -18,7 +18,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
 import pytz
 
@@ -53,13 +53,9 @@ def is_market_hours() -> bool:
         market_open = now.replace(hour=open_h, minute=open_m, second=0)
         market_close = now.replace(hour=close_h, minute=close_m, second=0)
 
-        # Apply skip periods
-        effective_open = market_open.replace(
-            minute=open_m + SCHEDULE["skip_first_minutes"]
-        )
-        effective_close = market_close.replace(
-            minute=close_m - SCHEDULE["skip_last_minutes"]
-        )
+        # Apply skip periods using timedelta for correct arithmetic
+        effective_open = market_open + timedelta(minutes=SCHEDULE["skip_first_minutes"])
+        effective_close = market_close - timedelta(minutes=SCHEDULE["skip_last_minutes"])
 
         return effective_open <= now <= effective_close
     except Exception as e:
@@ -74,6 +70,51 @@ def check_internet() -> bool:
         requests.get("https://query1.finance.yahoo.com", timeout=5)
         return True
     except Exception:
+        return False
+
+
+def push_to_github():
+    """Push updated data files to GitHub."""
+    try:
+        # Add data files
+        result = subprocess.run(
+            ["git", "add", "-f", "data/portfolio.json", "data/trade_log.json"],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        if result.returncode != 0:
+            print(f"Git add failed: {result.stderr}")
+            return False
+
+        # Commit with timestamp
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+        result = subprocess.run(
+            ["git", "commit", "-m", f"Trading update {timestamp}"],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        # returncode 1 means nothing to commit, which is fine
+        if result.returncode not in [0, 1]:
+            print(f"Git commit failed: {result.stderr}")
+            return False
+
+        # Push
+        result = subprocess.run(
+            ["git", "push"],
+            capture_output=True,
+            text=True,
+            timeout=60
+        )
+        if result.returncode != 0:
+            print(f"Git push failed: {result.stderr}")
+            return False
+
+        print("Pushed updates to GitHub.")
+        return True
+    except Exception as e:
+        print(f"Error pushing to GitHub: {e}")
         return False
 
 
@@ -330,11 +371,33 @@ def log_trading_session(
     """Log the trading session."""
     timestamp = datetime.now().isoformat()
 
+    # Capture holdings snapshot for time series analysis
+    holdings_snapshot = {}
+    for symbol, holding in portfolio.holdings.items():
+        current_price = market_data.get(symbol, {}).get("price", 0)
+        holdings_snapshot[symbol] = {
+            "shares": holding.shares,
+            "avg_price": holding.avg_price,
+            "current_price": current_price,
+            "value": round(holding.shares * current_price, 2),
+            "pnl_pct": round(((current_price - holding.avg_price) / holding.avg_price) * 100, 2) if holding.avg_price else 0
+        }
+
+    # Get SPY price for benchmark tracking
+    spy_price = None
+    for stock in market_summary:
+        if stock['symbol'] == 'SPY':
+            spy_price = stock['price']
+            break
+
     session = {
         "timestamp": timestamp,
+        "date": timestamp[:10],  # YYYY-MM-DD for easy grouping
         "portfolio_value": portfolio.get_total_value(),
         "cash": portfolio.cash,
         "positions": len(portfolio.holdings),
+        "spy_price": spy_price,  # For benchmark comparison
+        "holdings": holdings_snapshot,
         "claude_analysis": claude_response.get("analysis") if claude_response else None,
         "executed_trades": executed_trades,
         "skipped_trades": [{"trade": t, "reason": r} for t, r in skipped_trades],
@@ -457,6 +520,9 @@ def run_trading_cycle():
 
     print(f"Cycle complete. Executed {len(executed_trades)} trades.")
 
+    # Push to GitHub so frontend updates
+    push_to_github()
+
 
 def run_continuous():
     """Run continuous trading during market hours."""
@@ -466,19 +532,41 @@ def run_continuous():
     print(f"Strategy loaded from strategy_config.py")
     print(f"Trading {len(STOCK_UNIVERSE)} stocks")
     print(f"Check interval: {SCHEDULE['check_interval_minutes']} minutes")
+    print("Will auto-exit when market closes.")
     print("=" * 60)
+
+    last_cycle_time = None
+    was_in_market_hours = False
+    expected_interval = SCHEDULE["check_interval_minutes"] * 60
 
     while True:
         try:
+            now = datetime.now()
+
+            # Check for gaps (computer likely slept)
+            if last_cycle_time:
+                gap = (now - last_cycle_time).total_seconds()
+                if gap > expected_interval * 2:  # More than 2x expected = likely slept
+                    gap_minutes = int(gap / 60)
+                    print(f"\n[WARNING] {gap_minutes} minute gap detected - computer likely slept")
+
             if is_market_hours():
+                was_in_market_hours = True
+                last_cycle_time = now
                 run_trading_cycle()
             else:
                 et = pytz.timezone('US/Eastern')
-                now = datetime.now(et)
-                print(f"[{now.strftime('%H:%M:%S')} ET] Outside market hours. Waiting...")
+                now_et = datetime.now(et)
+
+                # If we were trading and market just closed, exit
+                if was_in_market_hours:
+                    print(f"\n[{now_et.strftime('%H:%M:%S')} ET] Market closed. Exiting trader.")
+                    break
+                else:
+                    print(f"[{now_et.strftime('%H:%M:%S')} ET] Outside market hours. Waiting...")
 
             # Wait for next cycle
-            time.sleep(SCHEDULE["check_interval_minutes"] * 60)
+            time.sleep(expected_interval)
 
         except KeyboardInterrupt:
             print("\nStopping trader...")

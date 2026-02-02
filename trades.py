@@ -22,6 +22,11 @@ class TradeResult:
 
 def validate_buy(portfolio: Portfolio, symbol: str, shares: float, price: float) -> Tuple[bool, str]:
     """Validate a buy order."""
+    # Check if symbol is benchmark-only (not tradeable)
+    from config import BENCHMARK_ONLY
+    if symbol in BENCHMARK_ONLY:
+        return False, f"{symbol} is a benchmark symbol and cannot be traded"
+
     total_cost = shares * price
 
     # Check sufficient cash

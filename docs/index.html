@@ -812,63 +812,25 @@
             container.innerHTML = html;
         }
 
-        // Fetch S&P 500 benchmark data normalized to $1000 starting value
-        async function fetchSPYBenchmark(sessions) {
+        // Get S&P 500 benchmark data normalized to $1000 starting value
+        function fetchSPYBenchmark(sessions) {
             try {
                 if (sessions.length === 0) return [];
 
                 const startingValue = 1000;
-                const firstDate = new Date(sessions[0].timestamp);
-                const lastDate = new Date(sessions[sessions.length - 1].timestamp);
-
-                // Fetch historical SPY data from Yahoo Finance
-                const period1 = Math.floor(firstDate.getTime() / 1000) - 86400; // 1 day before
-                const period2 = Math.floor(lastDate.getTime() / 1000) + 86400;  // 1 day after
-
-                const url = `https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=${period1}&period2=${period2}&interval=1d`;
-                const response = await fetch(url);
-                const data = await response.json();
-
-                const quotes = data.chart.result[0];
-                const timestamps = quotes.timestamp;
-                const closes = quotes.indicators.quote[0].close;
-
-                // Build a map of date -> SPY close price
-                const spyPrices = {};
-                timestamps.forEach((ts, i) => {
-                    const date = new Date(ts * 1000).toISOString().split('T')[0];
-                    spyPrices[date] = closes[i];
-                });
 
                 // Get first SPY price for normalization
-                const firstSessionDate = firstDate.toISOString().split('T')[0];
-                let firstSPYPrice = spyPrices[firstSessionDate];
-
-                // If exact date not found, use closest available price
+                const firstSPYPrice = sessions[0].spy_price;
                 if (!firstSPYPrice) {
-                    const availablePrices = Object.values(spyPrices).filter(p => p !== null);
-                    firstSPYPrice = availablePrices[0] || 500; // Fallback
+                    console.warn('No SPY price data in sessions');
+                    return sessions.map(() => null);
                 }
 
                 // Normalize each session's SPY price to $1000 starting value
-                return sessions.map(session => {
-                    const sessionDate = new Date(session.timestamp).toISOString().split('T')[0];
-                    let spyPrice = spyPrices[sessionDate];
-
-                    // If exact date not found, find closest date
-                    if (!spyPrice) {
-                        const dates = Object.keys(spyPrices).sort();
-                        const closestDate = dates.reduce((prev, curr) => {
-                            return Math.abs(new Date(curr) - new Date(sessionDate)) <
-                                   Math.abs(new Date(prev) - new Date(sessionDate)) ? curr : prev;
-                        });
-                        spyPrice = spyPrices[closestDate];
-                    }
-
-                    if (!spyPrice || !firstSPYPrice) return null;
-
+                const spyBenchmark = sessions.map(session => {
+                    if (!session.spy_price) return null;
                     // Normalize: (current price / starting price) * $1000
-                    return (spyPrice / firstSPYPrice) * startingValue;
+                    return (session.spy_price / firstSPYPrice) * startingValue;
                 });
 
                 console.log('SPY benchmark data:', {
@@ -880,14 +842,13 @@
 
                 return spyBenchmark;
             } catch (err) {
-                console.error('Failed to fetch SPY benchmark:', err);
-                // Return null values so chart still renders
+                console.error('Failed to process SPY benchmark:', err);
                 return sessions.map(() => null);
             }
         }
 
         // Update value chart
-        async function updateValueChart() {
+        function updateValueChart() {
             const chartContainer = document.getElementById('chartContainer');
             const chartEmpty = document.getElementById('chartEmpty');
             const canvas = document.getElementById('valueChart');
@@ -912,7 +873,7 @@
             const holdingsValues = sessions.map(s => s.portfolio_value - s.cash);
 
             // Fetch S&P 500 (SPY) benchmark data
-            const spyValues = await fetchSPYBenchmark(sessions);
+            const spyValues = fetchSPYBenchmark(sessions);
             console.log('SPY values for chart:', spyValues);
 
             if (valueChart) {

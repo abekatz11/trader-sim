@@ -4,8 +4,11 @@
 STARTING_CASH = 1000
 SIMULATION_DAYS = 30
 
-# Stock universe - 50 volatile small/mid-cap and growth stocks
+# Stock universe - 50 volatile small/mid-cap and growth stocks + SPY for benchmark
 STOCK_UNIVERSE = [
+    # Benchmark (not tradeable - for charting only)
+    "SPY",
+
     # Small-cap tech / growth
     "PLTR", "SOFI", "HOOD", "AFRM", "UPST", "PATH", "DKNG", "RBLX",
     "U", "SNAP", "PINS", "ROKU", "SQ", "COIN", "MARA", "RIOT",
@@ -25,6 +28,9 @@ STOCK_UNIVERSE = [
     # Volatile large-cap (for balance)
     "TSLA", "AMD", "NVDA", "META",
 ]
+
+# Symbols that cannot be traded (benchmark only)
+BENCHMARK_ONLY = ["SPY"]
 
 # Screening parameters
 SCREENING = {
