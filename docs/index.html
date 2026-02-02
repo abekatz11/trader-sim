@@ -814,15 +814,23 @@
 
         // Get S&P 500 benchmark data normalized to $1000 starting value
         function fetchSPYBenchmark(sessions) {
+            console.log('fetchSPYBenchmark called with', sessions.length, 'sessions');
+
             try {
-                if (sessions.length === 0) return [];
+                if (sessions.length === 0) {
+                    console.warn('No sessions provided');
+                    return [];
+                }
 
                 const startingValue = 1000;
 
                 // Get first SPY price for normalization
                 const firstSPYPrice = sessions[0].spy_price;
+                console.log('First session spy_price:', firstSPYPrice);
+                console.log('First session keys:', Object.keys(sessions[0]));
+
                 if (!firstSPYPrice) {
-                    console.warn('No SPY price data in sessions');
+                    console.warn('No SPY price data in first session');
                     return sessions.map(() => null);
                 }
 
@@ -833,16 +841,18 @@
                     return (session.spy_price / firstSPYPrice) * startingValue;
                 });
 
-                console.log('SPY benchmark data:', {
+                console.log('SPY benchmark calculated:', {
                     firstSPYPrice,
                     startingValue,
-                    sampleValues: spyBenchmark.slice(0, 3),
-                    totalPoints: spyBenchmark.length
+                    sampleValues: spyBenchmark.slice(0, 5),
+                    lastValue: spyBenchmark[spyBenchmark.length - 1],
+                    totalPoints: spyBenchmark.length,
+                    nullCount: spyBenchmark.filter(v => v === null).length
                 });
 
                 return spyBenchmark;
             } catch (err) {
-                console.error('Failed to process SPY benchmark:', err);
+                console.error('Failed to process SPY benchmark:', err, err.stack);
                 return sessions.map(() => null);
             }
         }
