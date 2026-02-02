@@ -870,6 +870,15 @@
                     // Normalize: (current price / starting price) * $1000
                     return (spyPrice / firstSPYPrice) * startingValue;
                 });
+
+                console.log('SPY benchmark data:', {
+                    firstSPYPrice,
+                    startingValue,
+                    sampleValues: spyBenchmark.slice(0, 3),
+                    totalPoints: spyBenchmark.length
+                });
+
+                return spyBenchmark;
             } catch (err) {
                 console.error('Failed to fetch SPY benchmark:', err);
                 // Return null values so chart still renders
@@ -904,56 +913,67 @@
 
             // Fetch S&P 500 (SPY) benchmark data
             const spyValues = await fetchSPYBenchmark(sessions);
+            console.log('SPY values for chart:', spyValues);
 
             if (valueChart) {
                 valueChart.destroy();
             }
 
             const ctx = canvas.getContext('2d');
+
+            // Build datasets array
+            const datasets = [
+                {
+                    label: 'Total Value',
+                    data: totalValues,
+                    borderColor: '#58a6ff',
+                    backgroundColor: 'rgba(88, 166, 255, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 3,
+                    pointHoverRadius: 5
+                },
+                {
+                    label: 'Cash',
+                    data: cashValues,
+                    borderColor: '#3fb950',
+                    backgroundColor: 'transparent',
+                    borderDash: [5, 5],
+                    tension: 0.3,
+                    pointRadius: 2
+                },
+                {
+                    label: 'Holdings',
+                    data: holdingsValues,
+                    borderColor: '#d29922',
+                    backgroundColor: 'transparent',
+                    borderDash: [5, 5],
+                    tension: 0.3,
+                    pointRadius: 2
+                }
+            ];
+
+            // Add S&P 500 benchmark if data is available
+            const hasValidSPY = spyValues && spyValues.some(v => v !== null);
+            if (hasValidSPY) {
+                datasets.push({
+                    label: 'S&P 500 Benchmark',
+                    data: spyValues,
+                    borderColor: '#8b949e',
+                    backgroundColor: 'transparent',
+                    borderDash: [2, 2],
+                    tension: 0.3,
+                    pointRadius: 1,
+                    pointHoverRadius: 3,
+                    spanGaps: true  // Connect points even if there are nulls
+                });
+            }
+
             valueChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: labels,
-                    datasets: [
-                        {
-                            label: 'Total Value',
-                            data: totalValues,
-                            borderColor: '#58a6ff',
-                            backgroundColor: 'rgba(88, 166, 255, 0.1)',
-                            fill: true,
-                            tension: 0.3,
-                            pointRadius: 3,
-                            pointHoverRadius: 5
-                        },
-                        {
-                            label: 'Cash',
-                            data: cashValues,
-                            borderColor: '#3fb950',
-                            backgroundColor: 'transparent',
-                            borderDash: [5, 5],
-                            tension: 0.3,
-                            pointRadius: 2
-                        },
-                        {
-                            label: 'Holdings',
-                            data: holdingsValues,
-                            borderColor: '#d29922',
-                            backgroundColor: 'transparent',
-                            borderDash: [5, 5],
-                            tension: 0.3,
-                            pointRadius: 2
-                        },
-                        {
-                            label: 'S&P 500 Benchmark',
-                            data: spyValues,
-                            borderColor: '#8b949e',
-                            backgroundColor: 'transparent',
-                            borderDash: [2, 2],
-                            tension: 0.3,
-                            pointRadius: 1,
-                            pointHoverRadius: 3
-                        }
-                    ]
+                    datasets: datasets
                 },
                 options: {
                     responsive: true,
