@@ -1,18 +1,6 @@
 {
-  "cash": 67.09000000000003,
+  "cash": 327.51,
   "holdings": {
-    "PLTR": {
-      "symbol": "PLTR",
-      "shares": 1,
-      "cost_basis": 147.8,
-      "avg_price": 147.8
-    },
-    "SOFI": {
-      "symbol": "SOFI",
-      "shares": 10,
-      "cost_basis": 221.9,
-      "avg_price": 22.19
-    },
     "COIN": {
       "symbol": "COIN",
       "shares": 1,
@@ -25,17 +13,23 @@
       "cost_basis": 95.64,
       "avg_price": 95.64
     },
-    "SNAP": {
-      "symbol": "SNAP",
-      "shares": 10,
-      "cost_basis": 66.7,
-      "avg_price": 6.67
+    "AFRM": {
+      "symbol": "AFRM",
+      "shares": 1,
+      "cost_basis": 62.04,
+      "avg_price": 62.04
     },
-    "PATH": {
-      "symbol": "PATH",
-      "shares": 10,
-      "cost_basis": 125.19999999999999,
-      "avg_price": 12.52
+    "PLTR": {
+      "symbol": "PLTR",
+      "shares": 1,
+      "cost_basis": 147.97,
+      "avg_price": 147.97
+    },
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 1,
+      "cost_basis": 89.48,
+      "avg_price": 89.48
     }
   },
   "transactions": [
@@ -438,6 +432,62 @@
       "shares": 10,
       "price": 12.52,
       "total": 125.2
+    },
+    {
+      "timestamp": "2026-02-02T15:44:09.480191",
+      "action": "SELL",
+      "symbol": "PLTR",
+      "shares": 1,
+      "price": 147.61,
+      "total": 147.61
+    },
+    {
+      "timestamp": "2026-02-02T15:44:20.116875",
+      "action": "BUY",
+      "symbol": "AFRM",
+      "shares": 1,
+      "price": 62.04,
+      "total": 62.04
+    },
+    {
+      "timestamp": "2026-02-02T15:48:06.099217",
+      "action": "SELL",
+      "symbol": "SOFI",
+      "shares": 10,
+      "price": 22.07,
+      "total": 220.7
+    },
+    {
+      "timestamp": "2026-02-02T15:48:09.229421",
+      "action": "SELL",
+      "symbol": "PATH",
+      "shares": 10,
+      "price": 12.49,
+      "total": 124.9
+    },
+    {
+      "timestamp": "2026-02-02T15:48:11.601247",
+      "action": "SELL",
+      "symbol": "SNAP",
+      "shares": 10,
+      "price": 6.67,
+      "total": 66.7
+    },
+    {
+      "timestamp": "2026-02-02T15:48:18.158636",
+      "action": "BUY",
+      "symbol": "PLTR",
+      "shares": 1,
+      "price": 147.97,
+      "total": 147.97
+    },
+    {
+      "timestamp": "2026-02-02T15:48:26.641348",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 1,
+      "price": 89.48,
+      "total": 89.48
     }
   ],
   "value_history": [
@@ -656,6 +706,48 @@
       "total_value": 911.7,
       "cash": 67.09,
       "holdings_value": 844.61
+    },
+    {
+      "timestamp": "2026-02-02T15:44:12.006990",
+      "total_value": 911.35,
+      "cash": 214.7,
+      "holdings_value": 696.65
+    },
+    {
+      "timestamp": "2026-02-02T15:44:23.326336",
+      "total_value": 911.73,
+      "cash": 152.66,
+      "holdings_value": 759.07
+    },
+    {
+      "timestamp": "2026-02-02T15:48:08.704380",
+      "total_value": 911.03,
+      "cash": 373.36,
+      "holdings_value": 537.67
+    },
+    {
+      "timestamp": "2026-02-02T15:48:11.101348",
+      "total_value": 911.01,
+      "cash": 498.26,
+      "holdings_value": 412.75
+    },
+    {
+      "timestamp": "2026-02-02T15:48:13.194250",
+      "total_value": 911.06,
+      "cash": 564.96,
+      "holdings_value": 346.1
+    },
+    {
+      "timestamp": "2026-02-02T15:48:20.238649",
+      "total_value": 911.19,
+      "cash": 416.99,
+      "holdings_value": 494.2
+    },
+    {
+      "timestamp": "2026-02-02T15:48:29.361616",
+      "total_value": 911.12,
+      "cash": 327.51,
+      "holdings_value": 583.61
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
