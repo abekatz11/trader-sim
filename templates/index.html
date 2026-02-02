@@ -52,7 +52,13 @@
             font-weight: 600;
         }
 
-        .data-source {
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .status-badge {
             font-size: 0.85rem;
             color: var(--text-secondary);
             padding: 4px 12px;
@@ -60,8 +66,8 @@
             border-radius: 20px;
         }
 
-        .data-source.live { color: var(--accent-green); }
-        .data-source.sample { color: var(--accent-yellow); }
+        .status-badge.live { color: var(--accent-green); }
+        .status-badge.error { color: var(--accent-red); }
 
         .market-status {
             font-size: 0.85rem;
@@ -83,6 +89,21 @@
         .market-status.open .dot { background: var(--accent-green); }
         .market-status.closed { color: var(--text-secondary); }
         .market-status.closed .dot { background: var(--text-secondary); }
+
+        .refresh-btn {
+            padding: 6px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .refresh-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--accent-blue);
+        }
 
         .grid {
             display: grid;
@@ -163,13 +184,7 @@
 
         tr:hover { background: var(--bg-tertiary); }
 
-        .symbol {
-            font-weight: 600;
-            color: var(--accent-blue);
-            cursor: pointer;
-        }
-
-        .symbol:hover { text-decoration: underline; }
+        .symbol { font-weight: 600; color: var(--accent-blue); }
 
         .tabs {
             display: flex;
@@ -196,97 +211,6 @@
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        .trade-form {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr auto;
-            gap: 12px;
-            align-items: end;
-        }
-
-        .form-group { display: flex; flex-direction: column; gap: 4px; }
-        .form-group label { font-size: 0.8rem; color: var(--text-secondary); }
-
-        input, select {
-            padding: 10px 12px;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-        }
-
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-primary {
-            background: var(--accent-blue);
-            color: white;
-        }
-
-        .btn-primary:hover { opacity: 0.9; }
-
-        .btn-buy { background: var(--accent-green); color: white; }
-        .btn-sell { background: var(--accent-red); color: white; }
-        .btn-secondary { background: var(--bg-tertiary); color: var(--text-primary); }
-
-        .trade-result {
-            margin-top: 16px;
-            padding: 12px;
-            border-radius: 6px;
-            display: none;
-        }
-
-        .trade-result.success { background: rgba(63, 185, 80, 0.15); color: var(--accent-green); }
-        .trade-result.error { background: rgba(248, 81, 73, 0.15); color: var(--accent-red); }
-
-        .stock-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
-        }
-
-        .stock-card {
-            background: var(--bg-tertiary);
-            border-radius: 8px;
-            padding: 16px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .stock-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-
-        .stock-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .stock-symbol { font-size: 1.1rem; font-weight: 600; }
-        .stock-price { font-size: 1.2rem; font-weight: 700; font-family: 'SF Mono', Consolas, monospace; }
-
-        .stock-metrics {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            font-size: 0.8rem;
-        }
-
-        .stock-metric { text-align: center; }
-        .stock-metric-label { color: var(--text-secondary); }
-        .stock-metric-value { font-weight: 600; font-family: 'SF Mono', Consolas, monospace; }
-
         .loading {
             text-align: center;
             padding: 40px;
@@ -305,64 +229,51 @@
 
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            display: none;
-        }
-
-        .modal {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            max-width: 500px;
-            width: 90%;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .modal-close {
-            background: transparent;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0;
-        }
-
         .empty-state {
             text-align: center;
             padding: 40px;
             color: var(--text-secondary);
         }
 
-        .actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 16px;
+        .last-updated {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
         }
 
+        .analysis-card {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .analysis-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+
+        .analysis-time { color: var(--text-secondary); }
+        .analysis-value { color: var(--accent-blue); font-weight: 600; }
+        .analysis-text { color: var(--text-primary); line-height: 1.6; }
+
+        .trade-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .trade-badge.buy { background: rgba(63, 185, 80, 0.2); color: var(--accent-green); }
+        .trade-badge.sell { background: rgba(248, 81, 73, 0.2); color: var(--accent-red); }
+
         @media (max-width: 768px) {
-            .trade-form {
-                grid-template-columns: 1fr 1fr;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
+            .grid { grid-template-columns: 1fr; }
+            .header-right { flex-direction: column; align-items: flex-end; gap: 8px; }
         }
     </style>
 </head>
@@ -370,80 +281,62 @@
     <div class="container">
         <header>
             <h1>Trader-Sim</h1>
-            <div style="display: flex; gap: 12px; align-items: center;">
+            <div class="header-right">
                 <span class="market-status" id="marketStatus">
                     <span class="dot"></span>
                     <span id="marketStatusText">Checking...</span>
                 </span>
-                <span class="data-source" id="dataSource">Loading...</span>
+                <span class="status-badge" id="statusBadge">Loading...</span>
+                <button class="refresh-btn" onclick="loadAllData()">Fetch Latest Trade Sessions</button>
+                <button class="refresh-btn" onclick="fetchLivePrices()" style="background: var(--accent-blue); color: white;">Live Prices</button>
             </div>
         </header>
 
         <div class="grid">
             <div class="card">
                 <h2>Portfolio Value</h2>
-                <div class="total-value" id="totalValue">$0.00</div>
-                <span class="return-badge" id="returnBadge">+0.00%</span>
+                <div class="total-value" id="totalValue">--</div>
+                <span class="return-badge" id="returnBadge">--%</span>
                 <div style="margin-top: 16px">
                     <div class="metric">
-                        <span class="metric-label">Day</span>
-                        <span class="metric-value" id="currentDay">1 / 30</span>
+                        <span class="metric-label">Starting Cash</span>
+                        <span class="metric-value">$1,000.00</span>
                     </div>
                     <div class="metric">
                         <span class="metric-label">Cash</span>
-                        <span class="metric-value" id="cashValue">$0.00</span>
+                        <span class="metric-value" id="cashValue">--</span>
                     </div>
                     <div class="metric">
                         <span class="metric-label">Holdings</span>
-                        <span class="metric-value" id="holdingsValue">$0.00</span>
+                        <span class="metric-value" id="holdingsValue">--</span>
                     </div>
                     <div class="metric">
                         <span class="metric-label">Positions</span>
-                        <span class="metric-value" id="positions">0 / 10</span>
+                        <span class="metric-value" id="positions">--</span>
                     </div>
                 </div>
+                <div class="last-updated" id="lastUpdated"></div>
             </div>
 
             <div class="card" style="grid-column: span 2;">
-                <h2>Quick Trade</h2>
-                <form class="trade-form" id="tradeForm">
-                    <div class="form-group">
-                        <label>Action</label>
-                        <select id="tradeAction">
-                            <option value="BUY">BUY</option>
-                            <option value="SELL">SELL</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Symbol</label>
-                        <input type="text" id="tradeSymbol" placeholder="e.g., NVDA" list="symbolList" required>
-                        <datalist id="symbolList"></datalist>
-                    </div>
-                    <div class="form-group">
-                        <label>Shares</label>
-                        <input type="number" id="tradeShares" min="1" step="1" value="1" required>
-                    </div>
-                    <button type="submit" class="btn-buy" id="tradeBtn">BUY</button>
-                </form>
-                <div class="trade-result" id="tradeResult"></div>
+                <h2>Latest Analysis</h2>
+                <div id="latestAnalysis">
+                    <div class="loading"><div class="spinner"></div>Loading...</div>
+                </div>
             </div>
         </div>
 
         <div class="tabs">
             <button class="tab active" data-tab="holdings">Holdings</button>
-            <button class="tab" data-tab="history">History</button>
+            <button class="tab" data-tab="history">Trade History</button>
             <button class="tab" data-tab="chart">Chart</button>
-            <button class="tab" data-tab="market">Market</button>
-            <button class="tab" data-tab="screener">Screener</button>
+            <button class="tab" data-tab="sessions">Sessions</button>
         </div>
 
         <div class="tab-content active" id="holdings">
             <div class="card">
                 <div id="holdingsTable">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        Loading holdings...
-                    </div>
+                    <div class="loading"><div class="spinner"></div>Loading holdings...</div>
                 </div>
             </div>
         </div>
@@ -451,10 +344,7 @@
         <div class="tab-content" id="history">
             <div class="card">
                 <div id="historyTable">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        Loading history...
-                    </div>
+                    <div class="loading"><div class="spinner"></div>Loading history...</div>
                 </div>
             </div>
         </div>
@@ -467,84 +357,55 @@
                 </div>
                 <div id="chartEmpty" class="empty-state" style="display: none;">
                     <p>No value history yet.</p>
-                    <p style="margin-top: 8px">Make some trades to start tracking your portfolio value over time.</p>
                 </div>
             </div>
         </div>
 
-        <div class="tab-content" id="market">
+        <div class="tab-content" id="sessions">
             <div class="card">
-                <h2>Market Overview</h2>
-                <div id="marketSummary">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        Loading market data...
-                    </div>
+                <h2>Trading Sessions</h2>
+                <div id="sessionsContent">
+                    <div class="loading"><div class="spinner"></div>Loading sessions...</div>
                 </div>
             </div>
-        </div>
-
-        <div class="tab-content" id="screener">
-            <div class="card">
-                <h2>Screened Opportunities</h2>
-                <div id="screenerResults">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        Screening stocks...
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="quoteModal">
-        <div class="modal">
-            <div class="modal-header">
-                <h3 id="quoteSymbol">STOCK</h3>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
-            </div>
-            <div id="quoteContent"></div>
         </div>
     </div>
 
     <script>
+        // Configuration
+        const GITHUB_USER = 'abekatz11';
+        const GITHUB_REPO = 'trader-sim';
+        const GITHUB_BRANCH = 'master';
+        const STARTING_CASH = 1000;
+
+        const RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}`;
+        const PORTFOLIO_URL = `${RAW_BASE}/data/portfolio.json`;
+        const TRADE_LOG_URL = `${RAW_BASE}/data/trade_log.json`;
+
         // State
-        let stockUniverse = [];
-        let portfolioStatus = null;
+        let portfolioData = null;
+        let tradeLogData = null;
+        let valueChart = null;
+        let livePrices = {};
+        let lastLivePriceFetch = null;  // Timestamp of last successful live price fetch
 
-        // Format currency
-        const formatCurrency = (val) => {
-            return '$' + parseFloat(val).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        };
-
-        // Format percent
-        const formatPercent = (val) => {
-            const sign = val >= 0 ? '+' : '';
-            return sign + parseFloat(val).toFixed(2) + '%';
-        };
-
-        // Get color class
+        // Utilities
+        const formatCurrency = (val) => '$' + parseFloat(val || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        const formatPercent = (val) => (val >= 0 ? '+' : '') + parseFloat(val || 0).toFixed(2) + '%';
         const getColorClass = (val) => val >= 0 ? 'positive' : 'negative';
 
         // Check if market is open (NYSE/NASDAQ: 9:30 AM - 4:00 PM ET, Mon-Fri)
         function isMarketOpen() {
             const now = new Date();
-
-            // Convert to Eastern Time
             const et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
             const day = et.getDay();
             const hours = et.getHours();
             const minutes = et.getMinutes();
             const timeInMinutes = hours * 60 + minutes;
-
-            // Market hours: 9:30 AM (570 min) to 4:00 PM (960 min)
             const marketOpen = 9 * 60 + 30;  // 9:30 AM
             const marketClose = 16 * 60;      // 4:00 PM
-
-            // Check if weekday (1-5) and within market hours
             const isWeekday = day >= 1 && day <= 5;
             const isDuringHours = timeInMinutes >= marketOpen && timeInMinutes < marketClose;
-
             return isWeekday && isDuringHours;
         }
 
@@ -553,55 +414,276 @@
             const statusEl = document.getElementById('marketStatus');
             const textEl = document.getElementById('marketStatusText');
             const open = isMarketOpen();
-
             statusEl.className = 'market-status ' + (open ? 'open' : 'closed');
             textEl.textContent = open ? 'Market Open' : 'Market Closed';
         }
 
-        // Fetch portfolio status
-        async function fetchStatus() {
+        // Get the most recent market close time (4 PM ET)
+        function getLastMarketClose() {
+            const now = new Date();
+            const et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+            const day = et.getDay();
+            const hours = et.getHours();
+            const minutes = et.getMinutes();
+            const timeInMinutes = hours * 60 + minutes;
+            const marketClose = 16 * 60; // 4:00 PM
+
+            // Start with today at 4 PM ET
+            let closeDate = new Date(et);
+            closeDate.setHours(16, 0, 0, 0);
+
+            // If it's before 4 PM today, use yesterday's close
+            if (timeInMinutes < marketClose) {
+                closeDate.setDate(closeDate.getDate() - 1);
+            }
+
+            // Walk back to find the last weekday (skip weekends)
+            while (closeDate.getDay() === 0 || closeDate.getDay() === 6) {
+                closeDate.setDate(closeDate.getDate() - 1);
+            }
+
+            return closeDate;
+        }
+
+        // Check if we already have prices from the current after-hours period
+        function hasCurrentAfterHoursPrices() {
+            if (!lastLivePriceFetch || Object.keys(livePrices).length === 0) {
+                return false;
+            }
+            // If market is open, always allow fetching
+            if (isMarketOpen()) {
+                return false;
+            }
+            // If we fetched after the last market close, no need to fetch again
+            const lastClose = getLastMarketClose();
+            return lastLivePriceFetch > lastClose;
+        }
+
+        // Fetch data from GitHub
+        async function fetchJSON(url) {
+            const res = await fetch(url + '?t=' + Date.now()); // Cache bust
+            if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+            return res.json();
+        }
+
+        // Fetch live prices from Yahoo Finance via CORS proxy
+        async function fetchLivePrices() {
+            if (!portfolioData || !portfolioData.holdings) return;
+
+            const symbols = Object.keys(portfolioData.holdings);
+            if (symbols.length === 0) return;
+
+            // Skip fetch if market is closed and we already have prices from after close
+            if (hasCurrentAfterHoursPrices()) {
+                document.getElementById('statusBadge').textContent = 'Using cached prices';
+                document.getElementById('statusBadge').className = 'status-badge live';
+                document.getElementById('lastUpdated').textContent =
+                    'Market closed - prices from ' + lastLivePriceFetch.toLocaleTimeString();
+                return;
+            }
+
+            document.getElementById('statusBadge').textContent = 'Fetching prices...';
+            document.getElementById('statusBadge').className = 'status-badge';
+
             try {
-                const res = await fetch('/api/status');
-                const data = await res.json();
-                portfolioStatus = data;
-                updateStatusDisplay(data);
+                // Fetch each symbol individually using Yahoo chart API via allorigins proxy
+                livePrices = {};
+
+                for (const symbol of symbols) {
+                    try {
+                        const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`;
+                        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(yahooUrl)}`;
+
+                        const res = await fetch(proxyUrl);
+                        if (res.ok) {
+                            const data = await res.json();
+                            const price = data?.chart?.result?.[0]?.meta?.regularMarketPrice;
+                            if (price) {
+                                livePrices[symbol] = price;
+                            }
+                        }
+                    } catch (e) {
+                        console.warn(`Failed to fetch price for ${symbol}`);
+                    }
+                }
+
+                if (Object.keys(livePrices).length > 0) {
+                    lastLivePriceFetch = new Date();
+                    updatePortfolioDisplayLive();
+                    updateHoldingsTableLive();
+
+                    document.getElementById('statusBadge').textContent = 'Live';
+                    document.getElementById('statusBadge').className = 'status-badge live';
+                    document.getElementById('lastUpdated').textContent = 'Live prices as of ' + lastLivePriceFetch.toLocaleTimeString();
+                } else {
+                    throw new Error('No prices fetched');
+                }
             } catch (err) {
-                console.error('Failed to fetch status:', err);
+                console.error('Failed to fetch live prices:', err);
+                document.getElementById('statusBadge').textContent = 'Price fetch failed';
+                document.getElementById('statusBadge').className = 'status-badge error';
             }
         }
 
-        // Update status display
-        function updateStatusDisplay(data) {
-            document.getElementById('totalValue').textContent = formatCurrency(data.total_value);
+        // Update portfolio display with live prices
+        function updatePortfolioDisplayLive() {
+            if (!portfolioData || Object.keys(livePrices).length === 0) return;
 
+            const cash = portfolioData.cash || 0;
+            let holdingsValue = 0;
+
+            for (const [symbol, holding] of Object.entries(portfolioData.holdings || {})) {
+                const price = livePrices[symbol] || holding.avg_price;
+                holdingsValue += holding.shares * price;
+            }
+
+            const totalValue = cash + holdingsValue;
+            document.getElementById('totalValue').textContent = formatCurrency(totalValue);
+
+            const returnPct = ((totalValue - STARTING_CASH) / STARTING_CASH) * 100;
             const returnBadge = document.getElementById('returnBadge');
-            returnBadge.textContent = formatPercent(data.total_return);
-            returnBadge.className = 'return-badge ' + getColorClass(data.total_return);
+            returnBadge.textContent = formatPercent(returnPct);
+            returnBadge.className = 'return-badge ' + getColorClass(returnPct);
 
-            document.getElementById('currentDay').textContent = `${data.day} / ${data.simulation_days}`;
-            document.getElementById('cashValue').textContent = formatCurrency(data.cash);
-            document.getElementById('holdingsValue').textContent = formatCurrency(data.holdings_value);
-            document.getElementById('positions').textContent = `${data.num_holdings} / ${data.max_positions}`;
+            document.getElementById('holdingsValue').textContent = formatCurrency(holdingsValue);
+        }
 
-            const dataSource = document.getElementById('dataSource');
-            dataSource.textContent = data.using_sample_data ? 'Sample Data' : 'Live Data';
-            dataSource.className = 'data-source ' + (data.using_sample_data ? 'sample' : 'live');
+        // Update holdings table with live prices
+        function updateHoldingsTableLive() {
+            if (!portfolioData || Object.keys(livePrices).length === 0) return;
 
-            updateHoldingsTable(data.holdings);
+            const container = document.getElementById('holdingsTable');
+            const holdings = portfolioData.holdings || {};
+
+            if (Object.keys(holdings).length === 0) return;
+
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Shares</th>
+                            <th>Avg Price</th>
+                            <th>Current</th>
+                            <th>Value</th>
+                            <th>P&L %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            for (const [symbol, holding] of Object.entries(holdings)) {
+                const currentPrice = livePrices[symbol] || holding.avg_price;
+                const currentValue = holding.shares * currentPrice;
+                const pnlPct = ((currentPrice - holding.avg_price) / holding.avg_price) * 100;
+                const colorClass = getColorClass(pnlPct);
+
+                html += `
+                    <tr>
+                        <td><span class="symbol">${symbol}</span></td>
+                        <td>${holding.shares}</td>
+                        <td>${formatCurrency(holding.avg_price)}</td>
+                        <td>${formatCurrency(currentPrice)}</td>
+                        <td>${formatCurrency(currentValue)}</td>
+                        <td class="${colorClass}">${formatPercent(pnlPct)}</td>
+                    </tr>
+                `;
+            }
+
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+
+        // Load portfolio data
+        async function loadPortfolio() {
+            try {
+                portfolioData = await fetchJSON(PORTFOLIO_URL);
+                updatePortfolioDisplay();
+                updateHoldingsTable();
+                updateHistoryTable();
+                document.getElementById('statusBadge').textContent = 'Live';
+                document.getElementById('statusBadge').className = 'status-badge live';
+            } catch (err) {
+                console.error('Failed to load portfolio:', err);
+                document.getElementById('statusBadge').textContent = 'Error';
+                document.getElementById('statusBadge').className = 'status-badge error';
+            }
+        }
+
+        // Load trade log data
+        async function loadTradeLog() {
+            try {
+                tradeLogData = await fetchJSON(TRADE_LOG_URL);
+                updateLatestAnalysis();
+                updateValueChart();
+                updateSessionsDisplay();
+            } catch (err) {
+                console.error('Failed to load trade log:', err);
+            }
+        }
+
+        // Load all data
+        async function loadAllData() {
+            document.getElementById('statusBadge').textContent = 'Loading...';
+            document.getElementById('statusBadge').className = 'status-badge';
+            await Promise.all([loadPortfolio(), loadTradeLog()]);
+        }
+
+        // Update portfolio display
+        function updatePortfolioDisplay() {
+            if (!portfolioData) return;
+
+            const cash = portfolioData.cash || 0;
+            let holdingsValue = 0;
+
+            // Calculate holdings value from stored data
+            for (const [symbol, holding] of Object.entries(portfolioData.holdings || {})) {
+                holdingsValue += holding.shares * holding.avg_price; // Use avg_price as fallback
+            }
+
+            // Try to get better values from latest trade log session
+            if (tradeLogData && tradeLogData.sessions && tradeLogData.sessions.length > 0) {
+                const latest = tradeLogData.sessions[tradeLogData.sessions.length - 1];
+                const totalValue = latest.portfolio_value || (cash + holdingsValue);
+                holdingsValue = totalValue - cash;
+
+                document.getElementById('totalValue').textContent = formatCurrency(totalValue);
+                const returnPct = ((totalValue - STARTING_CASH) / STARTING_CASH) * 100;
+                const returnBadge = document.getElementById('returnBadge');
+                returnBadge.textContent = formatPercent(returnPct);
+                returnBadge.className = 'return-badge ' + getColorClass(returnPct);
+
+                document.getElementById('lastUpdated').textContent =
+                    'Value as of last trade session: ' + new Date(latest.timestamp).toLocaleString();
+            } else {
+                const totalValue = cash + holdingsValue;
+                document.getElementById('totalValue').textContent = formatCurrency(totalValue);
+                const returnPct = ((totalValue - STARTING_CASH) / STARTING_CASH) * 100;
+                const returnBadge = document.getElementById('returnBadge');
+                returnBadge.textContent = formatPercent(returnPct);
+                returnBadge.className = 'return-badge ' + getColorClass(returnPct);
+            }
+
+            document.getElementById('cashValue').textContent = formatCurrency(cash);
+            document.getElementById('holdingsValue').textContent = formatCurrency(holdingsValue);
+            document.getElementById('positions').textContent = Object.keys(portfolioData.holdings || {}).length + ' / 8';
         }
 
         // Update holdings table
-        function updateHoldingsTable(holdings) {
+        function updateHoldingsTable() {
             const container = document.getElementById('holdingsTable');
+            const holdings = portfolioData?.holdings || {};
 
-            if (!holdings || holdings.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <p>No holdings yet.</p>
-                        <p style="margin-top: 8px">Use the Quick Trade form above to buy your first stock!</p>
-                    </div>
-                `;
+            if (Object.keys(holdings).length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>No holdings.</p></div>';
                 return;
+            }
+
+            // Get latest prices from trade log if available
+            let latestPrices = {};
+            if (tradeLogData && tradeLogData.sessions && tradeLogData.sessions.length > 0) {
+                const latest = tradeLogData.sessions[tradeLogData.sessions.length - 1];
+                latestPrices = latest.holdings || {};
             }
 
             let html = `
@@ -613,29 +695,27 @@
                             <th>Avg Price</th>
                             <th>Current</th>
                             <th>Value</th>
-                            <th>P&L</th>
                             <th>P&L %</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
             `;
 
-            for (const h of holdings) {
-                const colorClass = getColorClass(h.pnl);
+            for (const [symbol, holding] of Object.entries(holdings)) {
+                const latestData = latestPrices[symbol] || {};
+                const currentPrice = latestData.current_price || holding.avg_price;
+                const currentValue = holding.shares * currentPrice;
+                const pnlPct = ((currentPrice - holding.avg_price) / holding.avg_price) * 100;
+                const colorClass = getColorClass(pnlPct);
+
                 html += `
                     <tr>
-                        <td><span class="symbol" onclick="showQuote('${h.symbol}')">${h.symbol}</span></td>
-                        <td>${h.shares}</td>
-                        <td>${formatCurrency(h.avg_price)}</td>
-                        <td>${formatCurrency(h.current_price)}</td>
-                        <td>${formatCurrency(h.current_value)}</td>
-                        <td class="${colorClass}">${formatCurrency(h.pnl)}</td>
-                        <td class="${colorClass}">${formatPercent(h.pnl_pct)}</td>
-                        <td>
-                            <button class="btn-sell" style="padding: 4px 12px; font-size: 0.8rem"
-                                    onclick="quickSell('${h.symbol}', ${h.shares})">Sell All</button>
-                        </td>
+                        <td><span class="symbol">${symbol}</span></td>
+                        <td>${holding.shares}</td>
+                        <td>${formatCurrency(holding.avg_price)}</td>
+                        <td>${formatCurrency(currentPrice)}</td>
+                        <td>${formatCurrency(currentValue)}</td>
+                        <td class="${colorClass}">${formatPercent(pnlPct)}</td>
                     </tr>
                 `;
             }
@@ -644,22 +724,12 @@
             container.innerHTML = html;
         }
 
-        // Fetch and display history
-        async function fetchHistory() {
-            try {
-                const res = await fetch('/api/history?limit=50');
-                const data = await res.json();
-                updateHistoryTable(data.transactions);
-            } catch (err) {
-                console.error('Failed to fetch history:', err);
-            }
-        }
-
         // Update history table
-        function updateHistoryTable(transactions) {
+        function updateHistoryTable() {
             const container = document.getElementById('historyTable');
+            const transactions = portfolioData?.transactions || [];
 
-            if (!transactions || transactions.length === 0) {
+            if (transactions.length === 0) {
                 container.innerHTML = '<div class="empty-state"><p>No transactions yet.</p></div>';
                 return;
             }
@@ -679,14 +749,15 @@
                     <tbody>
             `;
 
-            for (const t of transactions) {
+            // Show newest first
+            for (const t of [...transactions].reverse().slice(0, 50)) {
                 const actionClass = t.action === 'BUY' ? 'positive' : 'negative';
                 const time = new Date(t.timestamp).toLocaleString();
                 html += `
                     <tr>
                         <td style="color: var(--text-secondary)">${time}</td>
                         <td class="${actionClass}">${t.action}</td>
-                        <td><span class="symbol" onclick="showQuote('${t.symbol}')">${t.symbol}</span></td>
+                        <td><span class="symbol">${t.symbol}</span></td>
                         <td>${t.shares}</td>
                         <td>${formatCurrency(t.price)}</td>
                         <td>${formatCurrency(t.total)}</td>
@@ -698,141 +769,57 @@
             container.innerHTML = html;
         }
 
-        // Fetch and display market summary
-        async function fetchMarket() {
-            try {
-                const res = await fetch('/api/market');
-                const data = await res.json();
-                updateMarketDisplay(data);
-            } catch (err) {
-                console.error('Failed to fetch market data:', err);
-                document.getElementById('marketSummary').innerHTML = '<div class="empty-state"><p>Failed to load market data.</p></div>';
-            }
-        }
+        // Update latest analysis
+        function updateLatestAnalysis() {
+            const container = document.getElementById('latestAnalysis');
+            const sessions = tradeLogData?.sessions || [];
 
-        // Update market display
-        function updateMarketDisplay(data) {
-            const container = document.getElementById('marketSummary');
-
-            if (data.error) {
-                container.innerHTML = `<div class="empty-state"><p>${data.error}</p></div>`;
+            if (sessions.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>No trading sessions yet.</p></div>';
                 return;
             }
 
-            let html = `
-                <div class="grid" style="margin-bottom: 20px">
-                    <div>
-                        <div class="metric">
-                            <span class="metric-label">Stocks Analyzed</span>
-                            <span class="metric-value">${data.stocks_analyzed}</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Avg Daily Change</span>
-                            <span class="metric-value ${getColorClass(data.avg_daily_change)}">${formatPercent(data.avg_daily_change)}</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Avg RSI</span>
-                            <span class="metric-value">${data.avg_rsi.toFixed(1)}</span>
-                        </div>
-                    </div>
-                </div>
+            // Show last 3 sessions with analysis
+            const recentSessions = sessions.slice(-3).reverse();
+            let html = '';
 
-                <div class="grid">
-                    <div>
-                        <h3 style="color: var(--accent-green); margin-bottom: 12px">Top Gainers</h3>
-            `;
+            for (const session of recentSessions) {
+                const time = new Date(session.timestamp).toLocaleString();
+                const analysis = session.claude_analysis || session.hold_reasoning || 'No analysis';
+                const trades = session.executed_trades || [];
 
-            for (const s of data.top_gainers.slice(0, 5)) {
                 html += `
-                    <div class="metric">
-                        <span class="symbol" onclick="showQuote('${s.symbol}')">${s.symbol}</span>
-                        <span class="metric-value positive">${formatPercent(s.daily_change)}</span>
-                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-header">
+                            <span class="analysis-time">${time}</span>
+                            <span class="analysis-value">${formatCurrency(session.portfolio_value)}</span>
+                        </div>
+                        <div class="analysis-text">${analysis}</div>
                 `;
+
+                if (trades.length > 0) {
+                    html += '<div style="margin-top: 8px">';
+                    for (const trade of trades) {
+                        const badgeClass = trade.action.toLowerCase();
+                        html += `<span class="trade-badge ${badgeClass}">${trade.action} ${trade.shares} ${trade.symbol}</span>`;
+                    }
+                    html += '</div>';
+                }
+
+                html += '</div>';
             }
 
-            html += `
-                    </div>
-                    <div>
-                        <h3 style="color: var(--accent-red); margin-bottom: 12px">Top Losers</h3>
-            `;
-
-            for (const s of data.top_losers.slice(0, 5)) {
-                html += `
-                    <div class="metric">
-                        <span class="symbol" onclick="showQuote('${s.symbol}')">${s.symbol}</span>
-                        <span class="metric-value negative">${formatPercent(s.daily_change)}</span>
-                    </div>
-                `;
-            }
-
-            html += '</div></div>';
-
-            // All stocks grid
-            html += '<h3 style="margin: 24px 0 16px">All Stocks</h3><div class="stock-grid">';
-
-            for (const s of data.all_stocks) {
-                const changeClass = getColorClass(s.daily_change);
-                html += `
-                    <div class="stock-card" onclick="showQuote('${s.symbol}')">
-                        <div class="stock-header">
-                            <span class="stock-symbol">${s.symbol}</span>
-                            <span class="stock-price">${formatCurrency(s.price)}</span>
-                        </div>
-                        <div class="stock-metrics">
-                            <div class="stock-metric">
-                                <div class="stock-metric-label">Day</div>
-                                <div class="stock-metric-value ${changeClass}">${formatPercent(s.daily_change)}</div>
-                            </div>
-                            <div class="stock-metric">
-                                <div class="stock-metric-label">RSI</div>
-                                <div class="stock-metric-value">${s.rsi.toFixed(1)}</div>
-                            </div>
-                            <div class="stock-metric">
-                                <div class="stock-metric-label">ATR</div>
-                                <div class="stock-metric-value">${formatCurrency(s.atr)}</div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-
-            html += '</div>';
             container.innerHTML = html;
         }
 
-        // Fetch and display screener results
-        async function fetchScreener() {
-            try {
-                const res = await fetch('/api/screen');
-                const data = await res.json();
-                updateScreenerDisplay(data);
-            } catch (err) {
-                console.error('Failed to fetch screener:', err);
-            }
-        }
-
-        // Chart instance
-        let valueChart = null;
-
-        // Fetch and display value history chart
-        async function fetchValueHistory() {
-            try {
-                const res = await fetch('/api/value-history');
-                const data = await res.json();
-                updateValueChart(data);
-            } catch (err) {
-                console.error('Failed to fetch value history:', err);
-            }
-        }
-
         // Update value chart
-        function updateValueChart(data) {
+        function updateValueChart() {
             const chartContainer = document.getElementById('chartContainer');
             const chartEmpty = document.getElementById('chartEmpty');
             const canvas = document.getElementById('valueChart');
+            const sessions = tradeLogData?.sessions || [];
 
-            if (!data.history || data.history.length === 0) {
+            if (sessions.length === 0) {
                 chartContainer.style.display = 'none';
                 chartEmpty.style.display = 'block';
                 return;
@@ -841,16 +828,15 @@
             chartContainer.style.display = 'block';
             chartEmpty.style.display = 'none';
 
-            const labels = data.history.map(h => {
-                const date = new Date(h.timestamp);
+            const labels = sessions.map(s => {
+                const date = new Date(s.timestamp);
                 return date.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
             });
 
-            const totalValues = data.history.map(h => h.total_value);
-            const cashValues = data.history.map(h => h.cash);
-            const holdingsValues = data.history.map(h => h.holdings_value);
+            const totalValues = sessions.map(s => s.portfolio_value);
+            const cashValues = sessions.map(s => s.cash);
+            const holdingsValues = sessions.map(s => s.portfolio_value - s.cash);
 
-            // Destroy existing chart if any
             if (valueChart) {
                 valueChart.destroy();
             }
@@ -868,8 +854,8 @@
                             backgroundColor: 'rgba(88, 166, 255, 0.1)',
                             fill: true,
                             tension: 0.3,
-                            pointRadius: 4,
-                            pointHoverRadius: 6
+                            pointRadius: 3,
+                            pointHoverRadius: 5
                         },
                         {
                             label: 'Cash',
@@ -900,10 +886,7 @@
                     },
                     plugins: {
                         legend: {
-                            labels: {
-                                color: '#e6edf3',
-                                font: { size: 12 }
-                            }
+                            labels: { color: '#e6edf3', font: { size: 12 } }
                         },
                         tooltip: {
                             backgroundColor: '#21262d',
@@ -920,7 +903,7 @@
                     },
                     scales: {
                         x: {
-                            ticks: { color: '#8b949e', maxRotation: 45 },
+                            ticks: { color: '#8b949e', maxRotation: 45, maxTicksLimit: 12 },
                             grid: { color: '#21262d' }
                         },
                         y: {
@@ -931,224 +914,67 @@
                                 }
                             },
                             grid: { color: '#21262d' },
-                            suggestedMin: data.starting_cash * 0.9,
+                            suggestedMin: STARTING_CASH * 0.8,
                             suggestedMax: Math.max(...totalValues) * 1.05
                         }
                     }
                 }
             });
-
-            // Add starting cash reference line annotation
-            const startingCash = data.starting_cash;
-            valueChart.options.plugins.annotation = {
-                annotations: {
-                    line1: {
-                        type: 'line',
-                        yMin: startingCash,
-                        yMax: startingCash,
-                        borderColor: '#f85149',
-                        borderWidth: 1,
-                        borderDash: [10, 5],
-                        label: {
-                            content: 'Starting Cash',
-                            enabled: true,
-                            color: '#f85149'
-                        }
-                    }
-                }
-            };
         }
 
-        // Update screener display
-        function updateScreenerDisplay(data) {
-            const container = document.getElementById('screenerResults');
+        // Update sessions display
+        function updateSessionsDisplay() {
+            const container = document.getElementById('sessionsContent');
+            const sessions = tradeLogData?.sessions || [];
 
-            if (!data.stocks || data.stocks.length === 0) {
-                container.innerHTML = '<div class="empty-state"><p>No stocks currently pass screening criteria.</p></div>';
+            if (sessions.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>No trading sessions yet.</p></div>';
                 return;
             }
 
-            let html = `<p style="margin-bottom: 16px; color: var(--text-secondary)">Found ${data.count} stocks passing filters</p>`;
-            html += `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Price</th>
-                            <th>Daily</th>
-                            <th>RSI</th>
-                            <th>ATR</th>
-                            <th>Max Buy</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
+            let html = `<p style="margin-bottom: 16px; color: var(--text-secondary)">${sessions.length} trading sessions recorded</p>`;
 
-            for (const s of data.stocks) {
-                const changeClass = getColorClass(s.daily_change);
+            // Show sessions in reverse order (newest first)
+            for (const session of [...sessions].reverse().slice(0, 20)) {
+                const time = new Date(session.timestamp).toLocaleString();
+                const analysis = session.claude_analysis || '';
+                const holdReasoning = session.hold_reasoning || '';
+                const trades = session.executed_trades || [];
+
                 html += `
-                    <tr>
-                        <td><span class="symbol" onclick="showQuote('${s.symbol}')">${s.symbol}</span></td>
-                        <td>${formatCurrency(s.price)}</td>
-                        <td class="${changeClass}">${formatPercent(s.daily_change)}</td>
-                        <td>${s.rsi.toFixed(1)}</td>
-                        <td>${formatCurrency(s.atr)}</td>
-                        <td>${s.max_shares}</td>
-                        <td>
-                            ${s.max_shares > 0 ? `<button class="btn-buy" style="padding: 4px 12px; font-size: 0.8rem"
-                                    onclick="quickBuy('${s.symbol}', ${s.max_shares})">Buy Max</button>` : ''}
-                        </td>
-                    </tr>
+                    <div class="analysis-card">
+                        <div class="analysis-header">
+                            <span class="analysis-time">${time}</span>
+                            <span class="analysis-value">${formatCurrency(session.portfolio_value)} (${session.positions} positions)</span>
+                        </div>
                 `;
+
+                if (analysis) {
+                    html += `<div class="analysis-text" style="margin-bottom: 8px">${analysis}</div>`;
+                }
+
+                if (trades.length > 0) {
+                    html += '<div style="margin-bottom: 8px">';
+                    for (const trade of trades) {
+                        const badgeClass = trade.action.toLowerCase();
+                        html += `
+                            <div style="margin: 4px 0">
+                                <span class="trade-badge ${badgeClass}">${trade.action} ${trade.shares} ${trade.symbol}</span>
+                                <span style="color: var(--text-secondary); font-size: 0.85rem">${trade.reasoning || ''}</span>
+                            </div>
+                        `;
+                    }
+                    html += '</div>';
+                }
+
+                if (holdReasoning && trades.length === 0) {
+                    html += `<div style="color: var(--text-secondary); font-size: 0.9rem">Hold: ${holdReasoning}</div>`;
+                }
+
+                html += '</div>';
             }
 
-            html += '</tbody></table>';
             container.innerHTML = html;
-        }
-
-        // Show quote modal
-        async function showQuote(symbol) {
-            const modal = document.getElementById('quoteModal');
-            const content = document.getElementById('quoteContent');
-
-            document.getElementById('quoteSymbol').textContent = symbol;
-            content.innerHTML = '<div class="loading"><div class="spinner"></div>Loading...</div>';
-            modal.style.display = 'flex';
-
-            try {
-                const res = await fetch(`/api/quote/${symbol}`);
-                const data = await res.json();
-
-                if (data.error) {
-                    content.innerHTML = `<p>${data.error}</p>`;
-                    return;
-                }
-
-                const changeClass = getColorClass(data.daily_change);
-                content.innerHTML = `
-                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 16px">${formatCurrency(data.price)}</div>
-
-                    <div class="metric">
-                        <span class="metric-label">Daily Change</span>
-                        <span class="metric-value ${changeClass}">${formatPercent(data.daily_change)}</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">Weekly Change</span>
-                        <span class="metric-value ${getColorClass(data.weekly_change)}">${formatPercent(data.weekly_change)}</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">Monthly Change</span>
-                        <span class="metric-value ${getColorClass(data.monthly_change)}">${formatPercent(data.monthly_change)}</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">RSI</span>
-                        <span class="metric-value">${data.rsi.toFixed(1)} ${data.rsi < 30 ? '(Oversold)' : data.rsi > 70 ? '(Overbought)' : ''}</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">ATR</span>
-                        <span class="metric-value">${formatCurrency(data.atr)}</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">SMA 10 / 20 / 50</span>
-                        <span class="metric-value">${formatCurrency(data.sma_10)} / ${formatCurrency(data.sma_20)} / ${formatCurrency(data.sma_50)}</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">Avg Volume</span>
-                        <span class="metric-value">${data.avg_volume.toLocaleString()}</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">Max Buyable Shares</span>
-                        <span class="metric-value">${data.max_shares}</span>
-                    </div>
-
-                    <div class="actions">
-                        ${data.max_shares > 0 ? `<button class="btn-buy" onclick="quickBuy('${symbol}', 1); closeModal()">Buy 1</button>` : ''}
-                        ${data.max_shares > 0 ? `<button class="btn-buy" onclick="quickBuy('${symbol}', ${data.max_shares}); closeModal()">Buy Max (${data.max_shares})</button>` : ''}
-                    </div>
-                `;
-            } catch (err) {
-                content.innerHTML = '<p>Failed to load quote data.</p>';
-            }
-        }
-
-        // Close modal
-        function closeModal() {
-            document.getElementById('quoteModal').style.display = 'none';
-        }
-
-        // Quick buy
-        function quickBuy(symbol, shares) {
-            document.getElementById('tradeAction').value = 'BUY';
-            document.getElementById('tradeSymbol').value = symbol;
-            document.getElementById('tradeShares').value = shares;
-            updateTradeButton();
-            document.getElementById('tradeForm').dispatchEvent(new Event('submit'));
-        }
-
-        // Quick sell
-        function quickSell(symbol, shares) {
-            document.getElementById('tradeAction').value = 'SELL';
-            document.getElementById('tradeSymbol').value = symbol;
-            document.getElementById('tradeShares').value = shares;
-            updateTradeButton();
-            document.getElementById('tradeForm').dispatchEvent(new Event('submit'));
-        }
-
-        // Update trade button appearance
-        function updateTradeButton() {
-            const action = document.getElementById('tradeAction').value;
-            const btn = document.getElementById('tradeBtn');
-            btn.textContent = action;
-            btn.className = action === 'BUY' ? 'btn-buy' : 'btn-sell';
-        }
-
-        // Execute trade
-        async function executeTrade(action, symbol, shares) {
-            const resultDiv = document.getElementById('tradeResult');
-            resultDiv.style.display = 'block';
-            resultDiv.className = 'trade-result';
-            resultDiv.textContent = 'Processing...';
-
-            try {
-                const res = await fetch('/api/trade', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action, symbol, shares })
-                });
-
-                const data = await res.json();
-
-                resultDiv.className = 'trade-result ' + (data.success ? 'success' : 'error');
-                resultDiv.textContent = data.message;
-
-                if (data.success) {
-                    await fetchStatus();
-                    await fetchHistory();
-                }
-
-                // Hide result after 5 seconds
-                setTimeout(() => {
-                    resultDiv.style.display = 'none';
-                }, 5000);
-            } catch (err) {
-                resultDiv.className = 'trade-result error';
-                resultDiv.textContent = 'Failed to execute trade';
-            }
-        }
-
-        // Load stock universe for autocomplete
-        async function loadConfig() {
-            try {
-                const res = await fetch('/api/config');
-                const data = await res.json();
-                stockUniverse = data.stock_universe;
-
-                const datalist = document.getElementById('symbolList');
-                datalist.innerHTML = stockUniverse.map(s => `<option value="${s}">`).join('');
-            } catch (err) {
-                console.error('Failed to load config:', err);
-            }
         }
 
         // Tab switching
@@ -1161,44 +987,19 @@
                 const tabId = tab.dataset.tab;
                 document.getElementById(tabId).classList.add('active');
 
-                // Lazy load tab content
-                if (tabId === 'history') fetchHistory();
-                if (tabId === 'chart') fetchValueHistory();
-                if (tabId === 'market') fetchMarket();
-                if (tabId === 'screener') fetchScreener();
+                // Render chart when tab is shown
+                if (tabId === 'chart' && tradeLogData) {
+                    updateValueChart();
+                }
             });
         });
 
-        // Trade form
-        document.getElementById('tradeForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const action = document.getElementById('tradeAction').value;
-            const symbol = document.getElementById('tradeSymbol').value.toUpperCase();
-            const shares = parseFloat(document.getElementById('tradeShares').value);
-
-            await executeTrade(action, symbol, shares);
-        });
-
-        // Update button on action change
-        document.getElementById('tradeAction').addEventListener('change', updateTradeButton);
-
-        // Close modal on overlay click
-        document.getElementById('quoteModal').addEventListener('click', (e) => {
-            if (e.target.id === 'quoteModal') closeModal();
-        });
-
-        // Close modal on Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
-
         // Initial load
-        loadConfig();
-        fetchStatus();
+        loadAllData();
         updateMarketStatus();
 
-        // Auto-refresh every 60 seconds
-        setInterval(fetchStatus, 60000);
+        // Auto-refresh every 5 minutes
+        setInterval(loadAllData, 5 * 60 * 1000);
 
         // Update market status every minute
         setInterval(updateMarketStatus, 60000);
