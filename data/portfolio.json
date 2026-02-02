@@ -1,12 +1,6 @@
 {
-  "cash": 168.36,
+  "cash": 192.29000000000002,
   "holdings": {
-    "AFRM": {
-      "symbol": "AFRM",
-      "shares": 3,
-      "cost_basis": 187.05,
-      "avg_price": 62.35
-    },
     "PLTR": {
       "symbol": "PLTR",
       "shares": 1,
@@ -24,6 +18,18 @@
       "shares": 1,
       "cost_basis": 187.36,
       "avg_price": 187.36
+    },
+    "ROKU": {
+      "symbol": "ROKU",
+      "shares": 1,
+      "cost_basis": 95.64,
+      "avg_price": 95.64
+    },
+    "SNAP": {
+      "symbol": "SNAP",
+      "shares": 10,
+      "cost_basis": 66.7,
+      "avg_price": 6.67
     }
   },
   "transactions": [
@@ -394,6 +400,30 @@
       "shares": 1,
       "price": 187.36,
       "total": 187.36
+    },
+    {
+      "timestamp": "2026-02-02T15:31:25.621268",
+      "action": "SELL",
+      "symbol": "AFRM",
+      "shares": 3,
+      "price": 62.09,
+      "total": 186.27
+    },
+    {
+      "timestamp": "2026-02-02T15:31:32.360846",
+      "action": "BUY",
+      "symbol": "ROKU",
+      "shares": 1,
+      "price": 95.64,
+      "total": 95.64
+    },
+    {
+      "timestamp": "2026-02-02T15:31:41.019760",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 10,
+      "price": 6.67,
+      "total": 66.7
     }
   ],
   "value_history": [
@@ -588,6 +618,24 @@
       "total_value": 911.61,
       "cash": 168.36,
       "holdings_value": 743.25
+    },
+    {
+      "timestamp": "2026-02-02T15:31:27.319685",
+      "total_value": 910.74,
+      "cash": 354.63,
+      "holdings_value": 556.11
+    },
+    {
+      "timestamp": "2026-02-02T15:31:34.373037",
+      "total_value": 911.04,
+      "cash": 258.99,
+      "holdings_value": 652.05
+    },
+    {
+      "timestamp": "2026-02-02T15:31:43.456453",
+      "total_value": 911.0,
+      "cash": 192.29,
+      "holdings_value": 718.71
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
