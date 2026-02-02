@@ -58,6 +58,28 @@ python3 main.py analyze         # Market analysis
 
 GitHub Actions runs `refresh_data.py` every 5 minutes during market hours (9:30 AM - 4:00 PM ET, Mon-Fri) to update stock prices. This does NOT execute trades - it just refreshes market data.
 
+## Important Limitation: Computer Must Be Running
+
+**The Claude Auto-Trader ONLY works when your computer is awake and you manually start it.**
+
+Why:
+- The trader uses the `claude` CLI tool, which requires local authentication
+- The Anthropic API is NOT included in Claude Pro subscriptions
+- GitHub Actions cannot run the trader because it can't authenticate with Claude
+
+To run the auto-trader:
+1. Your computer must be on and awake
+2. You must manually run `python3 claude_trader.py` in a terminal
+3. Keep the terminal open while trading
+4. The program will automatically commit and push trades to GitHub
+
+If you want 24/7 autonomous trading, you would need:
+- A separate Anthropic API subscription (paid, separate from Claude Pro)
+- Modify `claude_trader.py` to use the API instead of the CLI
+- Then it could run on GitHub Actions or a cloud server
+
+For now, this is designed for **semi-automated trading** - the AI makes decisions, but you control when it runs.
+
 ## Checking if Running
 
 ```bash
