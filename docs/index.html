@@ -654,7 +654,7 @@
                 returnBadge.className = 'return-badge ' + getColorClass(returnPct);
 
                 document.getElementById('lastUpdated').textContent =
-                    'Last updated: ' + new Date(latest.timestamp).toLocaleString();
+                    'Value as of last trade session: ' + new Date(latest.timestamp).toLocaleString();
             } else {
                 const totalValue = cash + holdingsValue;
                 document.getElementById('totalValue').textContent = formatCurrency(totalValue);
