@@ -1,5 +1,5 @@
 {
-  "cash": 192.29000000000002,
+  "cash": 67.09000000000003,
   "holdings": {
     "PLTR": {
       "symbol": "PLTR",
@@ -30,6 +30,12 @@
       "shares": 10,
       "cost_basis": 66.7,
       "avg_price": 6.67
+    },
+    "PATH": {
+      "symbol": "PATH",
+      "shares": 10,
+      "cost_basis": 125.19999999999999,
+      "avg_price": 12.52
     }
   },
   "transactions": [
@@ -424,6 +430,14 @@
       "shares": 10,
       "price": 6.67,
       "total": 66.7
+    },
+    {
+      "timestamp": "2026-02-02T15:39:41.380787",
+      "action": "BUY",
+      "symbol": "PATH",
+      "shares": 10,
+      "price": 12.52,
+      "total": 125.2
     }
   ],
   "value_history": [
@@ -636,6 +650,12 @@
       "total_value": 911.0,
       "cash": 192.29,
       "holdings_value": 718.71
+    },
+    {
+      "timestamp": "2026-02-02T15:39:44.168852",
+      "total_value": 911.7,
+      "cash": 67.09,
+      "holdings_value": 844.61
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
