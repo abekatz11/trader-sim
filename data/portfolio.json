@@ -1,12 +1,6 @@
 {
-  "cash": 176.12000000000003,
+  "cash": 168.36,
   "holdings": {
-    "NIO": {
-      "symbol": "NIO",
-      "shares": 40.0,
-      "cost_basis": 184.8,
-      "avg_price": 4.62
-    },
     "AFRM": {
       "symbol": "AFRM",
       "shares": 3,
@@ -24,6 +18,12 @@
       "shares": 10,
       "cost_basis": 221.9,
       "avg_price": 22.19
+    },
+    "COIN": {
+      "symbol": "COIN",
+      "shares": 1,
+      "cost_basis": 187.36,
+      "avg_price": 187.36
     }
   },
   "transactions": [
@@ -378,6 +378,22 @@
       "shares": 10,
       "price": 22.19,
       "total": 221.9
+    },
+    {
+      "timestamp": "2026-02-02T15:23:48.980642",
+      "action": "SELL",
+      "symbol": "NIO",
+      "shares": 40,
+      "price": 4.49,
+      "total": 179.6
+    },
+    {
+      "timestamp": "2026-02-02T15:23:58.535422",
+      "action": "BUY",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 187.36,
+      "total": 187.36
     }
   ],
   "value_history": [
@@ -560,6 +576,18 @@
       "total_value": 911.86,
       "cash": 176.12,
       "holdings_value": 735.74
+    },
+    {
+      "timestamp": "2026-02-02T15:23:50.431220",
+      "total_value": 911.77,
+      "cash": 355.72,
+      "holdings_value": 556.05
+    },
+    {
+      "timestamp": "2026-02-02T15:24:00.500163",
+      "total_value": 911.61,
+      "cash": 168.36,
+      "holdings_value": 743.25
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
