@@ -1,5 +1,5 @@
 {
-  "cash": 71.10999999999996,
+  "cash": 185.92999999999995,
   "holdings": {
     "XPEV": {
       "symbol": "XPEV",
@@ -25,23 +25,17 @@
       "cost_basis": 38.650000000000006,
       "avg_price": 7.73
     },
-    "CHPT": {
-      "symbol": "CHPT",
-      "shares": 4,
-      "cost_basis": 23.6,
-      "avg_price": 5.9
-    },
     "SOFI": {
       "symbol": "SOFI",
       "shares": 8,
       "cost_basis": 167.68,
       "avg_price": 20.96
     },
-    "COIN": {
-      "symbol": "COIN",
+    "HOOD": {
+      "symbol": "HOOD",
       "shares": 1,
-      "cost_basis": 169.76,
-      "avg_price": 169.76
+      "cost_basis": 80.75,
+      "avg_price": 80.75
     }
   },
   "transactions": [
@@ -636,6 +630,30 @@
       "shares": 1,
       "price": 169.76,
       "total": 169.76
+    },
+    {
+      "timestamp": "2026-02-04T10:16:03.962143",
+      "action": "SELL",
+      "symbol": "CHPT",
+      "shares": 4,
+      "price": 5.83,
+      "total": 23.32
+    },
+    {
+      "timestamp": "2026-02-04T10:16:07.499691",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 172.25,
+      "total": 172.25
+    },
+    {
+      "timestamp": "2026-02-04T10:16:23.289433",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 1,
+      "price": 80.75,
+      "total": 80.75
     }
   ],
   "value_history": [
@@ -998,6 +1016,24 @@
       "total_value": 873.58,
       "cash": 71.11,
       "holdings_value": 802.47
+    },
+    {
+      "timestamp": "2026-02-04T10:16:07.005345",
+      "total_value": 879.53,
+      "cash": 94.43,
+      "holdings_value": 785.1
+    },
+    {
+      "timestamp": "2026-02-04T10:16:10.066933",
+      "total_value": 879.56,
+      "cash": 266.68,
+      "holdings_value": 612.88
+    },
+    {
+      "timestamp": "2026-02-04T10:16:26.343741",
+      "total_value": 878.94,
+      "cash": 185.93,
+      "holdings_value": 693.01
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
