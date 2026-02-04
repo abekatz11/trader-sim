@@ -1,5 +1,5 @@
 {
-  "cash": 27.119999999999948,
+  "cash": 145.99999999999994,
   "holdings": {
     "XPEV": {
       "symbol": "XPEV",
@@ -19,12 +19,6 @@
       "cost_basis": 59.400000000000006,
       "avg_price": 5.94
     },
-    "PINS": {
-      "symbol": "PINS",
-      "shares": 7,
-      "cost_basis": 142.51999999999998,
-      "avg_price": 20.36
-    },
     "HOOD": {
       "symbol": "HOOD",
       "shares": 2,
@@ -36,6 +30,12 @@
       "shares": 1,
       "cost_basis": 140.02,
       "avg_price": 140.02
+    },
+    "PATH": {
+      "symbol": "PATH",
+      "shares": 2,
+      "cost_basis": 24.34,
+      "avg_price": 12.17
     }
   },
   "transactions": [
@@ -814,6 +814,22 @@
       "shares": 1,
       "price": 140.02,
       "total": 140.02
+    },
+    {
+      "timestamp": "2026-02-04T11:23:34.639572",
+      "action": "SELL",
+      "symbol": "PINS",
+      "shares": 7,
+      "price": 20.46,
+      "total": 143.22
+    },
+    {
+      "timestamp": "2026-02-04T11:23:45.393593",
+      "action": "BUY",
+      "symbol": "PATH",
+      "shares": 2,
+      "price": 12.17,
+      "total": 24.34
     }
   ],
   "value_history": [
@@ -1314,6 +1330,18 @@
       "total_value": 878.01,
       "cash": 27.12,
       "holdings_value": 850.89
+    },
+    {
+      "timestamp": "2026-02-04T11:23:37.425086",
+      "total_value": 876.42,
+      "cash": 170.34,
+      "holdings_value": 706.08
+    },
+    {
+      "timestamp": "2026-02-04T11:23:48.501235",
+      "total_value": 876.59,
+      "cash": 146.0,
+      "holdings_value": 730.59
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
