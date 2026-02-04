@@ -1,5 +1,5 @@
 {
-  "cash": 185.92999999999995,
+  "cash": 267.17999999999995,
   "holdings": {
     "XPEV": {
       "symbol": "XPEV",
@@ -30,12 +30,6 @@
       "shares": 8,
       "cost_basis": 167.68,
       "avg_price": 20.96
-    },
-    "HOOD": {
-      "symbol": "HOOD",
-      "shares": 1,
-      "cost_basis": 80.75,
-      "avg_price": 80.75
     }
   },
   "transactions": [
@@ -654,6 +648,14 @@
       "shares": 1,
       "price": 80.75,
       "total": 80.75
+    },
+    {
+      "timestamp": "2026-02-04T10:24:47.691852",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 1,
+      "price": 81.25,
+      "total": 81.25
     }
   ],
   "value_history": [
@@ -1034,6 +1036,12 @@
       "total_value": 878.94,
       "cash": 185.93,
       "holdings_value": 693.01
+    },
+    {
+      "timestamp": "2026-02-04T10:24:50.221533",
+      "total_value": 882.09,
+      "cash": 267.18,
+      "holdings_value": 614.91
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
