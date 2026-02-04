@@ -1,12 +1,6 @@
 {
-  "cash": 98.52999999999994,
+  "cash": 48.779999999999944,
   "holdings": {
-    "ROKU": {
-      "symbol": "ROKU",
-      "shares": 1,
-      "cost_basis": 95.64,
-      "avg_price": 95.64
-    },
     "AFRM": {
       "symbol": "AFRM",
       "shares": 1,
@@ -36,6 +30,18 @@
       "shares": 6,
       "cost_basis": 165.54,
       "avg_price": 27.59
+    },
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 1,
+      "cost_basis": 82.53,
+      "avg_price": 82.53
+    },
+    "SNAP": {
+      "symbol": "SNAP",
+      "shares": 10,
+      "cost_basis": 59.400000000000006,
+      "avg_price": 5.94
     }
   },
   "transactions": [
@@ -534,6 +540,30 @@
       "shares": 6,
       "price": 27.59,
       "total": 165.54
+    },
+    {
+      "timestamp": "2026-02-04T09:47:37.690599",
+      "action": "SELL",
+      "symbol": "ROKU",
+      "shares": 1,
+      "price": 92.18,
+      "total": 92.18
+    },
+    {
+      "timestamp": "2026-02-04T09:47:53.496810",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 1,
+      "price": 82.53,
+      "total": 82.53
+    },
+    {
+      "timestamp": "2026-02-04T09:48:06.124904",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 10,
+      "price": 5.94,
+      "total": 59.4
     }
   ],
   "value_history": [
@@ -824,6 +854,24 @@
       "total_value": 890.25,
       "cash": 98.53,
       "holdings_value": 791.72
+    },
+    {
+      "timestamp": "2026-02-04T09:47:45.260243",
+      "total_value": 888.39,
+      "cash": 190.71,
+      "holdings_value": 697.68
+    },
+    {
+      "timestamp": "2026-02-04T09:47:56.390460",
+      "total_value": 887.29,
+      "cash": 108.18,
+      "holdings_value": 779.11
+    },
+    {
+      "timestamp": "2026-02-04T09:48:09.672220",
+      "total_value": 889.22,
+      "cash": 48.78,
+      "holdings_value": 840.44
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
