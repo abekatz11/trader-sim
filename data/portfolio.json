@@ -1,5 +1,5 @@
 {
-  "cash": 177.68000000000035,
+  "cash": 48.51000000000036,
   "holdings": {
     "RIVN": {
       "symbol": "RIVN",
@@ -19,11 +19,17 @@
       "cost_basis": 207.10000000000002,
       "avg_price": 20.71
     },
-    "PINS": {
-      "symbol": "PINS",
-      "shares": 10,
-      "cost_basis": 200.7,
-      "avg_price": 20.07
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 2,
+      "cost_basis": 160.6,
+      "avg_price": 80.3
+    },
+    "COIN": {
+      "symbol": "COIN",
+      "shares": 1,
+      "cost_basis": 169.07,
+      "avg_price": 169.07
     }
   },
   "transactions": [
@@ -1642,6 +1648,30 @@
       "shares": 10,
       "price": 20.07,
       "total": 200.7
+    },
+    {
+      "timestamp": "2026-02-04T15:45:44.563834",
+      "action": "SELL",
+      "symbol": "PINS",
+      "shares": 10,
+      "price": 20.05,
+      "total": 200.5
+    },
+    {
+      "timestamp": "2026-02-04T15:45:51.214679",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 80.3,
+      "total": 160.6
+    },
+    {
+      "timestamp": "2026-02-04T15:45:59.675691",
+      "action": "BUY",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 169.07,
+      "total": 169.07
     }
   ],
   "value_history": [
@@ -2772,6 +2802,24 @@
       "total_value": 864.18,
       "cash": 177.68,
       "holdings_value": 686.5
+    },
+    {
+      "timestamp": "2026-02-04T15:45:46.037920",
+      "total_value": 863.65,
+      "cash": 378.18,
+      "holdings_value": 485.47
+    },
+    {
+      "timestamp": "2026-02-04T15:45:53.203146",
+      "total_value": 863.61,
+      "cash": 217.58,
+      "holdings_value": 646.03
+    },
+    {
+      "timestamp": "2026-02-04T15:46:02.293194",
+      "total_value": 863.47,
+      "cash": 48.51,
+      "holdings_value": 814.96
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
