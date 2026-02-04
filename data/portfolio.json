@@ -1,5 +1,5 @@
 {
-  "cash": 203.6,
+  "cash": 71.36000000000004,
   "holdings": {
     "SNAP": {
       "symbol": "SNAP",
@@ -19,17 +19,23 @@
       "cost_basis": 122.28,
       "avg_price": 20.38
     },
-    "COIN": {
-      "symbol": "COIN",
-      "shares": 1,
-      "cost_basis": 169.17,
-      "avg_price": 169.17
-    },
     "PINS": {
       "symbol": "PINS",
       "shares": 8,
       "cost_basis": 161.28,
       "avg_price": 20.16
+    },
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 2,
+      "cost_basis": 162.16,
+      "avg_price": 81.08
+    },
+    "PLTR": {
+      "symbol": "PLTR",
+      "shares": 1,
+      "cost_basis": 137.95,
+      "avg_price": 137.95
     }
   },
   "transactions": [
@@ -992,6 +998,30 @@
       "shares": 8,
       "price": 20.16,
       "total": 161.28
+    },
+    {
+      "timestamp": "2026-02-04T12:24:11.042129",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 167.87,
+      "total": 167.87
+    },
+    {
+      "timestamp": "2026-02-04T12:24:19.379337",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 81.08,
+      "total": 162.16
+    },
+    {
+      "timestamp": "2026-02-04T12:24:30.139906",
+      "action": "BUY",
+      "symbol": "PLTR",
+      "shares": 1,
+      "price": 137.95,
+      "total": 137.95
     }
   ],
   "value_history": [
@@ -1630,6 +1660,24 @@
       "total_value": 872.8,
       "cash": 203.6,
       "holdings_value": 669.2
+    },
+    {
+      "timestamp": "2026-02-04T12:24:12.951933",
+      "total_value": 868.27,
+      "cash": 371.47,
+      "holdings_value": 496.8
+    },
+    {
+      "timestamp": "2026-02-04T12:24:21.927013",
+      "total_value": 868.32,
+      "cash": 209.31,
+      "holdings_value": 659.01
+    },
+    {
+      "timestamp": "2026-02-04T12:24:32.986731",
+      "total_value": 867.7,
+      "cash": 71.36,
+      "holdings_value": 796.34
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
