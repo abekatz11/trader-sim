@@ -1,5 +1,5 @@
 {
-  "cash": 405.85000000000014,
+  "cash": 568.2500000000001,
   "holdings": {
     "RIVN": {
       "symbol": "RIVN",
@@ -18,18 +18,6 @@
       "shares": 10,
       "cost_basis": 60.0,
       "avg_price": 6.0
-    },
-    "PINS": {
-      "symbol": "PINS",
-      "shares": 4,
-      "cost_basis": 80.0,
-      "avg_price": 20.0
-    },
-    "MARA": {
-      "symbol": "MARA",
-      "shares": 10,
-      "cost_basis": 82.0,
-      "avg_price": 8.2
     }
   },
   "transactions": [
@@ -1456,6 +1444,22 @@
       "shares": 10,
       "price": 8.2,
       "total": 82.0
+    },
+    {
+      "timestamp": "2026-02-04T14:52:07.036590",
+      "action": "SELL",
+      "symbol": "MARA",
+      "shares": 10,
+      "price": 8.24,
+      "total": 82.4
+    },
+    {
+      "timestamp": "2026-02-04T14:52:09.549077",
+      "action": "SELL",
+      "symbol": "PINS",
+      "shares": 4,
+      "price": 20.0,
+      "total": 80.0
     }
   ],
   "value_history": [
@@ -2442,6 +2446,18 @@
       "total_value": 861.32,
       "cash": 405.85,
       "holdings_value": 455.47
+    },
+    {
+      "timestamp": "2026-02-04T14:52:09.099875",
+      "total_value": 863.37,
+      "cash": 488.25,
+      "holdings_value": 375.12
+    },
+    {
+      "timestamp": "2026-02-04T14:52:11.152933",
+      "total_value": 863.4,
+      "cash": 568.25,
+      "holdings_value": 295.15
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
