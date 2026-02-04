@@ -1,5 +1,5 @@
 {
-  "cash": 234.89000000000013,
+  "cash": 108.09000000000015,
   "holdings": {
     "DKNG": {
       "symbol": "DKNG",
@@ -25,11 +25,11 @@
       "cost_basis": 42.33,
       "avg_price": 14.11
     },
-    "MARA": {
-      "symbol": "MARA",
-      "shares": 5,
-      "cost_basis": 39.900000000000006,
-      "avg_price": 7.98
+    "COIN": {
+      "symbol": "COIN",
+      "shares": 1,
+      "cost_basis": 167.0,
+      "avg_price": 167.0
     }
   },
   "transactions": [
@@ -1216,6 +1216,22 @@
       "shares": 5,
       "price": 7.98,
       "total": 39.9
+    },
+    {
+      "timestamp": "2026-02-04T13:29:02.697403",
+      "action": "SELL",
+      "symbol": "MARA",
+      "shares": 5,
+      "price": 8.04,
+      "total": 40.2
+    },
+    {
+      "timestamp": "2026-02-04T13:29:11.364329",
+      "action": "BUY",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 167.0,
+      "total": 167.0
     }
   ],
   "value_history": [
@@ -2022,6 +2038,18 @@
       "total_value": 850.5,
       "cash": 234.89,
       "holdings_value": 615.61
+    },
+    {
+      "timestamp": "2026-02-04T13:29:05.021285",
+      "total_value": 856.07,
+      "cash": 275.09,
+      "holdings_value": 580.98
+    },
+    {
+      "timestamp": "2026-02-04T13:29:13.916672",
+      "total_value": 856.62,
+      "cash": 108.09,
+      "holdings_value": 748.53
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
