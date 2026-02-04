@@ -1,12 +1,6 @@
 {
-  "cash": 48.779999999999944,
+  "cash": 186.33999999999997,
   "holdings": {
-    "AFRM": {
-      "symbol": "AFRM",
-      "shares": 1,
-      "cost_basis": 62.04,
-      "avg_price": 62.04
-    },
     "PLTR": {
       "symbol": "PLTR",
       "shares": 1,
@@ -19,17 +13,11 @@
       "cost_basis": 149.21999999999997,
       "avg_price": 16.58
     },
-    "SOFI": {
-      "symbol": "SOFI",
-      "shares": 8,
-      "cost_basis": 172.96,
-      "avg_price": 21.62
-    },
     "DKNG": {
       "symbol": "DKNG",
-      "shares": 6,
-      "cost_basis": 165.54,
-      "avg_price": 27.59
+      "shares": 7,
+      "cost_basis": 193.23,
+      "avg_price": 27.6
     },
     "HOOD": {
       "symbol": "HOOD",
@@ -42,6 +30,18 @@
       "shares": 10,
       "cost_basis": 59.400000000000006,
       "avg_price": 5.94
+    },
+    "TLRY": {
+      "symbol": "TLRY",
+      "shares": 5,
+      "cost_basis": 38.650000000000006,
+      "avg_price": 7.73
+    },
+    "CHPT": {
+      "symbol": "CHPT",
+      "shares": 4,
+      "cost_basis": 23.6,
+      "avg_price": 5.9
     }
   },
   "transactions": [
@@ -564,6 +564,46 @@
       "shares": 10,
       "price": 5.94,
       "total": 59.4
+    },
+    {
+      "timestamp": "2026-02-04T09:57:01.003979",
+      "action": "SELL",
+      "symbol": "SOFI",
+      "shares": 8,
+      "price": 20.98,
+      "total": 167.84
+    },
+    {
+      "timestamp": "2026-02-04T09:57:04.653520",
+      "action": "SELL",
+      "symbol": "AFRM",
+      "shares": 1,
+      "price": 59.66,
+      "total": 59.66
+    },
+    {
+      "timestamp": "2026-02-04T09:57:15.129387",
+      "action": "BUY",
+      "symbol": "DKNG",
+      "shares": 1,
+      "price": 27.69,
+      "total": 27.69
+    },
+    {
+      "timestamp": "2026-02-04T09:57:26.662716",
+      "action": "BUY",
+      "symbol": "TLRY",
+      "shares": 5,
+      "price": 7.73,
+      "total": 38.65
+    },
+    {
+      "timestamp": "2026-02-04T09:57:39.349124",
+      "action": "BUY",
+      "symbol": "CHPT",
+      "shares": 4,
+      "price": 5.9,
+      "total": 23.6
     }
   ],
   "value_history": [
@@ -872,6 +912,36 @@
       "total_value": 889.22,
       "cash": 48.78,
       "holdings_value": 840.44
+    },
+    {
+      "timestamp": "2026-02-04T09:57:04.041463",
+      "total_value": 877.81,
+      "cash": 216.62,
+      "holdings_value": 661.19
+    },
+    {
+      "timestamp": "2026-02-04T09:57:07.130228",
+      "total_value": 877.23,
+      "cash": 276.28,
+      "holdings_value": 600.95
+    },
+    {
+      "timestamp": "2026-02-04T09:57:17.718015",
+      "total_value": 877.0,
+      "cash": 248.59,
+      "holdings_value": 628.41
+    },
+    {
+      "timestamp": "2026-02-04T09:57:29.773945",
+      "total_value": 877.12,
+      "cash": 209.94,
+      "holdings_value": 667.18
+    },
+    {
+      "timestamp": "2026-02-04T09:57:42.896628",
+      "total_value": 877.13,
+      "cash": 186.34,
+      "holdings_value": 690.79
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
