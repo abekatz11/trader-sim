@@ -1,5 +1,5 @@
 {
-  "cash": 149.47000000000025,
+  "cash": 165.59000000000023,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -13,12 +13,6 @@
       "cost_basis": 42.33,
       "avg_price": 14.11
     },
-    "HOOD": {
-      "symbol": "HOOD",
-      "shares": 2,
-      "cost_basis": 156.14,
-      "avg_price": 78.07
-    },
     "COIN": {
       "symbol": "COIN",
       "shares": 1,
@@ -30,6 +24,12 @@
       "shares": 1,
       "cost_basis": 136.87,
       "avg_price": 136.87
+    },
+    "PINS": {
+      "symbol": "PINS",
+      "shares": 7,
+      "cost_basis": 140.28,
+      "avg_price": 20.04
     }
   },
   "transactions": [
@@ -1368,6 +1368,22 @@
       "shares": 1,
       "price": 136.87,
       "total": 136.87
+    },
+    {
+      "timestamp": "2026-02-04T14:26:46.622806",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 78.2,
+      "total": 156.4
+    },
+    {
+      "timestamp": "2026-02-04T14:26:55.357321",
+      "action": "BUY",
+      "symbol": "PINS",
+      "shares": 7,
+      "price": 20.04,
+      "total": 140.28
     }
   ],
   "value_history": [
@@ -2288,6 +2304,18 @@
       "total_value": 854.25,
       "cash": 149.47,
       "holdings_value": 704.78
+    },
+    {
+      "timestamp": "2026-02-04T14:26:48.589239",
+      "total_value": 855.68,
+      "cash": 305.87,
+      "holdings_value": 549.81
+    },
+    {
+      "timestamp": "2026-02-04T14:26:57.899766",
+      "total_value": 855.8,
+      "cash": 165.59,
+      "holdings_value": 690.21
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
