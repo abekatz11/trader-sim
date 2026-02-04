@@ -1,34 +1,16 @@
 {
-  "cash": 82.07000000000022,
+  "cash": 405.85000000000014,
   "holdings": {
-    "SOFI": {
-      "symbol": "SOFI",
-      "shares": 10,
-      "cost_basis": 202.0,
-      "avg_price": 20.2
-    },
     "RIVN": {
       "symbol": "RIVN",
       "shares": 3,
       "cost_basis": 42.33,
       "avg_price": 14.11
     },
-    "COIN": {
-      "symbol": "COIN",
-      "shares": 1,
-      "cost_basis": 166.45,
-      "avg_price": 166.45
-    },
-    "PLTR": {
-      "symbol": "PLTR",
-      "shares": 1,
-      "cost_basis": 136.87,
-      "avg_price": 136.87
-    },
     "DKNG": {
       "symbol": "DKNG",
-      "shares": 6,
-      "cost_basis": 163.8,
+      "shares": 7,
+      "cost_basis": 191.08,
       "avg_price": 27.3
     },
     "SNAP": {
@@ -36,6 +18,18 @@
       "shares": 10,
       "cost_basis": 60.0,
       "avg_price": 6.0
+    },
+    "PINS": {
+      "symbol": "PINS",
+      "shares": 4,
+      "cost_basis": 80.0,
+      "avg_price": 20.0
+    },
+    "MARA": {
+      "symbol": "MARA",
+      "shares": 10,
+      "cost_basis": 82.0,
+      "avg_price": 8.2
     }
   },
   "transactions": [
@@ -1414,6 +1408,54 @@
       "shares": 10,
       "price": 6.0,
       "total": 60.0
+    },
+    {
+      "timestamp": "2026-02-04T14:43:42.366616",
+      "action": "SELL",
+      "symbol": "SOFI",
+      "shares": 10,
+      "price": 20.62,
+      "total": 206.2
+    },
+    {
+      "timestamp": "2026-02-04T14:43:45.219335",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 168.41,
+      "total": 168.41
+    },
+    {
+      "timestamp": "2026-02-04T14:43:47.754174",
+      "action": "SELL",
+      "symbol": "PLTR",
+      "shares": 1,
+      "price": 138.45,
+      "total": 138.45
+    },
+    {
+      "timestamp": "2026-02-04T14:43:54.432083",
+      "action": "BUY",
+      "symbol": "DKNG",
+      "shares": 1,
+      "price": 27.28,
+      "total": 27.28
+    },
+    {
+      "timestamp": "2026-02-04T14:44:00.857285",
+      "action": "BUY",
+      "symbol": "PINS",
+      "shares": 4,
+      "price": 20.0,
+      "total": 80.0
+    },
+    {
+      "timestamp": "2026-02-04T14:44:09.387743",
+      "action": "BUY",
+      "symbol": "MARA",
+      "shares": 10,
+      "price": 8.2,
+      "total": 82.0
     }
   ],
   "value_history": [
@@ -2364,6 +2406,42 @@
       "total_value": 859.29,
       "cash": 82.07,
       "holdings_value": 777.22
+    },
+    {
+      "timestamp": "2026-02-04T14:43:44.800258",
+      "total_value": 861.7,
+      "cash": 288.27,
+      "holdings_value": 573.43
+    },
+    {
+      "timestamp": "2026-02-04T14:43:47.291232",
+      "total_value": 861.63,
+      "cash": 456.68,
+      "holdings_value": 404.95
+    },
+    {
+      "timestamp": "2026-02-04T14:43:49.307509",
+      "total_value": 861.57,
+      "cash": 595.13,
+      "holdings_value": 266.44
+    },
+    {
+      "timestamp": "2026-02-04T14:43:55.785423",
+      "total_value": 861.57,
+      "cash": 567.85,
+      "holdings_value": 293.72
+    },
+    {
+      "timestamp": "2026-02-04T14:44:02.977147",
+      "total_value": 861.43,
+      "cash": 487.85,
+      "holdings_value": 373.58
+    },
+    {
+      "timestamp": "2026-02-04T14:44:11.908552",
+      "total_value": 861.32,
+      "cash": 405.85,
+      "holdings_value": 455.47
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
