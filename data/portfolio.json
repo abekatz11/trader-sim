@@ -1,5 +1,5 @@
 {
-  "cash": 267.17999999999995,
+  "cash": 142.93999999999994,
   "holdings": {
     "XPEV": {
       "symbol": "XPEV",
@@ -19,17 +19,17 @@
       "cost_basis": 59.400000000000006,
       "avg_price": 5.94
     },
-    "TLRY": {
-      "symbol": "TLRY",
-      "shares": 5,
-      "cost_basis": 38.650000000000006,
-      "avg_price": 7.73
-    },
     "SOFI": {
       "symbol": "SOFI",
       "shares": 8,
       "cost_basis": 167.68,
       "avg_price": 20.96
+    },
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 2,
+      "cost_basis": 162.44,
+      "avg_price": 81.22
     }
   },
   "transactions": [
@@ -656,6 +656,22 @@
       "shares": 1,
       "price": 81.25,
       "total": 81.25
+    },
+    {
+      "timestamp": "2026-02-04T10:32:44.381353",
+      "action": "SELL",
+      "symbol": "TLRY",
+      "shares": 5,
+      "price": 7.64,
+      "total": 38.2
+    },
+    {
+      "timestamp": "2026-02-04T10:32:52.954581",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 81.22,
+      "total": 162.44
     }
   ],
   "value_history": [
@@ -1042,6 +1058,18 @@
       "total_value": 882.09,
       "cash": 267.18,
       "holdings_value": 614.91
+    },
+    {
+      "timestamp": "2026-02-04T10:32:46.431560",
+      "total_value": 878.21,
+      "cash": 305.38,
+      "holdings_value": 572.83
+    },
+    {
+      "timestamp": "2026-02-04T10:32:55.461699",
+      "total_value": 877.91,
+      "cash": 142.94,
+      "holdings_value": 734.97
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
