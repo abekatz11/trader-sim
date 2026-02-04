@@ -1,23 +1,11 @@
 {
-  "cash": 91.33000000000015,
+  "cash": 343.6300000000001,
   "holdings": {
-    "DKNG": {
-      "symbol": "DKNG",
-      "shares": 5,
-      "cost_basis": 136.13,
-      "avg_price": 27.23
-    },
     "SOFI": {
       "symbol": "SOFI",
       "shares": 10,
       "cost_basis": 202.0,
       "avg_price": 20.2
-    },
-    "PINS": {
-      "symbol": "PINS",
-      "shares": 10,
-      "cost_basis": 199.4,
-      "avg_price": 19.94
     },
     "RIVN": {
       "symbol": "RIVN",
@@ -36,6 +24,12 @@
       "shares": 13,
       "cost_basis": 104.91,
       "avg_price": 8.07
+    },
+    "TTD": {
+      "symbol": "TTD",
+      "shares": 3,
+      "cost_basis": 80.85,
+      "avg_price": 26.95
     }
   },
   "transactions": [
@@ -1262,6 +1256,30 @@
       "shares": 13,
       "price": 8.07,
       "total": 104.91
+    },
+    {
+      "timestamp": "2026-02-04T13:46:00.304065",
+      "action": "SELL",
+      "symbol": "PINS",
+      "shares": 10,
+      "price": 19.84,
+      "total": 198.4
+    },
+    {
+      "timestamp": "2026-02-04T13:46:03.389278",
+      "action": "SELL",
+      "symbol": "DKNG",
+      "shares": 5,
+      "price": 26.95,
+      "total": 134.75
+    },
+    {
+      "timestamp": "2026-02-04T13:46:11.916074",
+      "action": "BUY",
+      "symbol": "TTD",
+      "shares": 3,
+      "price": 26.95,
+      "total": 80.85
     }
   ],
   "value_history": [
@@ -2098,6 +2116,24 @@
       "total_value": 853.59,
       "cash": 91.33,
       "holdings_value": 762.26
+    },
+    {
+      "timestamp": "2026-02-04T13:46:02.852763",
+      "total_value": 854.05,
+      "cash": 289.73,
+      "holdings_value": 564.32
+    },
+    {
+      "timestamp": "2026-02-04T13:46:05.353102",
+      "total_value": 854.05,
+      "cash": 424.48,
+      "holdings_value": 429.57
+    },
+    {
+      "timestamp": "2026-02-04T13:46:14.487394",
+      "total_value": 853.85,
+      "cash": 343.63,
+      "holdings_value": 510.22
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
