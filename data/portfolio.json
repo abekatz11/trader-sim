@@ -1,5 +1,5 @@
 {
-  "cash": 261.58,
+  "cash": 33.120000000000005,
   "holdings": {
     "DKNG": {
       "symbol": "DKNG",
@@ -25,11 +25,17 @@
       "cost_basis": 122.28,
       "avg_price": 20.38
     },
-    "HOOD": {
-      "symbol": "HOOD",
+    "COIN": {
+      "symbol": "COIN",
       "shares": 1,
-      "cost_basis": 79.3,
-      "avg_price": 79.3
+      "cost_basis": 169.32,
+      "avg_price": 169.32
+    },
+    "PLTR": {
+      "symbol": "PLTR",
+      "shares": 1,
+      "cost_basis": 139.18,
+      "avg_price": 139.18
     }
   },
   "transactions": [
@@ -912,6 +918,30 @@
       "shares": 1,
       "price": 79.3,
       "total": 79.3
+    },
+    {
+      "timestamp": "2026-02-04T11:57:40.242206",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 1,
+      "price": 80.04,
+      "total": 80.04
+    },
+    {
+      "timestamp": "2026-02-04T11:57:48.814436",
+      "action": "BUY",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 169.32,
+      "total": 169.32
+    },
+    {
+      "timestamp": "2026-02-04T11:58:05.024745",
+      "action": "BUY",
+      "symbol": "PLTR",
+      "shares": 1,
+      "price": 139.18,
+      "total": 139.18
     }
   ],
   "value_history": [
@@ -1490,6 +1520,24 @@
       "total_value": 868.54,
       "cash": 261.58,
       "holdings_value": 606.96
+    },
+    {
+      "timestamp": "2026-02-04T11:57:42.300163",
+      "total_value": 872.47,
+      "cash": 341.62,
+      "holdings_value": 530.85
+    },
+    {
+      "timestamp": "2026-02-04T11:57:51.380991",
+      "total_value": 872.21,
+      "cash": 172.3,
+      "holdings_value": 699.91
+    },
+    {
+      "timestamp": "2026-02-04T11:58:08.062289",
+      "total_value": 872.25,
+      "cash": 33.12,
+      "holdings_value": 839.13
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
