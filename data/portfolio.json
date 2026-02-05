@@ -1,5 +1,5 @@
 {
-  "cash": 261.6800000000004,
+  "cash": 123.04000000000045,
   "holdings": {
     "RIVN": {
       "symbol": "RIVN",
@@ -19,12 +19,6 @@
       "cost_basis": 155.28,
       "avg_price": 19.41
     },
-    "SNAP": {
-      "symbol": "SNAP",
-      "shares": 30,
-      "cost_basis": 161.7,
-      "avg_price": 5.39
-    },
     "PINS": {
       "symbol": "PINS",
       "shares": 3,
@@ -36,6 +30,18 @@
       "shares": 2,
       "cost_basis": 50.72,
       "avg_price": 25.36
+    },
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 2,
+      "cost_basis": 148.34,
+      "avg_price": 74.17
+    },
+    "COIN": {
+      "symbol": "COIN",
+      "shares": 1,
+      "cost_basis": 151.1,
+      "avg_price": 151.1
     }
   },
   "transactions": [
@@ -1966,6 +1972,30 @@
       "shares": 2,
       "price": 25.36,
       "total": 50.72
+    },
+    {
+      "timestamp": "2026-02-05T13:40:33.182556",
+      "action": "SELL",
+      "symbol": "SNAP",
+      "shares": 30,
+      "price": 5.36,
+      "total": 160.8
+    },
+    {
+      "timestamp": "2026-02-05T13:40:43.843079",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 74.17,
+      "total": 148.34
+    },
+    {
+      "timestamp": "2026-02-05T13:40:56.347808",
+      "action": "BUY",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 151.1,
+      "total": 151.1
     }
   ],
   "value_history": [
@@ -3330,6 +3360,24 @@
       "total_value": 824.01,
       "cash": 261.68,
       "holdings_value": 562.33
+    },
+    {
+      "timestamp": "2026-02-05T13:40:35.564665",
+      "total_value": 821.77,
+      "cash": 422.48,
+      "holdings_value": 399.29
+    },
+    {
+      "timestamp": "2026-02-05T13:40:46.813846",
+      "total_value": 821.67,
+      "cash": 274.14,
+      "holdings_value": 547.53
+    },
+    {
+      "timestamp": "2026-02-05T13:40:59.723779",
+      "total_value": 821.83,
+      "cash": 123.04,
+      "holdings_value": 698.79
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
