@@ -1,5 +1,5 @@
 {
-  "cash": 272.54000000000036,
+  "cash": 70.41000000000037,
   "holdings": {
     "RIVN": {
       "symbol": "RIVN",
@@ -12,12 +12,6 @@
       "shares": 10,
       "cost_basis": 47.400000000000006,
       "avg_price": 4.74
-    },
-    "XPEV": {
-      "symbol": "XPEV",
-      "shares": 2,
-      "cost_basis": 34.08,
-      "avg_price": 17.04
     },
     "SOFI": {
       "symbol": "SOFI",
@@ -33,9 +27,15 @@
     },
     "HOOD": {
       "symbol": "HOOD",
-      "shares": 1,
-      "cost_basis": 74.8,
-      "avg_price": 74.8
+      "shares": 2,
+      "cost_basis": 149.05,
+      "avg_price": 74.53
+    },
+    "SNAP": {
+      "symbol": "SNAP",
+      "shares": 30,
+      "cost_basis": 161.7,
+      "avg_price": 5.39
     }
   },
   "transactions": [
@@ -1910,6 +1910,30 @@
       "shares": 1,
       "price": 74.8,
       "total": 74.8
+    },
+    {
+      "timestamp": "2026-02-05T13:22:59.178491",
+      "action": "SELL",
+      "symbol": "XPEV",
+      "shares": 2,
+      "price": 16.91,
+      "total": 33.82
+    },
+    {
+      "timestamp": "2026-02-05T13:23:09.755814",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 1,
+      "price": 74.25,
+      "total": 74.25
+    },
+    {
+      "timestamp": "2026-02-05T13:23:20.449123",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 30,
+      "price": 5.39,
+      "total": 161.7
     }
   ],
   "value_history": [
@@ -3232,6 +3256,24 @@
       "total_value": 826.49,
       "cash": 272.54,
       "holdings_value": 553.95
+    },
+    {
+      "timestamp": "2026-02-05T13:23:01.746976",
+      "total_value": 823.27,
+      "cash": 306.36,
+      "holdings_value": 516.91
+    },
+    {
+      "timestamp": "2026-02-05T13:23:12.209426",
+      "total_value": 822.95,
+      "cash": 232.11,
+      "holdings_value": 590.84
+    },
+    {
+      "timestamp": "2026-02-05T13:23:23.337862",
+      "total_value": 823.08,
+      "cash": 70.41,
+      "holdings_value": 752.67
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
