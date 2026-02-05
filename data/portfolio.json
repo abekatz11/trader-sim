@@ -1,5 +1,5 @@
 {
-  "cash": 310.80000000000047,
+  "cash": 141.14000000000044,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -13,11 +13,17 @@
       "cost_basis": 201.36,
       "avg_price": 25.17
     },
-    "COIN": {
-      "symbol": "COIN",
-      "shares": 1,
-      "cost_basis": 150.27,
-      "avg_price": 150.27
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 2,
+      "cost_basis": 146.52,
+      "avg_price": 73.26
+    },
+    "UPST": {
+      "symbol": "UPST",
+      "shares": 5,
+      "cost_basis": 173.35000000000002,
+      "avg_price": 34.67
     }
   },
   "transactions": [
@@ -2164,6 +2170,30 @@
       "shares": 3,
       "price": 19.31,
       "total": 57.93
+    },
+    {
+      "timestamp": "2026-02-05T14:55:22.229735",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 150.21,
+      "total": 150.21
+    },
+    {
+      "timestamp": "2026-02-05T14:55:26.618113",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 73.26,
+      "total": 146.52
+    },
+    {
+      "timestamp": "2026-02-05T14:55:33.383748",
+      "action": "BUY",
+      "symbol": "UPST",
+      "shares": 5,
+      "price": 34.67,
+      "total": 173.35
     }
   ],
   "value_history": [
@@ -3690,6 +3720,24 @@
       "total_value": 819.01,
       "cash": 310.8,
       "holdings_value": 508.21
+    },
+    {
+      "timestamp": "2026-02-05T14:55:23.277178",
+      "total_value": 818.45,
+      "cash": 461.01,
+      "holdings_value": 357.44
+    },
+    {
+      "timestamp": "2026-02-05T14:55:28.154855",
+      "total_value": 818.57,
+      "cash": 314.49,
+      "holdings_value": 504.08
+    },
+    {
+      "timestamp": "2026-02-05T14:55:35.336161",
+      "total_value": 818.47,
+      "cash": 141.14,
+      "holdings_value": 677.33
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
