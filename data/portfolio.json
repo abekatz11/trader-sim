@@ -1,5 +1,5 @@
 {
-  "cash": 245.41000000000045,
+  "cash": 90.64000000000044,
   "holdings": {
     "NIO": {
       "symbol": "NIO",
@@ -19,17 +19,17 @@
       "cost_basis": 148.34,
       "avg_price": 74.17
     },
-    "COIN": {
-      "symbol": "COIN",
-      "shares": 1,
-      "cost_basis": 151.1,
-      "avg_price": 151.1
+    "UPST": {
+      "symbol": "UPST",
+      "shares": 5,
+      "cost_basis": 175.25,
+      "avg_price": 35.05
     },
-    "MARA": {
-      "symbol": "MARA",
-      "shares": 10,
-      "cost_basis": 70.6,
-      "avg_price": 7.06
+    "DKNG": {
+      "symbol": "DKNG",
+      "shares": 8,
+      "cost_basis": 201.36,
+      "avg_price": 25.17
     }
   },
   "transactions": [
@@ -2016,6 +2016,38 @@
       "shares": 10,
       "price": 7.06,
       "total": 70.6
+    },
+    {
+      "timestamp": "2026-02-05T13:58:08.025951",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 150.94,
+      "total": 150.94
+    },
+    {
+      "timestamp": "2026-02-05T13:58:10.643793",
+      "action": "SELL",
+      "symbol": "MARA",
+      "shares": 10,
+      "price": 7.09,
+      "total": 70.9
+    },
+    {
+      "timestamp": "2026-02-05T13:58:17.094481",
+      "action": "BUY",
+      "symbol": "UPST",
+      "shares": 5,
+      "price": 35.05,
+      "total": 175.25
+    },
+    {
+      "timestamp": "2026-02-05T13:58:25.676803",
+      "action": "BUY",
+      "symbol": "DKNG",
+      "shares": 8,
+      "price": 25.17,
+      "total": 201.36
     }
   ],
   "value_history": [
@@ -3422,6 +3454,30 @@
       "total_value": 819.76,
       "cash": 245.41,
       "holdings_value": 574.35
+    },
+    {
+      "timestamp": "2026-02-05T13:58:09.905199",
+      "total_value": 822.07,
+      "cash": 396.35,
+      "holdings_value": 425.72
+    },
+    {
+      "timestamp": "2026-02-05T13:58:11.920776",
+      "total_value": 821.89,
+      "cash": 467.25,
+      "holdings_value": 354.64
+    },
+    {
+      "timestamp": "2026-02-05T13:58:19.145154",
+      "total_value": 821.81,
+      "cash": 292.0,
+      "holdings_value": 529.81
+    },
+    {
+      "timestamp": "2026-02-05T13:58:28.152661",
+      "total_value": 821.65,
+      "cash": 90.64,
+      "holdings_value": 731.01
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
