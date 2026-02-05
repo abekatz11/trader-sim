@@ -1,5 +1,5 @@
 {
-  "cash": 90.64000000000044,
+  "cash": 109.04000000000045,
   "holdings": {
     "NIO": {
       "symbol": "NIO",
@@ -13,12 +13,6 @@
       "cost_basis": 155.28,
       "avg_price": 19.41
     },
-    "HOOD": {
-      "symbol": "HOOD",
-      "shares": 2,
-      "cost_basis": 148.34,
-      "avg_price": 74.17
-    },
     "UPST": {
       "symbol": "UPST",
       "shares": 5,
@@ -30,6 +24,18 @@
       "shares": 8,
       "cost_basis": 201.36,
       "avg_price": 25.17
+    },
+    "PINS": {
+      "symbol": "PINS",
+      "shares": 4,
+      "cost_basis": 78.04,
+      "avg_price": 19.51
+    },
+    "SNAP": {
+      "symbol": "SNAP",
+      "shares": 10,
+      "cost_basis": 52.599999999999994,
+      "avg_price": 5.26
     }
   },
   "transactions": [
@@ -2048,6 +2054,30 @@
       "shares": 8,
       "price": 25.17,
       "total": 201.36
+    },
+    {
+      "timestamp": "2026-02-05T14:14:14.941819",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 74.52,
+      "total": 149.04
+    },
+    {
+      "timestamp": "2026-02-05T14:14:23.451692",
+      "action": "BUY",
+      "symbol": "PINS",
+      "shares": 4,
+      "price": 19.51,
+      "total": 78.04
+    },
+    {
+      "timestamp": "2026-02-05T14:14:33.994308",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 10,
+      "price": 5.26,
+      "total": 52.6
     }
   ],
   "value_history": [
@@ -3478,6 +3508,24 @@
       "total_value": 821.65,
       "cash": 90.64,
       "holdings_value": 731.01
+    },
+    {
+      "timestamp": "2026-02-05T14:14:16.867344",
+      "total_value": 825.46,
+      "cash": 239.68,
+      "holdings_value": 585.78
+    },
+    {
+      "timestamp": "2026-02-05T14:14:26.046184",
+      "total_value": 825.4,
+      "cash": 161.64,
+      "holdings_value": 663.76
+    },
+    {
+      "timestamp": "2026-02-05T14:14:37.153317",
+      "total_value": 825.28,
+      "cash": 109.04,
+      "holdings_value": 716.24
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
