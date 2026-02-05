@@ -1,5 +1,5 @@
 {
-  "cash": 65.36000000000041,
+  "cash": 296.2800000000004,
   "holdings": {
     "RIVN": {
       "symbol": "RIVN",
@@ -19,29 +19,23 @@
       "cost_basis": 34.08,
       "avg_price": 17.04
     },
-    "PLTR": {
-      "symbol": "PLTR",
-      "shares": 1,
-      "cost_basis": 134.88,
-      "avg_price": 134.88
-    },
     "HOOD": {
       "symbol": "HOOD",
       "shares": 2,
       "cost_basis": 150.68,
       "avg_price": 75.34
     },
-    "COIN": {
-      "symbol": "COIN",
-      "shares": 1,
-      "cost_basis": 156.1,
-      "avg_price": 156.1
-    },
     "SOFI": {
       "symbol": "SOFI",
       "shares": 8,
       "cost_basis": 155.28,
       "avg_price": 19.41
+    },
+    "SNAP": {
+      "symbol": "SNAP",
+      "shares": 10,
+      "cost_basis": 53.8,
+      "avg_price": 5.38
     }
   },
   "transactions": [
@@ -1828,6 +1822,30 @@
       "shares": 8,
       "price": 19.41,
       "total": 155.28
+    },
+    {
+      "timestamp": "2026-02-05T12:56:30.866421",
+      "action": "SELL",
+      "symbol": "PLTR",
+      "shares": 1,
+      "price": 132.11,
+      "total": 132.11
+    },
+    {
+      "timestamp": "2026-02-05T12:56:34.279591",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 152.61,
+      "total": 152.61
+    },
+    {
+      "timestamp": "2026-02-05T12:56:45.078055",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 10,
+      "price": 5.38,
+      "total": 53.8
     }
   ],
   "value_history": [
@@ -3084,6 +3102,24 @@
       "total_value": 821.9,
       "cash": 65.36,
       "holdings_value": 756.54
+    },
+    {
+      "timestamp": "2026-02-05T12:56:33.824925",
+      "total_value": 827.1,
+      "cash": 197.47,
+      "holdings_value": 629.63
+    },
+    {
+      "timestamp": "2026-02-05T12:56:36.875996",
+      "total_value": 827.02,
+      "cash": 350.08,
+      "holdings_value": 476.94
+    },
+    {
+      "timestamp": "2026-02-05T12:56:48.167842",
+      "total_value": 827.24,
+      "cash": 296.28,
+      "holdings_value": 530.96
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
