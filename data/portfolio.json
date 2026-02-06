@@ -1,18 +1,6 @@
 {
-  "cash": 197.01000000000053,
+  "cash": 85.53000000000057,
   "holdings": {
-    "DKNG": {
-      "symbol": "DKNG",
-      "shares": 2,
-      "cost_basis": 51.02,
-      "avg_price": 25.51
-    },
-    "PLTR": {
-      "symbol": "PLTR",
-      "shares": 1,
-      "cost_basis": 129.64,
-      "avg_price": 129.64
-    },
     "SOFI": {
       "symbol": "SOFI",
       "shares": 7,
@@ -36,6 +24,18 @@
       "shares": 1,
       "cost_basis": 161.94,
       "avg_price": 161.94
+    },
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 2,
+      "cost_basis": 165.16,
+      "avg_price": 82.58
+    },
+    "RBLX": {
+      "symbol": "RBLX",
+      "shares": 2,
+      "cost_basis": 135.32,
+      "avg_price": 67.66
     }
   },
   "transactions": [
@@ -2510,6 +2510,38 @@
       "shares": 2,
       "price": 83.44,
       "total": 166.88
+    },
+    {
+      "timestamp": "2026-02-06T13:28:04.436001",
+      "action": "SELL",
+      "symbol": "DKNG",
+      "shares": 2,
+      "price": 26.73,
+      "total": 53.46
+    },
+    {
+      "timestamp": "2026-02-06T13:28:07.400491",
+      "action": "SELL",
+      "symbol": "PLTR",
+      "shares": 1,
+      "price": 135.54,
+      "total": 135.54
+    },
+    {
+      "timestamp": "2026-02-06T13:28:16.170903",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 82.58,
+      "total": 165.16
+    },
+    {
+      "timestamp": "2026-02-06T13:28:26.690787",
+      "action": "BUY",
+      "symbol": "RBLX",
+      "shares": 2,
+      "price": 67.66,
+      "total": 135.32
     }
   ],
   "value_history": [
@@ -4282,6 +4314,30 @@
       "total_value": 859.67,
       "cash": 197.01,
       "holdings_value": 662.66
+    },
+    {
+      "timestamp": "2026-02-06T13:28:06.935993",
+      "total_value": 855.48,
+      "cash": 250.47,
+      "holdings_value": 605.01
+    },
+    {
+      "timestamp": "2026-02-06T13:28:09.499113",
+      "total_value": 855.56,
+      "cash": 386.01,
+      "holdings_value": 469.55
+    },
+    {
+      "timestamp": "2026-02-06T13:28:18.606171",
+      "total_value": 855.38,
+      "cash": 220.85,
+      "holdings_value": 634.53
+    },
+    {
+      "timestamp": "2026-02-06T13:28:30.533833",
+      "total_value": 855.16,
+      "cash": 85.53,
+      "holdings_value": 769.63
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
