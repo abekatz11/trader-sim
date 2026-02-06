@@ -1,5 +1,5 @@
 {
-  "cash": 192.07000000000053,
+  "cash": 197.01000000000053,
   "holdings": {
     "DKNG": {
       "symbol": "DKNG",
@@ -31,11 +31,11 @@
       "cost_basis": 121.95000000000002,
       "avg_price": 8.13
     },
-    "HOOD": {
-      "symbol": "HOOD",
-      "shares": 2,
-      "cost_basis": 166.72,
-      "avg_price": 83.36
+    "COIN": {
+      "symbol": "COIN",
+      "shares": 1,
+      "cost_basis": 161.94,
+      "avg_price": 161.94
     }
   },
   "transactions": [
@@ -2494,6 +2494,22 @@
       "shares": 2,
       "price": 83.36,
       "total": 166.72
+    },
+    {
+      "timestamp": "2026-02-06T13:19:18.822091",
+      "action": "BUY",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 161.94,
+      "total": 161.94
+    },
+    {
+      "timestamp": "2026-02-06T13:19:22.933630",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 83.44,
+      "total": 166.88
     }
   ],
   "value_history": [
@@ -4254,6 +4270,18 @@
       "total_value": 860.04,
       "cash": 192.07,
       "holdings_value": 667.97
+    },
+    {
+      "timestamp": "2026-02-06T13:19:22.452843",
+      "total_value": 859.97,
+      "cash": 30.13,
+      "holdings_value": 829.84
+    },
+    {
+      "timestamp": "2026-02-06T13:19:25.885093",
+      "total_value": 859.67,
+      "cash": 197.01,
+      "holdings_value": 662.66
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
