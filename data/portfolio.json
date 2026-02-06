@@ -1,5 +1,5 @@
 {
-  "cash": 318.54000000000053,
+  "cash": 192.07000000000053,
   "holdings": {
     "DKNG": {
       "symbol": "DKNG",
@@ -13,12 +13,6 @@
       "cost_basis": 129.64,
       "avg_price": 129.64
     },
-    "COIN": {
-      "symbol": "COIN",
-      "shares": 1,
-      "cost_basis": 146.53,
-      "avg_price": 146.53
-    },
     "SOFI": {
       "symbol": "SOFI",
       "shares": 7,
@@ -30,6 +24,18 @@
       "shares": 3,
       "cost_basis": 42.660000000000004,
       "avg_price": 14.22
+    },
+    "MARA": {
+      "symbol": "MARA",
+      "shares": 15,
+      "cost_basis": 121.95000000000002,
+      "avg_price": 8.13
+    },
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 2,
+      "cost_basis": 166.72,
+      "avg_price": 83.36
     }
   },
   "transactions": [
@@ -2464,6 +2470,30 @@
       "shares": 10,
       "price": 19.38,
       "total": 193.8
+    },
+    {
+      "timestamp": "2026-02-06T13:10:16.419812",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 162.2,
+      "total": 162.2
+    },
+    {
+      "timestamp": "2026-02-06T13:10:25.694583",
+      "action": "BUY",
+      "symbol": "MARA",
+      "shares": 15,
+      "price": 8.13,
+      "total": 121.95
+    },
+    {
+      "timestamp": "2026-02-06T13:10:36.541095",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 83.36,
+      "total": 166.72
     }
   ],
   "value_history": [
@@ -4206,6 +4236,24 @@
       "total_value": 861.29,
       "cash": 318.54,
       "holdings_value": 542.75
+    },
+    {
+      "timestamp": "2026-02-06T13:10:18.499782",
+      "total_value": 860.02,
+      "cash": 480.74,
+      "holdings_value": 379.28
+    },
+    {
+      "timestamp": "2026-02-06T13:10:28.209039",
+      "total_value": 860.02,
+      "cash": 358.79,
+      "holdings_value": 501.23
+    },
+    {
+      "timestamp": "2026-02-06T13:10:39.438242",
+      "total_value": 860.04,
+      "cash": 192.07,
+      "holdings_value": 667.97
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
