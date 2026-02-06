@@ -1,5 +1,5 @@
 {
-  "cash": 147.95000000000056,
+  "cash": 124.74000000000058,
   "holdings": {
     "DKNG": {
       "symbol": "DKNG",
@@ -19,17 +19,23 @@
       "cost_basis": 146.53,
       "avg_price": 146.53
     },
-    "HOOD": {
-      "symbol": "HOOD",
-      "shares": 2,
-      "cost_basis": 144.62,
-      "avg_price": 72.31
-    },
     "PINS": {
       "symbol": "PINS",
       "shares": 10,
       "cost_basis": 192.8,
       "avg_price": 19.28
+    },
+    "SOFI": {
+      "symbol": "SOFI",
+      "shares": 7,
+      "cost_basis": 147.21,
+      "avg_price": 21.03
+    },
+    "RIOT": {
+      "symbol": "RIOT",
+      "shares": 3,
+      "cost_basis": 42.660000000000004,
+      "avg_price": 14.22
     }
   },
   "transactions": [
@@ -2432,6 +2438,30 @@
       "shares": 10,
       "price": 19.28,
       "total": 192.8
+    },
+    {
+      "timestamp": "2026-02-06T12:53:24.797949",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 83.33,
+      "total": 166.66
+    },
+    {
+      "timestamp": "2026-02-06T12:53:33.329105",
+      "action": "BUY",
+      "symbol": "SOFI",
+      "shares": 7,
+      "price": 21.03,
+      "total": 147.21
+    },
+    {
+      "timestamp": "2026-02-06T12:53:43.942223",
+      "action": "BUY",
+      "symbol": "RIOT",
+      "shares": 3,
+      "price": 14.22,
+      "total": 42.66
     }
   ],
   "value_history": [
@@ -4150,6 +4180,24 @@
       "total_value": 811.47,
       "cash": 147.95,
       "holdings_value": 663.52
+    },
+    {
+      "timestamp": "2026-02-06T12:53:26.910746",
+      "total_value": 861.49,
+      "cash": 314.61,
+      "holdings_value": 546.88
+    },
+    {
+      "timestamp": "2026-02-06T12:53:35.875027",
+      "total_value": 861.45,
+      "cash": 167.4,
+      "holdings_value": 694.05
+    },
+    {
+      "timestamp": "2026-02-06T12:53:46.917825",
+      "total_value": 861.22,
+      "cash": 124.74,
+      "holdings_value": 736.48
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
