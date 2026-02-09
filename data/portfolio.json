@@ -1,5 +1,5 @@
 {
-  "cash": 48.390000000000555,
+  "cash": 47.05000000000055,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -37,17 +37,17 @@
       "cost_basis": 58.2,
       "avg_price": 58.2
     },
-    "SNAP": {
-      "symbol": "SNAP",
-      "shares": 5,
-      "cost_basis": 25.85,
-      "avg_price": 5.17
-    },
     "U": {
       "symbol": "U",
       "shares": 7,
       "cost_basis": 196.49,
       "avg_price": 28.07
+    },
+    "DKNG": {
+      "symbol": "DKNG",
+      "shares": 1,
+      "cost_basis": 27.14,
+      "avg_price": 27.14
     }
   },
   "transactions": [
@@ -2602,6 +2602,22 @@
       "shares": 7,
       "price": 28.07,
       "total": 196.49
+    },
+    {
+      "timestamp": "2026-02-09T13:26:40.638266",
+      "action": "SELL",
+      "symbol": "SNAP",
+      "shares": 5,
+      "price": 5.16,
+      "total": 25.8
+    },
+    {
+      "timestamp": "2026-02-09T13:26:55.524143",
+      "action": "BUY",
+      "symbol": "DKNG",
+      "shares": 1,
+      "price": 27.14,
+      "total": 27.14
     }
   ],
   "value_history": [
@@ -4434,6 +4450,18 @@
       "total_value": 897.93,
       "cash": 48.39,
       "holdings_value": 849.54
+    },
+    {
+      "timestamp": "2026-02-09T13:26:44.146073",
+      "total_value": 890.68,
+      "cash": 74.19,
+      "holdings_value": 816.49
+    },
+    {
+      "timestamp": "2026-02-09T13:26:59.566979",
+      "total_value": 890.56,
+      "cash": 47.05,
+      "holdings_value": 843.51
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
