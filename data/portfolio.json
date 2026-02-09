@@ -1,5 +1,5 @@
 {
-  "cash": 68.20000000000056,
+  "cash": 244.88000000000056,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -24,12 +24,6 @@
       "shares": 1,
       "cost_basis": 161.94,
       "avg_price": 161.94
-    },
-    "HOOD": {
-      "symbol": "HOOD",
-      "shares": 2,
-      "cost_basis": 165.16,
-      "avg_price": 82.58
     },
     "PINS": {
       "symbol": "PINS",
@@ -2586,6 +2580,14 @@
       "shares": 5,
       "price": 5.17,
       "total": 25.85
+    },
+    {
+      "timestamp": "2026-02-09T12:58:18.551042",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 88.34,
+      "total": 176.68
     }
   ],
   "value_history": [
@@ -4406,6 +4408,12 @@
       "total_value": 896.7,
       "cash": 68.2,
       "holdings_value": 828.5
+    },
+    {
+      "timestamp": "2026-02-09T12:58:22.120336",
+      "total_value": 897.11,
+      "cash": 244.88,
+      "holdings_value": 652.23
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
