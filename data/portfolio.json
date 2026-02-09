@@ -1,5 +1,5 @@
 {
-  "cash": 94.05000000000057,
+  "cash": 68.20000000000056,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -42,6 +42,12 @@
       "shares": 1,
       "cost_basis": 58.2,
       "avg_price": 58.2
+    },
+    "SNAP": {
+      "symbol": "SNAP",
+      "shares": 5,
+      "cost_basis": 25.85,
+      "avg_price": 5.17
     }
   },
   "transactions": [
@@ -2572,6 +2578,14 @@
       "shares": 1,
       "price": 58.2,
       "total": 58.2
+    },
+    {
+      "timestamp": "2026-02-09T12:48:37.356509",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 5,
+      "price": 5.17,
+      "total": 25.85
     }
   ],
   "value_history": [
@@ -4386,6 +4400,12 @@
       "total_value": 895.1,
       "cash": 94.05,
       "holdings_value": 801.05
+    },
+    {
+      "timestamp": "2026-02-09T12:48:41.298937",
+      "total_value": 896.7,
+      "cash": 68.2,
+      "holdings_value": 828.5
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
