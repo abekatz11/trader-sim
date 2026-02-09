@@ -1,5 +1,5 @@
 {
-  "cash": 85.53000000000057,
+  "cash": 94.05000000000057,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -31,11 +31,17 @@
       "cost_basis": 165.16,
       "avg_price": 82.58
     },
-    "RBLX": {
-      "symbol": "RBLX",
-      "shares": 2,
-      "cost_basis": 135.32,
-      "avg_price": 67.66
+    "PINS": {
+      "symbol": "PINS",
+      "shares": 4,
+      "cost_basis": 80.08,
+      "avg_price": 20.02
+    },
+    "AFRM": {
+      "symbol": "AFRM",
+      "shares": 1,
+      "cost_basis": 58.2,
+      "avg_price": 58.2
     }
   },
   "transactions": [
@@ -2542,6 +2548,30 @@
       "shares": 2,
       "price": 67.66,
       "total": 135.32
+    },
+    {
+      "timestamp": "2026-02-09T12:38:57.081728",
+      "action": "SELL",
+      "symbol": "RBLX",
+      "shares": 2,
+      "price": 73.4,
+      "total": 146.8
+    },
+    {
+      "timestamp": "2026-02-09T12:39:07.618966",
+      "action": "BUY",
+      "symbol": "PINS",
+      "shares": 4,
+      "price": 20.02,
+      "total": 80.08
+    },
+    {
+      "timestamp": "2026-02-09T12:39:25.947055",
+      "action": "BUY",
+      "symbol": "AFRM",
+      "shares": 1,
+      "price": 58.2,
+      "total": 58.2
     }
   ],
   "value_history": [
@@ -4338,6 +4368,24 @@
       "total_value": 855.16,
       "cash": 85.53,
       "holdings_value": 769.63
+    },
+    {
+      "timestamp": "2026-02-09T12:38:59.638700",
+      "total_value": 895.4,
+      "cash": 232.33,
+      "holdings_value": 663.07
+    },
+    {
+      "timestamp": "2026-02-09T12:39:10.665461",
+      "total_value": 895.76,
+      "cash": 152.25,
+      "holdings_value": 743.51
+    },
+    {
+      "timestamp": "2026-02-09T12:39:29.492975",
+      "total_value": 895.1,
+      "cash": 94.05,
+      "holdings_value": 801.05
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
