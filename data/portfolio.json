@@ -1,5 +1,5 @@
 {
-  "cash": 126.97000000000055,
+  "cash": 27.070000000000547,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -42,6 +42,12 @@
       "shares": 1,
       "cost_basis": 27.14,
       "avg_price": 27.14
+    },
+    "PINS": {
+      "symbol": "PINS",
+      "shares": 5,
+      "cost_basis": 99.9,
+      "avg_price": 19.98
     }
   },
   "transactions": [
@@ -2620,6 +2626,14 @@
       "shares": 4,
       "price": 19.98,
       "total": 79.92
+    },
+    {
+      "timestamp": "2026-02-09T13:54:41.137449",
+      "action": "BUY",
+      "symbol": "PINS",
+      "shares": 5,
+      "price": 19.98,
+      "total": 99.9
     }
   ],
   "value_history": [
@@ -4470,6 +4484,12 @@
       "total_value": 894.18,
       "cash": 126.97,
       "holdings_value": 767.21
+    },
+    {
+      "timestamp": "2026-02-09T13:54:45.155521",
+      "total_value": 893.89,
+      "cash": 27.07,
+      "holdings_value": 866.82
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
