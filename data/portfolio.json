@@ -1,17 +1,11 @@
 {
-  "cash": 206.24000000000055,
+  "cash": 81.78000000000057,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
       "shares": 7,
       "cost_basis": 147.21,
       "avg_price": 21.03
-    },
-    "COIN": {
-      "symbol": "COIN",
-      "shares": 1,
-      "cost_basis": 161.94,
-      "avg_price": 161.94
     },
     "AFRM": {
       "symbol": "AFRM",
@@ -33,9 +27,15 @@
     },
     "SNAP": {
       "symbol": "SNAP",
-      "shares": 14,
-      "cost_basis": 71.1,
-      "avg_price": 5.08
+      "shares": 39,
+      "cost_basis": 196.35,
+      "avg_price": 5.03
+    },
+    "HOOD": {
+      "symbol": "HOOD",
+      "shares": 2,
+      "cost_basis": 150.42,
+      "avg_price": 75.21
     }
   },
   "transactions": [
@@ -2670,6 +2670,30 @@
       "shares": 2,
       "price": 19.58,
       "total": 39.16
+    },
+    {
+      "timestamp": "2026-02-11T10:29:14.388743",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 151.21,
+      "total": 151.21
+    },
+    {
+      "timestamp": "2026-02-11T10:29:24.841955",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 25,
+      "price": 5.01,
+      "total": 125.25
+    },
+    {
+      "timestamp": "2026-02-11T10:29:35.423281",
+      "action": "BUY",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 75.21,
+      "total": 150.42
     }
   ],
   "value_history": [
@@ -4562,6 +4586,24 @@
       "total_value": 789.25,
       "cash": 206.24,
       "holdings_value": 583.01
+    },
+    {
+      "timestamp": "2026-02-11T10:29:16.750894",
+      "total_value": 790.17,
+      "cash": 357.45,
+      "holdings_value": 432.72
+    },
+    {
+      "timestamp": "2026-02-11T10:29:27.382899",
+      "total_value": 789.67,
+      "cash": 232.2,
+      "holdings_value": 557.47
+    },
+    {
+      "timestamp": "2026-02-11T10:29:38.471445",
+      "total_value": 789.62,
+      "cash": 81.78,
+      "holdings_value": 707.84
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
