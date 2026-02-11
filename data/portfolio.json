@@ -1,5 +1,5 @@
 {
-  "cash": 43.13000000000031,
+  "cash": 57.67000000000031,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -43,11 +43,11 @@
       "cost_basis": 95.8,
       "avg_price": 19.16
     },
-    "CRSP": {
-      "symbol": "CRSP",
+    "UPST": {
+      "symbol": "UPST",
       "shares": 1,
-      "cost_basis": 48.3,
-      "avg_price": 48.3
+      "cost_basis": 33.63,
+      "avg_price": 33.63
     }
   },
   "transactions": [
@@ -3434,6 +3434,22 @@
       "shares": 1,
       "price": 48.3,
       "total": 48.3
+    },
+    {
+      "timestamp": "2026-02-11T15:23:09.588883",
+      "action": "SELL",
+      "symbol": "CRSP",
+      "shares": 1,
+      "price": 48.17,
+      "total": 48.17
+    },
+    {
+      "timestamp": "2026-02-11T15:23:24.118243",
+      "action": "BUY",
+      "symbol": "UPST",
+      "shares": 1,
+      "price": 33.63,
+      "total": 33.63
     }
   ],
   "value_history": [
@@ -5890,6 +5906,18 @@
       "total_value": 787.84,
       "cash": 43.13,
       "holdings_value": 744.71
+    },
+    {
+      "timestamp": "2026-02-11T15:23:13.066313",
+      "total_value": 785.65,
+      "cash": 91.3,
+      "holdings_value": 694.35
+    },
+    {
+      "timestamp": "2026-02-11T15:23:28.152574",
+      "total_value": 785.87,
+      "cash": 57.67,
+      "holdings_value": 728.2
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
