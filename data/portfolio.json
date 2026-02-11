@@ -1,5 +1,5 @@
 {
-  "cash": 247.6100000000004,
+  "cash": 153.64000000000038,
   "holdings": {
     "MARA": {
       "symbol": "MARA",
@@ -19,11 +19,11 @@
       "cost_basis": 151.4,
       "avg_price": 151.4
     },
-    "TTD": {
-      "symbol": "TTD",
-      "shares": 3,
-      "cost_basis": 82.17,
-      "avg_price": 27.39
+    "SNAP": {
+      "symbol": "SNAP",
+      "shares": 35,
+      "cost_basis": 176.05,
+      "avg_price": 5.03
     }
   },
   "transactions": [
@@ -2882,6 +2882,22 @@
       "shares": 3,
       "price": 27.39,
       "total": 82.17
+    },
+    {
+      "timestamp": "2026-02-11T11:42:41.724071",
+      "action": "SELL",
+      "symbol": "TTD",
+      "shares": 3,
+      "price": 27.36,
+      "total": 82.08
+    },
+    {
+      "timestamp": "2026-02-11T11:42:48.270612",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 35,
+      "price": 5.03,
+      "total": 176.05
     }
   ],
   "value_history": [
@@ -4942,6 +4958,18 @@
       "total_value": 788.21,
       "cash": 247.61,
       "holdings_value": 540.6
+    },
+    {
+      "timestamp": "2026-02-11T11:42:43.152365",
+      "total_value": 788.89,
+      "cash": 329.69,
+      "holdings_value": 459.2
+    },
+    {
+      "timestamp": "2026-02-11T11:42:50.386284",
+      "total_value": 788.77,
+      "cash": 153.64,
+      "holdings_value": 635.13
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
