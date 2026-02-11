@@ -1,18 +1,6 @@
 {
-  "cash": 87.26000000000056,
+  "cash": 290.56000000000057,
   "holdings": {
-    "SOFI": {
-      "symbol": "SOFI",
-      "shares": 7,
-      "cost_basis": 147.21,
-      "avg_price": 21.03
-    },
-    "PINS": {
-      "symbol": "PINS",
-      "shares": 7,
-      "cost_basis": 139.06,
-      "avg_price": 19.87
-    },
     "SNAP": {
       "symbol": "SNAP",
       "shares": 39,
@@ -30,6 +18,12 @@
       "shares": 10,
       "cost_basis": 77.0,
       "avg_price": 7.7
+    },
+    "MRNA": {
+      "symbol": "MRNA",
+      "shares": 2,
+      "cost_basis": 75.44,
+      "avg_price": 37.72
     }
   },
   "transactions": [
@@ -2712,6 +2706,30 @@
       "shares": 10,
       "price": 7.7,
       "total": 77.0
+    },
+    {
+      "timestamp": "2026-02-11T10:47:24.075713",
+      "action": "SELL",
+      "symbol": "SOFI",
+      "shares": 7,
+      "price": 20.35,
+      "total": 142.45
+    },
+    {
+      "timestamp": "2026-02-11T10:47:26.577000",
+      "action": "SELL",
+      "symbol": "PINS",
+      "shares": 7,
+      "price": 19.47,
+      "total": 136.29
+    },
+    {
+      "timestamp": "2026-02-11T10:47:33.088876",
+      "action": "BUY",
+      "symbol": "MRNA",
+      "shares": 2,
+      "price": 37.72,
+      "total": 75.44
     }
   ],
   "value_history": [
@@ -4640,6 +4658,24 @@
       "total_value": 790.13,
       "cash": 87.26,
       "holdings_value": 702.87
+    },
+    {
+      "timestamp": "2026-02-11T10:47:26.033684",
+      "total_value": 788.36,
+      "cash": 229.71,
+      "holdings_value": 558.65
+    },
+    {
+      "timestamp": "2026-02-11T10:47:28.049640",
+      "total_value": 788.51,
+      "cash": 366.0,
+      "holdings_value": 422.51
+    },
+    {
+      "timestamp": "2026-02-11T10:47:35.098769",
+      "total_value": 788.63,
+      "cash": 290.56,
+      "holdings_value": 498.07
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
