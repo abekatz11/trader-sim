@@ -1,5 +1,5 @@
 {
-  "cash": 168.05000000000032,
+  "cash": 27.45000000000033,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -43,11 +43,17 @@
       "cost_basis": 40.47,
       "avg_price": 40.47
     },
-    "NVAX": {
-      "symbol": "NVAX",
-      "shares": 6,
-      "cost_basis": 55.38,
-      "avg_price": 9.23
+    "SNAP": {
+      "symbol": "SNAP",
+      "shares": 20,
+      "cost_basis": 100.0,
+      "avg_price": 5.0
+    },
+    "PINS": {
+      "symbol": "PINS",
+      "shares": 5,
+      "cost_basis": 95.5,
+      "avg_price": 19.1
     }
   },
   "transactions": [
@@ -3498,6 +3504,30 @@
       "shares": 6,
       "price": 9.23,
       "total": 55.38
+    },
+    {
+      "timestamp": "2026-02-11T15:43:14.975348",
+      "action": "SELL",
+      "symbol": "NVAX",
+      "shares": 6,
+      "price": 9.15,
+      "total": 54.9
+    },
+    {
+      "timestamp": "2026-02-11T15:43:30.464714",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 20,
+      "price": 5.0,
+      "total": 100.0
+    },
+    {
+      "timestamp": "2026-02-11T15:43:47.123195",
+      "action": "BUY",
+      "symbol": "PINS",
+      "shares": 5,
+      "price": 19.1,
+      "total": 95.5
     }
   ],
   "value_history": [
@@ -6002,6 +6032,24 @@
       "total_value": 782.7,
       "cash": 168.05,
       "holdings_value": 614.65
+    },
+    {
+      "timestamp": "2026-02-11T15:43:18.494581",
+      "total_value": 786.69,
+      "cash": 222.95,
+      "holdings_value": 563.74
+    },
+    {
+      "timestamp": "2026-02-11T15:43:34.565514",
+      "total_value": 786.84,
+      "cash": 122.95,
+      "holdings_value": 663.89
+    },
+    {
+      "timestamp": "2026-02-11T15:43:52.603759",
+      "total_value": 787.07,
+      "cash": 27.45,
+      "holdings_value": 759.62
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
