@@ -1,5 +1,5 @@
 {
-  "cash": 211.0700000000004,
+  "cash": 200.86000000000035,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -13,23 +13,17 @@
       "cost_basis": 151.4,
       "avg_price": 151.4
     },
-    "SNAP": {
-      "symbol": "SNAP",
-      "shares": 28,
-      "cost_basis": 140.68,
-      "avg_price": 5.02
-    },
-    "PINS": {
-      "symbol": "PINS",
-      "shares": 2,
-      "cost_basis": 38.5,
-      "avg_price": 19.25
-    },
     "PLUG": {
       "symbol": "PLUG",
       "shares": 30,
       "cost_basis": 60.0,
       "avg_price": 2.0
+    },
+    "MARA": {
+      "symbol": "MARA",
+      "shares": 25,
+      "cost_basis": 188.75,
+      "avg_price": 7.55
     }
   },
   "transactions": [
@@ -2984,6 +2978,30 @@
       "shares": 30,
       "price": 2.0,
       "total": 60.0
+    },
+    {
+      "timestamp": "2026-02-11T12:16:59.246574",
+      "action": "SELL",
+      "symbol": "SNAP",
+      "shares": 28,
+      "price": 5.01,
+      "total": 140.28
+    },
+    {
+      "timestamp": "2026-02-11T12:17:02.342906",
+      "action": "SELL",
+      "symbol": "PINS",
+      "shares": 2,
+      "price": 19.13,
+      "total": 38.26
+    },
+    {
+      "timestamp": "2026-02-11T12:17:08.799010",
+      "action": "BUY",
+      "symbol": "MARA",
+      "shares": 25,
+      "price": 7.55,
+      "total": 188.75
     }
   ],
   "value_history": [
@@ -5116,6 +5134,24 @@
       "total_value": 783.13,
       "cash": 211.07,
       "holdings_value": 572.06
+    },
+    {
+      "timestamp": "2026-02-11T12:17:01.809840",
+      "total_value": 783.39,
+      "cash": 351.35,
+      "holdings_value": 432.04
+    },
+    {
+      "timestamp": "2026-02-11T12:17:03.828165",
+      "total_value": 783.37,
+      "cash": 389.61,
+      "holdings_value": 393.76
+    },
+    {
+      "timestamp": "2026-02-11T12:17:10.853963",
+      "total_value": 782.98,
+      "cash": 200.86,
+      "holdings_value": 582.12
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
