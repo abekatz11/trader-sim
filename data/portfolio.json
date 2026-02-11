@@ -1,5 +1,5 @@
 {
-  "cash": 267.8000000000003,
+  "cash": 124.56000000000029,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -25,12 +25,6 @@
       "cost_basis": 150.26,
       "avg_price": 150.26
     },
-    "PATH": {
-      "symbol": "PATH",
-      "shares": 2,
-      "cost_basis": 23.06,
-      "avg_price": 11.53
-    },
     "MARA": {
       "symbol": "MARA",
       "shares": 4,
@@ -42,6 +36,12 @@
       "shares": 2,
       "cost_basis": 28.76,
       "avg_price": 14.38
+    },
+    "UPST": {
+      "symbol": "UPST",
+      "shares": 5,
+      "cost_basis": 166.5,
+      "avg_price": 33.3
     }
   },
   "transactions": [
@@ -3316,6 +3316,22 @@
       "shares": 2,
       "price": 14.38,
       "total": 28.76
+    },
+    {
+      "timestamp": "2026-02-11T13:41:12.638645",
+      "action": "SELL",
+      "symbol": "PATH",
+      "shares": 2,
+      "price": 11.63,
+      "total": 23.26
+    },
+    {
+      "timestamp": "2026-02-11T13:41:25.282307",
+      "action": "BUY",
+      "symbol": "UPST",
+      "shares": 5,
+      "price": 33.3,
+      "total": 166.5
     }
   ],
   "value_history": [
@@ -5688,6 +5704,18 @@
       "total_value": 779.74,
       "cash": 267.8,
       "holdings_value": 511.94
+    },
+    {
+      "timestamp": "2026-02-11T13:41:15.708675",
+      "total_value": 779.96,
+      "cash": 291.06,
+      "holdings_value": 488.9
+    },
+    {
+      "timestamp": "2026-02-11T13:41:28.764502",
+      "total_value": 779.64,
+      "cash": 124.56,
+      "holdings_value": 655.08
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
