@@ -1,23 +1,11 @@
 {
-  "cash": 81.78000000000057,
+  "cash": 87.26000000000056,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
       "shares": 7,
       "cost_basis": 147.21,
       "avg_price": 21.03
-    },
-    "AFRM": {
-      "symbol": "AFRM",
-      "shares": 1,
-      "cost_basis": 58.2,
-      "avg_price": 58.2
-    },
-    "DKNG": {
-      "symbol": "DKNG",
-      "shares": 1,
-      "cost_basis": 27.14,
-      "avg_price": 27.14
     },
     "PINS": {
       "symbol": "PINS",
@@ -36,6 +24,12 @@
       "shares": 2,
       "cost_basis": 150.42,
       "avg_price": 75.21
+    },
+    "MARA": {
+      "symbol": "MARA",
+      "shares": 10,
+      "cost_basis": 77.0,
+      "avg_price": 7.7
     }
   },
   "transactions": [
@@ -2694,6 +2688,30 @@
       "shares": 2,
       "price": 75.21,
       "total": 150.42
+    },
+    {
+      "timestamp": "2026-02-11T10:39:13.084659",
+      "action": "SELL",
+      "symbol": "AFRM",
+      "shares": 1,
+      "price": 56.37,
+      "total": 56.37
+    },
+    {
+      "timestamp": "2026-02-11T10:39:16.231941",
+      "action": "SELL",
+      "symbol": "DKNG",
+      "shares": 1,
+      "price": 26.11,
+      "total": 26.11
+    },
+    {
+      "timestamp": "2026-02-11T10:39:24.695185",
+      "action": "BUY",
+      "symbol": "MARA",
+      "shares": 10,
+      "price": 7.7,
+      "total": 77.0
     }
   ],
   "value_history": [
@@ -4604,6 +4622,24 @@
       "total_value": 789.62,
       "cash": 81.78,
       "holdings_value": 707.84
+    },
+    {
+      "timestamp": "2026-02-11T10:39:15.693422",
+      "total_value": 790.39,
+      "cash": 138.15,
+      "holdings_value": 652.24
+    },
+    {
+      "timestamp": "2026-02-11T10:39:18.139914",
+      "total_value": 790.2,
+      "cash": 164.26,
+      "holdings_value": 625.94
+    },
+    {
+      "timestamp": "2026-02-11T10:39:27.218959",
+      "total_value": 790.13,
+      "cash": 87.26,
+      "holdings_value": 702.87
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
