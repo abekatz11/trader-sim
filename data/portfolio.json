@@ -1,5 +1,5 @@
 {
-  "cash": 43.800000000000466,
+  "cash": 247.6100000000004,
   "holdings": {
     "MARA": {
       "symbol": "MARA",
@@ -19,17 +19,11 @@
       "cost_basis": 151.4,
       "avg_price": 151.4
     },
-    "HOOD": {
-      "symbol": "HOOD",
-      "shares": 2,
-      "cost_basis": 152.5,
-      "avg_price": 76.25
-    },
-    "UPST": {
-      "symbol": "UPST",
-      "shares": 4,
-      "cost_basis": 134.68,
-      "avg_price": 33.67
+    "TTD": {
+      "symbol": "TTD",
+      "shares": 3,
+      "cost_basis": 82.17,
+      "avg_price": 27.39
     }
   },
   "transactions": [
@@ -2864,6 +2858,30 @@
       "shares": 4,
       "price": 33.67,
       "total": 134.68
+    },
+    {
+      "timestamp": "2026-02-11T11:34:59.250427",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 75.75,
+      "total": 151.5
+    },
+    {
+      "timestamp": "2026-02-11T11:35:01.717531",
+      "action": "SELL",
+      "symbol": "UPST",
+      "shares": 4,
+      "price": 33.62,
+      "total": 134.48
+    },
+    {
+      "timestamp": "2026-02-11T11:35:08.304779",
+      "action": "BUY",
+      "symbol": "TTD",
+      "shares": 3,
+      "price": 27.39,
+      "total": 82.17
     }
   ],
   "value_history": [
@@ -4906,6 +4924,24 @@
       "total_value": 790.76,
       "cash": 43.8,
       "holdings_value": 746.96
+    },
+    {
+      "timestamp": "2026-02-11T11:35:01.282774",
+      "total_value": 788.19,
+      "cash": 195.3,
+      "holdings_value": 592.89
+    },
+    {
+      "timestamp": "2026-02-11T11:35:03.177049",
+      "total_value": 788.28,
+      "cash": 329.78,
+      "holdings_value": 458.5
+    },
+    {
+      "timestamp": "2026-02-11T11:35:10.280815",
+      "total_value": 788.21,
+      "cash": 247.61,
+      "holdings_value": 540.6
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
