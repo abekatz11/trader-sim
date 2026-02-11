@@ -1,5 +1,5 @@
 {
-  "cash": 193.7100000000003,
+  "cash": 160.89000000000033,
   "holdings": {
     "PLUG": {
       "symbol": "PLUG",
@@ -19,11 +19,11 @@
       "cost_basis": 189.62,
       "avg_price": 4.99
     },
-    "HOOD": {
-      "symbol": "HOOD",
-      "shares": 2,
-      "cost_basis": 150.34,
-      "avg_price": 75.17
+    "SOFI": {
+      "symbol": "SOFI",
+      "shares": 9,
+      "cost_basis": 182.88,
+      "avg_price": 20.32
     }
   },
   "transactions": [
@@ -3146,6 +3146,22 @@
       "shares": 2,
       "price": 75.17,
       "total": 150.34
+    },
+    {
+      "timestamp": "2026-02-11T12:57:02.181476",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 2,
+      "price": 75.03,
+      "total": 150.06
+    },
+    {
+      "timestamp": "2026-02-11T12:57:08.742770",
+      "action": "BUY",
+      "symbol": "SOFI",
+      "shares": 9,
+      "price": 20.32,
+      "total": 182.88
     }
   ],
   "value_history": [
@@ -5404,6 +5420,18 @@
       "total_value": 781.3,
       "cash": 193.71,
       "holdings_value": 587.59
+    },
+    {
+      "timestamp": "2026-02-11T12:57:03.733832",
+      "total_value": 779.11,
+      "cash": 343.77,
+      "holdings_value": 435.34
+    },
+    {
+      "timestamp": "2026-02-11T12:57:10.740462",
+      "total_value": 779.11,
+      "cash": 160.89,
+      "holdings_value": 618.22
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
