@@ -1,5 +1,5 @@
 {
-  "cash": 30.560000000000294,
+  "cash": 64.5100000000003,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -48,12 +48,6 @@
       "shares": 1,
       "cost_basis": 27.3,
       "avg_price": 27.3
-    },
-    "UPST": {
-      "symbol": "UPST",
-      "shares": 1,
-      "cost_basis": 33.37,
-      "avg_price": 33.37
     }
   },
   "transactions": [
@@ -3400,6 +3394,14 @@
       "shares": 1,
       "price": 33.37,
       "total": 33.37
+    },
+    {
+      "timestamp": "2026-02-11T14:25:47.825232",
+      "action": "SELL",
+      "symbol": "UPST",
+      "shares": 1,
+      "price": 33.95,
+      "total": 33.95
     }
   ],
   "value_history": [
@@ -5826,6 +5828,12 @@
       "total_value": 783.62,
       "cash": 30.56,
       "holdings_value": 753.06
+    },
+    {
+      "timestamp": "2026-02-11T14:26:09.818805",
+      "total_value": 789.95,
+      "cash": 64.51,
+      "holdings_value": 725.44
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
