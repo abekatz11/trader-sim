@@ -1,17 +1,11 @@
 {
-  "cash": 57.67000000000031,
+  "cash": 168.05000000000032,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
       "shares": 9,
       "cost_basis": 182.88,
       "avg_price": 20.32
-    },
-    "SNAP": {
-      "symbol": "SNAP",
-      "shares": 25,
-      "cost_basis": 125.14999999999999,
-      "avg_price": 5.01
     },
     "COIN": {
       "symbol": "COIN",
@@ -37,17 +31,23 @@
       "cost_basis": 76.25,
       "avg_price": 76.25
     },
-    "PINS": {
-      "symbol": "PINS",
-      "shares": 5,
-      "cost_basis": 95.8,
-      "avg_price": 19.16
-    },
-    "UPST": {
-      "symbol": "UPST",
+    "CRSP": {
+      "symbol": "CRSP",
       "shares": 1,
-      "cost_basis": 33.63,
-      "avg_price": 33.63
+      "cost_basis": 47.95,
+      "avg_price": 47.95
+    },
+    "MRNA": {
+      "symbol": "MRNA",
+      "shares": 1,
+      "cost_basis": 40.47,
+      "avg_price": 40.47
+    },
+    "NVAX": {
+      "symbol": "NVAX",
+      "shares": 6,
+      "cost_basis": 55.38,
+      "avg_price": 9.23
     }
   },
   "transactions": [
@@ -3450,6 +3450,54 @@
       "shares": 1,
       "price": 33.63,
       "total": 33.63
+    },
+    {
+      "timestamp": "2026-02-11T15:32:52.349587",
+      "action": "SELL",
+      "symbol": "SNAP",
+      "shares": 25,
+      "price": 5.0,
+      "total": 125.0
+    },
+    {
+      "timestamp": "2026-02-11T15:32:56.452749",
+      "action": "SELL",
+      "symbol": "PINS",
+      "shares": 5,
+      "price": 19.11,
+      "total": 95.55
+    },
+    {
+      "timestamp": "2026-02-11T15:32:59.915318",
+      "action": "SELL",
+      "symbol": "UPST",
+      "shares": 1,
+      "price": 33.63,
+      "total": 33.63
+    },
+    {
+      "timestamp": "2026-02-11T15:33:10.469481",
+      "action": "BUY",
+      "symbol": "CRSP",
+      "shares": 1,
+      "price": 47.95,
+      "total": 47.95
+    },
+    {
+      "timestamp": "2026-02-11T15:33:23.095234",
+      "action": "BUY",
+      "symbol": "MRNA",
+      "shares": 1,
+      "price": 40.47,
+      "total": 40.47
+    },
+    {
+      "timestamp": "2026-02-11T15:33:37.697134",
+      "action": "BUY",
+      "symbol": "NVAX",
+      "shares": 6,
+      "price": 9.23,
+      "total": 55.38
     }
   ],
   "value_history": [
@@ -5918,6 +5966,42 @@
       "total_value": 785.87,
       "cash": 57.67,
       "holdings_value": 728.2
+    },
+    {
+      "timestamp": "2026-02-11T15:32:55.887110",
+      "total_value": 783.18,
+      "cash": 182.67,
+      "holdings_value": 600.51
+    },
+    {
+      "timestamp": "2026-02-11T15:32:59.423678",
+      "total_value": 783.14,
+      "cash": 278.22,
+      "holdings_value": 504.92
+    },
+    {
+      "timestamp": "2026-02-11T15:33:02.424017",
+      "total_value": 783.12,
+      "cash": 311.85,
+      "holdings_value": 471.27
+    },
+    {
+      "timestamp": "2026-02-11T15:33:13.549820",
+      "total_value": 783.4,
+      "cash": 263.9,
+      "holdings_value": 519.5
+    },
+    {
+      "timestamp": "2026-02-11T15:33:26.661649",
+      "total_value": 783.15,
+      "cash": 223.43,
+      "holdings_value": 559.72
+    },
+    {
+      "timestamp": "2026-02-11T15:33:41.761082",
+      "total_value": 782.7,
+      "cash": 168.05,
+      "holdings_value": 614.65
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
