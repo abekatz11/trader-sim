@@ -1,5 +1,5 @@
 {
-  "cash": 187.7800000000003,
+  "cash": 201.02000000000035,
   "holdings": {
     "PLUG": {
       "symbol": "PLUG",
@@ -13,23 +13,17 @@
       "cost_basis": 188.75,
       "avg_price": 7.55
     },
-    "SNAP": {
-      "symbol": "SNAP",
-      "shares": 35,
-      "cost_basis": 175.35,
-      "avg_price": 5.01
+    "AFRM": {
+      "symbol": "AFRM",
+      "shares": 3,
+      "cost_basis": 166.47,
+      "avg_price": 55.49
     },
-    "COIN": {
-      "symbol": "COIN",
-      "shares": 1,
-      "cost_basis": 150.15,
-      "avg_price": 150.15
-    },
-    "SOFI": {
-      "symbol": "SOFI",
-      "shares": 1,
-      "cost_basis": 20.41,
-      "avg_price": 20.41
+    "UPST": {
+      "symbol": "UPST",
+      "shares": 5,
+      "cost_basis": 166.85,
+      "avg_price": 33.37
     }
   },
   "transactions": [
@@ -3080,6 +3074,46 @@
       "shares": 1,
       "price": 20.41,
       "total": 20.41
+    },
+    {
+      "timestamp": "2026-02-11T12:41:26.977871",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 150.12,
+      "total": 150.12
+    },
+    {
+      "timestamp": "2026-02-11T12:41:29.460624",
+      "action": "SELL",
+      "symbol": "SOFI",
+      "shares": 1,
+      "price": 20.39,
+      "total": 20.39
+    },
+    {
+      "timestamp": "2026-02-11T12:41:31.554122",
+      "action": "SELL",
+      "symbol": "SNAP",
+      "shares": 35,
+      "price": 5.03,
+      "total": 176.05
+    },
+    {
+      "timestamp": "2026-02-11T12:41:35.969873",
+      "action": "BUY",
+      "symbol": "AFRM",
+      "shares": 3,
+      "price": 55.49,
+      "total": 166.47
+    },
+    {
+      "timestamp": "2026-02-11T12:41:42.988577",
+      "action": "BUY",
+      "symbol": "UPST",
+      "shares": 5,
+      "price": 33.37,
+      "total": 166.85
     }
   ],
   "value_history": [
@@ -5284,6 +5318,36 @@
       "total_value": 782.94,
       "cash": 187.78,
       "holdings_value": 595.16
+    },
+    {
+      "timestamp": "2026-02-11T12:41:28.931599",
+      "total_value": 781.54,
+      "cash": 337.9,
+      "holdings_value": 443.64
+    },
+    {
+      "timestamp": "2026-02-11T12:41:31.074909",
+      "total_value": 781.54,
+      "cash": 358.29,
+      "holdings_value": 423.25
+    },
+    {
+      "timestamp": "2026-02-11T12:41:32.633940",
+      "total_value": 781.54,
+      "cash": 534.34,
+      "holdings_value": 247.2
+    },
+    {
+      "timestamp": "2026-02-11T12:41:37.977627",
+      "total_value": 782.12,
+      "cash": 367.87,
+      "holdings_value": 414.25
+    },
+    {
+      "timestamp": "2026-02-11T12:41:45.001748",
+      "total_value": 781.52,
+      "cash": 201.02,
+      "holdings_value": 580.5
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
