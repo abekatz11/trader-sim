@@ -1,5 +1,5 @@
 {
-  "cash": 169.04000000000033,
+  "cash": 75.07000000000033,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
@@ -25,12 +25,6 @@
       "cost_basis": 76.25,
       "avg_price": 76.25
     },
-    "CRSP": {
-      "symbol": "CRSP",
-      "shares": 1,
-      "cost_basis": 47.95,
-      "avg_price": 47.95
-    },
     "DKNG": {
       "symbol": "DKNG",
       "shares": 1,
@@ -48,6 +42,18 @@
       "shares": 5,
       "cost_basis": 95.35,
       "avg_price": 19.07
+    },
+    "SNAP": {
+      "symbol": "SNAP",
+      "shares": 20,
+      "cost_basis": 95.19999999999999,
+      "avg_price": 4.76
+    },
+    "AFRM": {
+      "symbol": "AFRM",
+      "shares": 1,
+      "cost_basis": 52.62,
+      "avg_price": 52.62
     }
   },
   "transactions": [
@@ -3578,6 +3584,30 @@
       "shares": 5,
       "price": 19.07,
       "total": 95.35
+    },
+    {
+      "timestamp": "2026-02-18T10:03:49.272611",
+      "action": "SELL",
+      "symbol": "CRSP",
+      "shares": 1,
+      "price": 53.85,
+      "total": 53.85
+    },
+    {
+      "timestamp": "2026-02-18T10:04:03.959105",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 20,
+      "price": 4.76,
+      "total": 95.2
+    },
+    {
+      "timestamp": "2026-02-18T10:04:20.722118",
+      "action": "BUY",
+      "symbol": "AFRM",
+      "shares": 1,
+      "price": 52.62,
+      "total": 52.62
     }
   ],
   "value_history": [
@@ -6142,6 +6172,24 @@
       "total_value": 784.23,
       "cash": 169.04,
       "holdings_value": 615.19
+    },
+    {
+      "timestamp": "2026-02-18T10:03:52.804806",
+      "total_value": 790.48,
+      "cash": 222.89,
+      "holdings_value": 567.59
+    },
+    {
+      "timestamp": "2026-02-18T10:04:08.137131",
+      "total_value": 789.97,
+      "cash": 127.69,
+      "holdings_value": 662.28
+    },
+    {
+      "timestamp": "2026-02-18T10:04:25.833824",
+      "total_value": 790.32,
+      "cash": 75.07,
+      "holdings_value": 715.25
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
