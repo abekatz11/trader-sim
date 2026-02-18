@@ -1,12 +1,6 @@
 {
-  "cash": 75.07000000000033,
+  "cash": 190.67000000000033,
   "holdings": {
-    "SOFI": {
-      "symbol": "SOFI",
-      "shares": 9,
-      "cost_basis": 182.88,
-      "avg_price": 20.32
-    },
     "MARA": {
       "symbol": "MARA",
       "shares": 4,
@@ -15,9 +9,9 @@
     },
     "RIOT": {
       "symbol": "RIOT",
-      "shares": 2,
-      "cost_basis": 28.76,
-      "avg_price": 14.38
+      "shares": 6,
+      "cost_basis": 90.28,
+      "avg_price": 15.05
     },
     "HOOD": {
       "symbol": "HOOD",
@@ -3608,6 +3602,22 @@
       "shares": 1,
       "price": 52.62,
       "total": 52.62
+    },
+    {
+      "timestamp": "2026-02-18T10:14:11.610844",
+      "action": "SELL",
+      "symbol": "SOFI",
+      "shares": 9,
+      "price": 19.68,
+      "total": 177.12
+    },
+    {
+      "timestamp": "2026-02-18T10:14:28.208977",
+      "action": "BUY",
+      "symbol": "RIOT",
+      "shares": 4,
+      "price": 15.38,
+      "total": 61.52
     }
   ],
   "value_history": [
@@ -6190,6 +6200,18 @@
       "total_value": 790.32,
       "cash": 75.07,
       "holdings_value": 715.25
+    },
+    {
+      "timestamp": "2026-02-18T10:14:15.632910",
+      "total_value": 788.13,
+      "cash": 252.19,
+      "holdings_value": 535.94
+    },
+    {
+      "timestamp": "2026-02-18T10:14:32.310459",
+      "total_value": 788.39,
+      "cash": 190.67,
+      "holdings_value": 597.72
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
