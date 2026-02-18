@@ -1,11 +1,11 @@
 {
-  "cash": 190.67000000000033,
+  "cash": 198.42000000000033,
   "holdings": {
     "MARA": {
       "symbol": "MARA",
-      "shares": 4,
-      "cost_basis": 29.44,
-      "avg_price": 7.36
+      "shares": 7,
+      "cost_basis": 52.09,
+      "avg_price": 7.44
     },
     "RIOT": {
       "symbol": "RIOT",
@@ -27,21 +27,15 @@
     },
     "PINS": {
       "symbol": "PINS",
-      "shares": 8,
-      "cost_basis": 129.04,
-      "avg_price": 16.13
+      "shares": 12,
+      "cost_basis": 194.24,
+      "avg_price": 16.19
     },
     "U": {
       "symbol": "U",
       "shares": 5,
       "cost_basis": 95.35,
       "avg_price": 19.07
-    },
-    "SNAP": {
-      "symbol": "SNAP",
-      "shares": 20,
-      "cost_basis": 95.19999999999999,
-      "avg_price": 4.76
     },
     "AFRM": {
       "symbol": "AFRM",
@@ -3618,6 +3612,30 @@
       "shares": 4,
       "price": 15.38,
       "total": 61.52
+    },
+    {
+      "timestamp": "2026-02-18T10:23:50.557733",
+      "action": "SELL",
+      "symbol": "SNAP",
+      "shares": 20,
+      "price": 4.78,
+      "total": 95.6
+    },
+    {
+      "timestamp": "2026-02-18T10:24:05.127414",
+      "action": "BUY",
+      "symbol": "PINS",
+      "shares": 4,
+      "price": 16.3,
+      "total": 65.2
+    },
+    {
+      "timestamp": "2026-02-18T10:24:19.732017",
+      "action": "BUY",
+      "symbol": "MARA",
+      "shares": 3,
+      "price": 7.55,
+      "total": 22.65
     }
   ],
   "value_history": [
@@ -6212,6 +6230,24 @@
       "total_value": 788.39,
       "cash": 190.67,
       "holdings_value": 597.72
+    },
+    {
+      "timestamp": "2026-02-18T10:23:54.081836",
+      "total_value": 787.95,
+      "cash": 286.27,
+      "holdings_value": 501.68
+    },
+    {
+      "timestamp": "2026-02-18T10:24:08.651774",
+      "total_value": 787.78,
+      "cash": 221.07,
+      "holdings_value": 566.71
+    },
+    {
+      "timestamp": "2026-02-18T10:24:23.280949",
+      "total_value": 787.78,
+      "cash": 198.42,
+      "holdings_value": 589.36
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
