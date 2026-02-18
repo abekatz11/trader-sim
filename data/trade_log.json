@@ -14959,6 +14959,104 @@
         }
       ],
       "hold_reasoning": ""
+    },
+    {
+      "timestamp": "2026-02-18T09:45:08.577766",
+      "date": "2026-02-18",
+      "portfolio_value": 783.3,
+      "cash": 223.80000000000035,
+      "positions": 7,
+      "spy_price": 684.07,
+      "holdings": {
+        "SOFI": {
+          "shares": 9,
+          "avg_price": 20.32,
+          "current_price": 19.45,
+          "value": 175.05,
+          "pnl_pct": -4.28
+        },
+        "COIN": {
+          "shares": 1,
+          "avg_price": 150.26,
+          "current_price": 168.82,
+          "value": 168.82,
+          "pnl_pct": 12.35
+        },
+        "MARA": {
+          "shares": 4,
+          "avg_price": 7.36,
+          "current_price": 7.45,
+          "value": 29.8,
+          "pnl_pct": 1.22
+        },
+        "RIOT": {
+          "shares": 2,
+          "avg_price": 14.38,
+          "current_price": 15.51,
+          "value": 31.02,
+          "pnl_pct": 7.86
+        },
+        "HOOD": {
+          "shares": 1,
+          "avg_price": 76.25,
+          "current_price": 74.98,
+          "value": 74.98,
+          "pnl_pct": -1.67
+        },
+        "CRSP": {
+          "shares": 1,
+          "avg_price": 47.95,
+          "current_price": 53.21,
+          "value": 53.21,
+          "pnl_pct": 10.97
+        },
+        "DKNG": {
+          "shares": 1,
+          "avg_price": 23.64,
+          "current_price": 23.35,
+          "value": 23.35,
+          "pnl_pct": -1.23
+        }
+      },
+      "claude_analysis": "Mixed market with select momentum names (RIOT, MRNA) leading while tech (AMD, ZS, DDOG) sells off hard. Cash is nearly depleted at $27.45, limiting new entries significantly.",
+      "executed_trades": [
+        {
+          "action": "SELL",
+          "symbol": "PINS",
+          "shares": 5,
+          "reasoning": "Down -17.9% from entry, well below the -8-10% stop loss threshold. RSI at 13, deeply oversold but below all SMAs with no catalyst - cutting the full losing position to free up ~$78 cash for better opportunities."
+        },
+        {
+          "action": "SELL",
+          "symbol": "MRNA",
+          "shares": 1,
+          "reasoning": "Up +14% and approaching the 15-20% profit target. RSI at 52 still has room but weekly gain is +13.5% - locking in near-target profits before a potential reversal."
+        },
+        {
+          "action": "SELL",
+          "symbol": "SNAP",
+          "shares": 20,
+          "reasoning": "Down -5.8% with RSI at 5 (extreme oversold) but below all SMAs with no momentum. The position size (20 shares) is too large relative to portfolio for a deteriorating stock - cutting to free capital."
+        },
+        {
+          "action": "BUY",
+          "symbol": "DKNG",
+          "shares": 1,
+          "reasoning": "RSI at 26 (oversold), +3.4% today showing early bounce despite weekly weakness. Matches oversold bounce criteria - using proceeds from sells."
+        }
+      ],
+      "skipped_trades": [
+        {
+          "trade": {
+            "action": "BUY",
+            "symbol": "RIOT",
+            "shares": 1,
+            "reasoning": "Strong momentum +5.9% today, RSI 41 with room to run, above SMA 10 and 50. Adding to winning crypto position while trend is intact."
+          },
+          "reason": "Position too small (min $20)"
+        }
+      ],
+      "hold_reasoning": ""
     }
   ]
 }
