@@ -1,5 +1,5 @@
 {
-  "cash": 110.07000000000033,
+  "cash": 62.170000000000336,
   "holdings": {
     "MARA": {
       "symbol": "MARA",
@@ -45,9 +45,9 @@
     },
     "SNAP": {
       "symbol": "SNAP",
-      "shares": 6,
-      "cost_basis": 28.799999999999997,
-      "avg_price": 4.8
+      "shares": 16,
+      "cost_basis": 76.69999999999999,
+      "avg_price": 4.79
     },
     "SOFI": {
       "symbol": "SOFI",
@@ -3664,6 +3664,14 @@
       "shares": 3,
       "price": 19.85,
       "total": 59.55
+    },
+    {
+      "timestamp": "2026-02-18T10:52:30.404875",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 10,
+      "price": 4.79,
+      "total": 47.9
     }
   ],
   "value_history": [
@@ -6288,6 +6296,12 @@
       "total_value": 792.66,
       "cash": 110.07,
       "holdings_value": 682.59
+    },
+    {
+      "timestamp": "2026-02-18T10:52:34.928740",
+      "total_value": 788.73,
+      "cash": 62.17,
+      "holdings_value": 726.56
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
