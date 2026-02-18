@@ -1,5 +1,5 @@
 {
-  "cash": 32.83000000000029,
+  "cash": 57.53000000000029,
   "holdings": {
     "MARA": {
       "symbol": "MARA",
@@ -36,12 +36,6 @@
       "shares": 2,
       "cost_basis": 39.78,
       "avg_price": 19.89
-    },
-    "NIO": {
-      "symbol": "NIO",
-      "shares": 5,
-      "cost_basis": 24.849999999999998,
-      "avg_price": 4.97
     },
     "DKNG": {
       "symbol": "DKNG",
@@ -3786,6 +3780,14 @@
       "shares": 2,
       "price": 23.3,
       "total": 46.6
+    },
+    {
+      "timestamp": "2026-02-18T14:52:10.174108",
+      "action": "SELL",
+      "symbol": "NIO",
+      "shares": 5,
+      "price": 4.94,
+      "total": 24.7
     }
   ],
   "value_history": [
@@ -6506,6 +6508,12 @@
       "total_value": 790.14,
       "cash": 32.83,
       "holdings_value": 757.31
+    },
+    {
+      "timestamp": "2026-02-18T14:52:13.732204",
+      "total_value": 781.3,
+      "cash": 57.53,
+      "holdings_value": 723.77
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
