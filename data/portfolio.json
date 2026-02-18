@@ -1,17 +1,11 @@
 {
-  "cash": 223.80000000000035,
+  "cash": 169.04000000000033,
   "holdings": {
     "SOFI": {
       "symbol": "SOFI",
       "shares": 9,
       "cost_basis": 182.88,
       "avg_price": 20.32
-    },
-    "COIN": {
-      "symbol": "COIN",
-      "shares": 1,
-      "cost_basis": 150.26,
-      "avg_price": 150.26
     },
     "MARA": {
       "symbol": "MARA",
@@ -42,6 +36,18 @@
       "shares": 1,
       "cost_basis": 23.64,
       "avg_price": 23.64
+    },
+    "PINS": {
+      "symbol": "PINS",
+      "shares": 8,
+      "cost_basis": 129.04,
+      "avg_price": 16.13
+    },
+    "U": {
+      "symbol": "U",
+      "shares": 5,
+      "cost_basis": 95.35,
+      "avg_price": 19.07
     }
   },
   "transactions": [
@@ -3548,6 +3554,30 @@
       "shares": 1,
       "price": 23.64,
       "total": 23.64
+    },
+    {
+      "timestamp": "2026-02-18T09:54:01.861073",
+      "action": "SELL",
+      "symbol": "COIN",
+      "shares": 1,
+      "price": 169.63,
+      "total": 169.63
+    },
+    {
+      "timestamp": "2026-02-18T09:54:14.473454",
+      "action": "BUY",
+      "symbol": "PINS",
+      "shares": 8,
+      "price": 16.13,
+      "total": 129.04
+    },
+    {
+      "timestamp": "2026-02-18T09:54:29.114852",
+      "action": "BUY",
+      "symbol": "U",
+      "shares": 5,
+      "price": 19.07,
+      "total": 95.35
     }
   ],
   "value_history": [
@@ -6094,6 +6124,24 @@
       "total_value": 783.45,
       "cash": 223.8,
       "holdings_value": 559.65
+    },
+    {
+      "timestamp": "2026-02-18T09:54:04.887223",
+      "total_value": 784.05,
+      "cash": 393.43,
+      "holdings_value": 390.62
+    },
+    {
+      "timestamp": "2026-02-18T09:54:18.014816",
+      "total_value": 784.37,
+      "cash": 264.39,
+      "holdings_value": 519.98
+    },
+    {
+      "timestamp": "2026-02-18T09:54:33.173318",
+      "total_value": 784.23,
+      "cash": 169.04,
+      "holdings_value": 615.19
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
