@@ -1,5 +1,5 @@
 {
-  "cash": 57.53000000000029,
+  "cash": 63.30000000000028,
   "holdings": {
     "MARA": {
       "symbol": "MARA",
@@ -27,15 +27,9 @@
     },
     "PATH": {
       "symbol": "PATH",
-      "shares": 11,
-      "cost_basis": 125.07000000000001,
-      "avg_price": 11.37
-    },
-    "SOFI": {
-      "symbol": "SOFI",
-      "shares": 2,
-      "cost_basis": 39.78,
-      "avg_price": 19.89
+      "shares": 14,
+      "cost_basis": 158.52,
+      "avg_price": 11.32
     },
     "DKNG": {
       "symbol": "DKNG",
@@ -3788,6 +3782,22 @@
       "shares": 5,
       "price": 4.94,
       "total": 24.7
+    },
+    {
+      "timestamp": "2026-02-18T15:25:07.648516",
+      "action": "SELL",
+      "symbol": "SOFI",
+      "shares": 2,
+      "price": 19.61,
+      "total": 39.22
+    },
+    {
+      "timestamp": "2026-02-18T15:25:20.488758",
+      "action": "BUY",
+      "symbol": "PATH",
+      "shares": 3,
+      "price": 11.15,
+      "total": 33.45
     }
   ],
   "value_history": [
@@ -6514,6 +6524,18 @@
       "total_value": 781.3,
       "cash": 57.53,
       "holdings_value": 723.77
+    },
+    {
+      "timestamp": "2026-02-18T15:25:10.765784",
+      "total_value": 779.47,
+      "cash": 96.75,
+      "holdings_value": 682.72
+    },
+    {
+      "timestamp": "2026-02-18T15:25:23.509040",
+      "total_value": 779.91,
+      "cash": 63.3,
+      "holdings_value": 716.61
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
