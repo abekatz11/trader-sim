@@ -1,5 +1,5 @@
 {
-  "cash": 44.14000000000031,
+  "cash": 146.9100000000003,
   "holdings": {
     "MARA": {
       "symbol": "MARA",
@@ -25,12 +25,6 @@
       "cost_basis": 194.24,
       "avg_price": 16.19
     },
-    "U": {
-      "symbol": "U",
-      "shares": 9,
-      "cost_basis": 170.27,
-      "avg_price": 18.92
-    },
     "SNAP": {
       "symbol": "SNAP",
       "shares": 36,
@@ -42,6 +36,18 @@
       "shares": 3,
       "cost_basis": 34.2,
       "avg_price": 11.4
+    },
+    "SOFI": {
+      "symbol": "SOFI",
+      "shares": 2,
+      "cost_basis": 39.78,
+      "avg_price": 19.89
+    },
+    "NIO": {
+      "symbol": "NIO",
+      "shares": 5,
+      "cost_basis": 24.849999999999998,
+      "avg_price": 4.97
     }
   },
   "transactions": [
@@ -3724,6 +3730,30 @@
       "shares": 15,
       "price": 4.87,
       "total": 73.05
+    },
+    {
+      "timestamp": "2026-02-18T13:04:43.233523",
+      "action": "SELL",
+      "symbol": "U",
+      "shares": 9,
+      "price": 18.6,
+      "total": 167.4
+    },
+    {
+      "timestamp": "2026-02-18T13:04:55.829931",
+      "action": "BUY",
+      "symbol": "SOFI",
+      "shares": 2,
+      "price": 19.89,
+      "total": 39.78
+    },
+    {
+      "timestamp": "2026-02-18T13:05:11.054420",
+      "action": "BUY",
+      "symbol": "NIO",
+      "shares": 5,
+      "price": 4.97,
+      "total": 24.85
     }
   ],
   "value_history": [
@@ -6402,6 +6432,24 @@
       "total_value": 792.21,
       "cash": 44.14,
       "holdings_value": 748.07
+    },
+    {
+      "timestamp": "2026-02-18T13:04:46.206369",
+      "total_value": 791.73,
+      "cash": 211.54,
+      "holdings_value": 580.19
+    },
+    {
+      "timestamp": "2026-02-18T13:04:59.325365",
+      "total_value": 791.96,
+      "cash": 171.76,
+      "holdings_value": 620.2
+    },
+    {
+      "timestamp": "2026-02-18T13:05:15.045297",
+      "total_value": 792.04,
+      "cash": 146.91,
+      "holdings_value": 645.13
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
