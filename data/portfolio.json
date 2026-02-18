@@ -1,5 +1,5 @@
 {
-  "cash": 50.03000000000032,
+  "cash": 117.19000000000031,
   "holdings": {
     "MARA": {
       "symbol": "MARA",
@@ -12,12 +12,6 @@
       "shares": 6,
       "cost_basis": 90.28,
       "avg_price": 15.05
-    },
-    "HOOD": {
-      "symbol": "HOOD",
-      "shares": 1,
-      "cost_basis": 76.25,
-      "avg_price": 76.25
     },
     "DKNG": {
       "symbol": "DKNG",
@@ -33,21 +27,15 @@
     },
     "U": {
       "symbol": "U",
-      "shares": 7,
-      "cost_basis": 132.81,
-      "avg_price": 18.97
-    },
-    "AFRM": {
-      "symbol": "AFRM",
-      "shares": 1,
-      "cost_basis": 52.62,
-      "avg_price": 52.62
+      "shares": 9,
+      "cost_basis": 170.27,
+      "avg_price": 18.92
     },
     "SNAP": {
       "symbol": "SNAP",
-      "shares": 16,
-      "cost_basis": 76.69999999999999,
-      "avg_price": 4.79
+      "shares": 21,
+      "cost_basis": 100.99999999999999,
+      "avg_price": 4.81
     },
     "PATH": {
       "symbol": "PATH",
@@ -3696,6 +3684,38 @@
       "shares": 2,
       "price": 18.73,
       "total": 37.46
+    },
+    {
+      "timestamp": "2026-02-18T11:42:14.077185",
+      "action": "SELL",
+      "symbol": "AFRM",
+      "shares": 1,
+      "price": 52.17,
+      "total": 52.17
+    },
+    {
+      "timestamp": "2026-02-18T11:42:18.586679",
+      "action": "SELL",
+      "symbol": "HOOD",
+      "shares": 1,
+      "price": 76.75,
+      "total": 76.75
+    },
+    {
+      "timestamp": "2026-02-18T11:42:33.201260",
+      "action": "BUY",
+      "symbol": "SNAP",
+      "shares": 5,
+      "price": 4.86,
+      "total": 24.3
+    },
+    {
+      "timestamp": "2026-02-18T11:42:47.867239",
+      "action": "BUY",
+      "symbol": "U",
+      "shares": 2,
+      "price": 18.73,
+      "total": 37.46
     }
   ],
   "value_history": [
@@ -6344,6 +6364,30 @@
       "total_value": 789.07,
       "cash": 50.03,
       "holdings_value": 739.04
+    },
+    {
+      "timestamp": "2026-02-18T11:42:18.073747",
+      "total_value": 790.94,
+      "cash": 102.2,
+      "holdings_value": 688.74
+    },
+    {
+      "timestamp": "2026-02-18T11:42:22.163879",
+      "total_value": 790.96,
+      "cash": 178.95,
+      "holdings_value": 612.01
+    },
+    {
+      "timestamp": "2026-02-18T11:42:36.718027",
+      "total_value": 790.48,
+      "cash": 154.65,
+      "holdings_value": 635.83
+    },
+    {
+      "timestamp": "2026-02-18T11:42:51.385592",
+      "total_value": 790.97,
+      "cash": 117.19,
+      "holdings_value": 673.78
     }
   ],
   "start_date": "2026-01-20T13:08:11.130141",
